@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://dnxlusuy3v0is"]
 
 [ext_resource type="PackedScene" uid="uid://der1yow75oll6" path="res://scenes/player/body_point.tscn" id="1_15wav"]
+[ext_resource type="Script" uid="uid://pyf2nb34ks2i" path="res://scenes/game_scene/player.gd" id="1_25vo0"]
 [ext_resource type="Texture2D" uid="uid://ddt2eypq1vxu2" path="res://icon.svg" id="2_25vo0"]
 [ext_resource type="Script" uid="uid://bagujp4lax5d5" path="res://scripts/player/body_line.gd" id="3_chv0e"]
 
 [node name="player" type="Node2D" unique_id=192982536]
+script = ExtResource("1_25vo0")
 
 [node name="Points" type="Node2D" parent="." unique_id=400753781]
 
 [node name="R_Hand" parent="Points" unique_id=2080435063 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
 position = Vector2(121, 80)
 neighbours = [NodePath("../R_Elbow")]
+is_extremity = true
 
 [node name="R_Elbow" parent="Points" unique_id=58329688 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
 position = Vector2(66, 46)
@@ -34,27 +37,30 @@ neighbours = [NodePath("../Head"), NodePath("../L_Hand")]
 [node name="L_Hand" parent="Points" unique_id=583153435 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
 position = Vector2(-101, 78)
 neighbours = [NodePath("../L_Elbow")]
+is_extremity = true
 
 [node name="Hips" parent="Points" unique_id=1017404883 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(15, 111)
+position = Vector2(0, 111)
 neighbours = [NodePath("../Head"), NodePath("../L_Knee"), NodePath("../R_Knee")]
 max_dist = 90.0
 
 [node name="L_Knee" parent="Points" unique_id=507512239 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-14, 156)
+position = Vector2(-29, 156)
 neighbours = [NodePath("../Hips"), NodePath("../L_Foot")]
 
 [node name="L_Foot" parent="Points" unique_id=233439184 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-22, 224)
+position = Vector2(-37, 224)
 neighbours = [NodePath("../L_Knee")]
+is_extremity = true
 
 [node name="R_Knee" parent="Points" unique_id=163544791 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(49, 161)
+position = Vector2(34, 161)
 neighbours = [NodePath("../Hips"), NodePath("../R_Foot")]
 
 [node name="R_Foot" parent="Points" unique_id=1980246193 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(61, 228)
+position = Vector2(46, 228)
 neighbours = [NodePath("../R_Knee")]
+is_extremity = true
 
 [node name="Lines" type="Node2D" parent="." unique_id=246568590]
 
