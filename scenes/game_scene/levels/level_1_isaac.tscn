@@ -8,6 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ydfmt"]
 shader = ExtResource("1_qvsb3")
+shader_parameter/pixel_scale = 4.000000142499999
 shader_parameter/brightness = 1.02
 shader_parameter/contrast = 1.08
 shader_parameter/saturation = 1.1
@@ -20,7 +21,7 @@ shader_parameter/scanline_density = 0.5
 shader_parameter/interlace_strength = 0.0
 shader_parameter/mask_strength = 0.0350000016625
 shader_parameter/mask_scale = 0.72400001064
-shader_parameter/chroma_offset_px = 0.442000020995
+shader_parameter/chroma_offset_px = 0.0470000022325
 shader_parameter/luma_smear_px = 0.65600003116
 shader_parameter/jitter_px = 0.0
 shader_parameter/wobble_px = 0.40400001919

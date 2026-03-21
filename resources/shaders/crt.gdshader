@@ -4,6 +4,8 @@ render_mode unshaded;
 // Full-screen post-process: reads the already-rendered frame. :contentReference[oaicite:1]{index=1}
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
+uniform float pixel_scale : hint_range(1.0, 8.0) = 1.0;
+
 // --- Color controls ---
 uniform float brightness : hint_range(0.0, 2.0) = 1.02;
 uniform float contrast   : hint_range(0.0, 2.0) = 1.08;
@@ -111,6 +113,8 @@ void fragment() {
 
 	// CRT curve
 	vec2 cuv = crt_curve(uv, curvature);
+	vec2 low_res = res / pixel_scale;              // virtual lower resolution
+	cuv = floor(cuv * low_res) / low_res;
 	float in_bounds = inside01(cuv);
 
 	// Rounded corners (soft clip)
