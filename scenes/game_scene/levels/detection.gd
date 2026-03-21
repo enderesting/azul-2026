@@ -21,33 +21,38 @@ func _ready() -> void:
 	target_nodes = get_children()
 
 func _process(_delta: float) -> void:
-	# 1. Reset distances to the maximum (no match state)
+
 	for key in distances.keys():
 		distances[key] = trigger_distance
-	
-	# 2. Update distances based on current positions
+
+
 	for target in target_nodes:
-		if not target is Node2D:
-			continue
+		if not target is Node2D: continue
+		
+		var min_dist = trigger_distance
 		
 		for part in body_parts:
-			var temp_name = part.name
-			if part.name == "R_Hand":
-				temp_name = "L_Hand"
-			if part.name == "R_Foot":
-				temp_name = "L_Foot"
-			
-			if temp_name == target.name and distances.has(target.name):
+
+			if _is_valid_match(part.name, target.name):
 				var d = target.global_position.distance_to(part.global_position)
+				if d < min_dist:
+					min_dist = d
+		
 
-				distances[target.name] = clamp(d, 0.0, trigger_distance)
+		distances[target.name] = clamp(min_dist, 0.0, trigger_distance)
 
-				
 
 	var total_score: float = 0.0
 	for part_name in distances:
-		var score = (trigger_distance - distances[part_name]) / trigger_distance
-		total_score += score
+		total_score += (trigger_distance - distances[part_name]) / trigger_distance
 	
 	match_coefficient = total_score / distances.size()
-	print (match_coefficient)
+	print(match_coefficient)
+
+
+func _is_valid_match(part_name: String, target_name: String) -> bool:
+	match target_name:
+		"Head": return part_name == "Head"
+		"L_Hand", "R_Hand": return "Hand" in part_name
+		"L_Foot", "R_Foot": return "Foot" in part_name
+	return false
