@@ -13,7 +13,7 @@ signal game_exited
 ## The scene to open when a player clicks the 'Options' button.
 @export var options_packed_scene : PackedScene
 ## The scene to open when a player clicks the 'Credits' button.
-@export var credits_packed_scene : Control = null
+@export var credits_packed_scene : PackedScene
 
 @onready var level_selector: Control = %Level_selector
 
@@ -122,8 +122,8 @@ func _on_new_game_button_pressed() -> void:
 func _on_options_button_pressed() -> void:
 	_open_sub_menu(options_packed_scene)
 
-#func _on_credits_button_pressed() -> void:
-	#_open_sub_menu(credits_packed_scene)
+func _on_credits_button_pressed() -> void:
+	_open_sub_menu(credits_packed_scene)
 
 func _on_exit_button_pressed() -> void:
 	try_exit_game()
