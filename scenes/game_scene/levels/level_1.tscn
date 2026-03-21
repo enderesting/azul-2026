@@ -19,8 +19,8 @@ next_level_path = "res://scenes/game_scene/levels/level_2.tscn"
 
 [node name="DavidTemp" type="Sprite2D" parent="." unique_id=1269795959]
 z_index = -10
-position = Vector2(128, 191)
-scale = Vector2(0.74475527, 0.74475527)
+position = Vector2(443.00003, 484)
+scale = Vector2(1.708042, 1.299752)
 texture = ExtResource("6_sycfm")
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1389548597]
@@ -31,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="TutorialManager" type="Node" parent="." unique_id=928060640]
 unique_name_in_owner = true
@@ -71,3 +71,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="player" parent="." unique_id=192982536 instance=ExtResource("5_623lg")]
+position = Vector2(1113, 599)
