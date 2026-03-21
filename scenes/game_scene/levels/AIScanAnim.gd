@@ -89,7 +89,7 @@ func writeLoss():
 		"to be murdered"
 	]
 	#winloseLog.modulate = Color.hex(0xff8774ff)
-	winloseLog.modulate = Color("ff8774ff")
+	winloseLog.modulate = Color("ff412cff")
 	#winloseLog.modulate.color = Color8(1/255,1/135,1/116)
 	
 	for line in fakeLoseLogData:
