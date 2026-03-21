@@ -52,10 +52,10 @@ func _process(_delta):
 script = SubResource("GDScript_0tsoq")
 
 [node name="Button" type="Button" parent="." unique_id=137901880]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 flat = true

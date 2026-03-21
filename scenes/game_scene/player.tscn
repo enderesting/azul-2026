@@ -28,30 +28,31 @@ script = ExtResource("1_25vo0")
 [node name="Points" type="Node2D" parent="." unique_id=400753781]
 
 [node name="R_Hand" parent="Points" unique_id=2080435063 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(151, 153)
+position = Vector2(136, 188)
 neighbours = [NodePath("../R_Elbow")]
 max_dist = 160.0
 stiffness = 0.4
 is_extremity = true
 
 [node name="R_Elbow" parent="Points" unique_id=58329688 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(84, 55)
+position = Vector2(137, 69)
 neighbours = [NodePath("../R_Hand"), NodePath("../Neck")]
 max_dist = 160.0
 stiffness = 0.4
 
 [node name="Head" parent="Points" unique_id=331611917 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(0, -90)
+position = Vector2(0, -72)
 neighbours = [NodePath("../Neck")]
-max_dist = 30.0
+max_dist = 100.0
 min_dist = 5.0
-stiffness = 0.4
+stiffness = 0.8
 
 [node name="Button" parent="Points/Head" index="0" unique_id=137901880]
-offset_left = -60.0
-offset_top = -36.0
-offset_right = 66.0
-offset_bottom = 59.0
+offset_left = -57.0
+offset_top = -29.0
+offset_right = 60.0
+offset_bottom = 53.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Face" type="Sprite2D" parent="Points/Head" unique_id=1626676485]
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
@@ -70,6 +71,7 @@ offset_top = -25.0
 offset_right = 74.0
 offset_bottom = 47.0
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="L_Eye" type="ColorRect" parent="Points/Head" unique_id=664365656]
 z_index = 11
@@ -79,32 +81,22 @@ offset_top = -22.0
 offset_right = 8.0
 offset_bottom = 50.0
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Neck" parent="Points" unique_id=2057357725 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
 position = Vector2(0, 23)
 neighbours = [NodePath("../R_Elbow"), NodePath("../L_Elbow"), NodePath("../Hips"), NodePath("../Head")]
-max_dist = 200.0
-stiffness = 0.4
-
-[node name="Button" parent="Points/Neck" index="0" unique_id=137901880]
-mouse_filter = 2
-disabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Points/Neck" unique_id=846243966]
-visible = false
-z_index = 10
-z_as_relative = false
-position = Vector2(0, -35)
-scale = Vector2(0.5, 0.5)
+max_dist = 300.0
+stiffness = 1.0
 
 [node name="L_Elbow" parent="Points" unique_id=993613529 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-72, 59)
+position = Vector2(-140, 75)
 neighbours = [NodePath("../Neck"), NodePath("../L_Hand")]
 max_dist = 160.0
 stiffness = 0.4
 
 [node name="L_Hand" parent="Points" unique_id=583153435 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(-132, 138)
+position = Vector2(-163, 189)
 neighbours = [NodePath("../L_Elbow")]
 max_dist = 160.0
 stiffness = 0.4
@@ -118,26 +110,26 @@ min_dist = 100.0
 stiffness = 0.4
 
 [node name="L_Knee" parent="Points" unique_id=507512239 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-59, 237)
+position = Vector2(-53, 294)
 neighbours = [NodePath("../Hips"), NodePath("../L_Foot")]
 max_dist = 160.0
 stiffness = 0.4
 
 [node name="L_Foot" parent="Points" unique_id=233439184 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(-66, 338)
+position = Vector2(-66, 410)
 neighbours = [NodePath("../L_Knee")]
 max_dist = 160.0
 stiffness = 0.4
 is_extremity = true
 
 [node name="R_Knee" parent="Points" unique_id=163544791 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(54, 234)
+position = Vector2(60, 291)
 neighbours = [NodePath("../Hips"), NodePath("../R_Foot")]
 max_dist = 160.0
 stiffness = 0.4
 
 [node name="R_Foot" parent="Points" unique_id=1980246193 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(65, 336)
+position = Vector2(65, 408)
 neighbours = [NodePath("../R_Knee")]
 max_dist = 160.0
 stiffness = 0.4
@@ -202,4 +194,3 @@ script = ExtResource("3_chv0e")
 body_points = [NodePath("../../Points/Neck"), NodePath("../../Points/Hips")]
 
 [editable path="Points/Head"]
-[editable path="Points/Neck"]
