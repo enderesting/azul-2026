@@ -11,6 +11,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vn02j"]
 shader = ExtResource("4_5lk5m")
+shader_parameter/pixel_scale = 1.0
 shader_parameter/brightness = 1.02
 shader_parameter/contrast = 1.08
 shader_parameter/saturation = 1.1
