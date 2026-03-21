@@ -4,7 +4,7 @@ signal level_lost
 @warning_ignore("unused_signal")
 @onready var detectionSys = $Detection
 @onready var countDownTimer = $"Game UI/VBoxContainer/CountDown/Timer"
-@export var time = 18
+@export var time = 20
 @export_file("*.tscn") var next_level_path : String
 @onready var scanUI = $"AI Scan UI"
 @onready var gameUI = $"Game UI"
@@ -28,10 +28,13 @@ func fadeBrightness(targetValue : float, duration : float) -> void:
 	await tween.finished
 
 func _ready() -> void:
+	$NextLvl.play()
+	$Walkie.play()
 	animation_player.play_backwards("fade")
 	level_state = GameState.get_level_state(scene_file_path)
 	countDownTimer.start(time)
 	await countDownTimer.timeout
+	$Walkie.stop()
 	$player.canMove = false
 	gameUI.visible = false
 	detectionSys	.checkBoxes()

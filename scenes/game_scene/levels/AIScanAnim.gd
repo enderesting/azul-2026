@@ -59,6 +59,7 @@ func writeWin():
 		"Next exhibit",
 		"Press any key to continue"
 	]
+	winloseLog.modulate = Color("18df13")
 	for line in fakeWinLogData:
 		var currentBlockText = ""
 		for i in range(logLines.size()):
@@ -87,6 +88,10 @@ func writeLoss():
 		"Press any key",
 		"to be murdered"
 	]
+	#winloseLog.modulate = Color.hex(0xff8774ff)
+	winloseLog.modulate = Color("ff8774ff")
+	#winloseLog.modulate.color = Color8(1/255,1/135,1/116)
+	
 	for line in fakeLoseLogData:
 		var currentBlockText = ""
 		for i in range(logLines.size()):
