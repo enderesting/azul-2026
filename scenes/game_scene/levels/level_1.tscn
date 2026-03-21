@@ -78,11 +78,16 @@ position = Vector2(1113, 599)
 script = ExtResource("7_pmyid")
 
 [node name="Head" type="Node2D" parent="Detection" unique_id=428873503]
+position = Vector2(896, 414)
 
 [node name="L_Hand" type="Node2D" parent="Detection" unique_id=382464656]
+position = Vector2(787, 707)
 
 [node name="R_Hand" type="Node2D" parent="Detection" unique_id=63859331]
+position = Vector2(966, 470)
 
 [node name="L_Foot" type="Node2D" parent="Detection" unique_id=1107649323]
+position = Vector2(916, 974)
 
 [node name="R_Foot" type="Node2D" parent="Detection" unique_id=1044884557]
+position = Vector2(1101, 1019)
