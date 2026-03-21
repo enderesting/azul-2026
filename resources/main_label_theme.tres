@@ -9,12 +9,42 @@ bg_color = Color(0.09411765, 0.8745098, 0.07450981, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6oh67"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbjr3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.09411765, 0.8745098, 0.07450981, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cjwv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.09411765, 0.8745098, 0.07450981, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvsaa"]
 bg_color = Color(0.07, 0.07, 0.07, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7lad"]
+bg_color = Color(0.2555622, 0.7141883, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abvgv"]
+bg_color = Color(0.05552212, 0.51803017, 0.04308112, 1)
 
 [resource]
 default_font = ExtResource("1_6oh67")
@@ -25,5 +55,9 @@ Button/colors/font_pressed_color = Color(0.07379841, 0.641152, 0.058835074, 1)
 Button/styles/hover = SubResource("StyleBoxFlat_6oh67")
 Button/styles/normal = SubResource("StyleBoxEmpty_nvsaa")
 Button/styles/pressed = SubResource("StyleBoxEmpty_6oh67")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_tbjr3")
+HSlider/styles/slider = SubResource("StyleBoxFlat_3cjwv")
 Label/colors/font_color = Color(0.09411765, 0.8745098, 0.07450981, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_nvsaa")
+ScrollContainer/styles/focus = SubResource("StyleBoxFlat_g7lad")
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_abvgv")
