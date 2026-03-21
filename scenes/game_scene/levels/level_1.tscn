@@ -19,8 +19,8 @@ next_level_path = "res://scenes/game_scene/levels/level_2.tscn"
 
 [node name="DavidTemp" type="Sprite2D" parent="." unique_id=1269795959]
 z_index = -10
-position = Vector2(443.00003, 484)
-scale = Vector2(1.708042, 1.299752)
+position = Vector2(938.00006, 703)
+scale = Vector2(2.5080433, 1.939752)
 texture = ExtResource("6_sycfm")
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1389548597]

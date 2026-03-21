@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnxlusuy3v0is"]
 
 [ext_resource type="PackedScene" uid="uid://der1yow75oll6" path="res://scenes/player/body_point.tscn" id="1_15wav"]
-[ext_resource type="Script" uid="uid://pyf2nb34ks2i" path="res://scenes/game_scene/player.gd" id="1_25vo0"]
+[ext_resource type="Script" path="res://scenes/game_scene/player.gd" id="1_25vo0"]
 [ext_resource type="Texture2D" uid="uid://ddt2eypq1vxu2" path="res://icon.svg" id="2_25vo0"]
 [ext_resource type="Script" uid="uid://bagujp4lax5d5" path="res://scripts/player/body_line.gd" id="3_chv0e"]
 
@@ -11,70 +11,108 @@ script = ExtResource("1_25vo0")
 [node name="Points" type="Node2D" parent="." unique_id=400753781]
 
 [node name="R_Hand" parent="Points" unique_id=2080435063 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(121, 80)
+position = Vector2(151, 153)
 neighbours = [NodePath("../R_Elbow")]
-is_extremity = true
+max_dist = 160.0
+stiffness = 0.4
 
 [node name="R_Elbow" parent="Points" unique_id=58329688 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(66, 46)
-neighbours = [NodePath("../R_Hand"), NodePath("../Head")]
+position = Vector2(91, 62)
+neighbours = [NodePath("../R_Hand"), NodePath("../Neck")]
+max_dist = 160.0
+stiffness = 0.4
 
-[node name="Head" parent="Points" unique_id=2057357725 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(7, 23)
-neighbours = [NodePath("../R_Elbow"), NodePath("../L_Elbow"), NodePath("../Hips")]
+[node name="Head" parent="Points" unique_id=331611917 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+position = Vector2(72, -44)
+neighbours = [NodePath("../Neck")]
+max_dist = 30.0
+min_dist = 5.0
+stiffness = 0.4
 
-[node name="Sprite2D" type="Sprite2D" parent="Points/Head" unique_id=846243966]
+[node name="Sprite2D" type="Sprite2D" parent="Points/Head" unique_id=1626676485]
 z_index = 10
 z_as_relative = false
-position = Vector2(0, -20)
+position = Vector2(0, -9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_25vo0")
+
+[node name="Neck" parent="Points" unique_id=2057357725 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+position = Vector2(7, 23)
+neighbours = [NodePath("../R_Elbow"), NodePath("../L_Elbow"), NodePath("../Hips"), NodePath("../Head")]
+max_dist = 200.0
+stiffness = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="Points/Neck" unique_id=846243966]
+visible = false
+z_index = 10
+z_as_relative = false
+position = Vector2(0, -35)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_25vo0")
 
 [node name="L_Elbow" parent="Points" unique_id=993613529 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-47, 45)
-neighbours = [NodePath("../Head"), NodePath("../L_Hand")]
+position = Vector2(-72, 59)
+neighbours = [NodePath("../Neck"), NodePath("../L_Hand")]
+max_dist = 160.0
+stiffness = 0.4
 
 [node name="L_Hand" parent="Points" unique_id=583153435 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-101, 78)
+position = Vector2(-132, 138)
 neighbours = [NodePath("../L_Elbow")]
-is_extremity = true
+max_dist = 160.0
+stiffness = 0.4
 
 [node name="Hips" parent="Points" unique_id=1017404883 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(0, 111)
-neighbours = [NodePath("../Head"), NodePath("../L_Knee"), NodePath("../R_Knee")]
-max_dist = 90.0
+position = Vector2(4, 185)
+neighbours = [NodePath("../Neck"), NodePath("../L_Knee"), NodePath("../R_Knee")]
+max_dist = 200.0
+stiffness = 0.4
 
 [node name="L_Knee" parent="Points" unique_id=507512239 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-29, 156)
+position = Vector2(-59, 237)
 neighbours = [NodePath("../Hips"), NodePath("../L_Foot")]
+max_dist = 160.0
+stiffness = 0.4
 
 [node name="L_Foot" parent="Points" unique_id=233439184 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-37, 224)
+position = Vector2(-66, 338)
 neighbours = [NodePath("../L_Knee")]
-is_extremity = true
+max_dist = 160.0
+stiffness = 0.4
 
 [node name="R_Knee" parent="Points" unique_id=163544791 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(34, 161)
+position = Vector2(54, 234)
 neighbours = [NodePath("../Hips"), NodePath("../R_Foot")]
+max_dist = 160.0
+stiffness = 0.4
 
 [node name="R_Foot" parent="Points" unique_id=1980246193 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(46, 228)
+position = Vector2(65, 336)
 neighbours = [NodePath("../R_Knee")]
-is_extremity = true
+max_dist = 160.0
+stiffness = 0.4
 
 [node name="Lines" type="Node2D" parent="." unique_id=246568590]
 
+[node name="Neck" type="Line2D" parent="Lines" unique_id=2069271899 node_paths=PackedStringArray("body_points")]
+default_color = Color(0.98039216, 0.80784315, 0.7254902, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_chv0e")
+body_points = [NodePath("../../Points/Neck"), NodePath("../../Points/Head")]
+
 [node name="arms" type="Line2D" parent="Lines" unique_id=44152408 node_paths=PackedStringArray("body_points")]
-width = 20.0
+width = 50.0
 default_color = Color(0.98045534, 0.8061994, 0.72741383, 1)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("3_chv0e")
-body_points = [NodePath("../../Points/R_Hand"), NodePath("../../Points/R_Elbow"), NodePath("../../Points/Head"), NodePath("../../Points/L_Elbow"), NodePath("../../Points/L_Hand")]
+body_points = [NodePath("../../Points/R_Hand"), NodePath("../../Points/R_Elbow"), NodePath("../../Points/Neck"), NodePath("../../Points/L_Elbow"), NodePath("../../Points/L_Hand")]
 
 [node name="legs" type="Line2D" parent="Lines" unique_id=241403007 node_paths=PackedStringArray("body_points")]
-width = 20.0
+width = 50.0
 default_color = Color(0.072902806, 0.38800356, 0.69499403, 1)
 joint_mode = 2
 begin_cap_mode = 2
@@ -83,10 +121,10 @@ script = ExtResource("3_chv0e")
 body_points = [NodePath("../../Points/L_Foot"), NodePath("../../Points/L_Knee"), NodePath("../../Points/Hips"), NodePath("../../Points/R_Knee"), NodePath("../../Points/R_Foot")]
 
 [node name="Body" type="Line2D" parent="Lines" unique_id=348578420 node_paths=PackedStringArray("body_points")]
-width = 30.0
+width = 50.0
 default_color = Color(0.14746085, 0.15999615, 0.16873208, 1)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("3_chv0e")
-body_points = [NodePath("../../Points/Head"), NodePath("../../Points/Hips")]
+body_points = [NodePath("../../Points/Neck"), NodePath("../../Points/Hips")]
