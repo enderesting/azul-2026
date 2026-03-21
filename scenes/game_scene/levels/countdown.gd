@@ -3,6 +3,8 @@ extends Control
 @onready var timeLabel = $Label
 @onready var countDownTimer = $Timer
 
+@onready var levelManager = $"../../.."
+
 func _process(delta):
 	var remainingTime = countDownTimer.time_left
 	var minutesAmount = int(remainingTime) / 60

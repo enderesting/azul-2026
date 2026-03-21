@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 		total_score += (trigger_distance - distances[part_name]) / trigger_distance
 	
 	match_coefficient = total_score / distances.size()
-	print(match_coefficient)
+	#print(match_coefficient)
 
 
 func _is_valid_match(part_name: String, target_name: String) -> bool:
@@ -56,3 +56,6 @@ func _is_valid_match(part_name: String, target_name: String) -> bool:
 		"L_Hand", "R_Hand": return "Hand" in part_name
 		"L_Foot", "R_Foot": return "Foot" in part_name
 	return false
+	
+func checkWinCondition() -> bool:
+	return match_coefficient > 0.6

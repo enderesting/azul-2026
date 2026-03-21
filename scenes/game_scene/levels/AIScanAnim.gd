@@ -19,11 +19,11 @@ var fakeLogData = [
 ]
 
 func _ready():
-	warningLabel.text = ""
-	codeBlockLabel.text = ""
 	beginScan()
 
 func beginScan():
+	warningLabel.text = ""
+	codeBlockLabel.text = ""
 	await writeWarning()
 	await writeTerminalOutput()
 
