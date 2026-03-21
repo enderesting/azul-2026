@@ -6,4 +6,4 @@ func _process(_delta: float) -> void:
 	clear_points()
 	for point in body_points:
 		if point != null:
-			add_point(point.global_position)
+			add_point(point.position)
