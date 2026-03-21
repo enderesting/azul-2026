@@ -18,6 +18,7 @@ func _ready() -> void:
 	level_state = GameState.get_level_state(scene_file_path)
 	countDownTimer.start(time)
 	await countDownTimer.timeout
+	$player.canMove = false
 	gameUI.visible = false
 	scanUI.visible = true
 	await $"AI Scan UI/VBoxContainer".beginScan()
