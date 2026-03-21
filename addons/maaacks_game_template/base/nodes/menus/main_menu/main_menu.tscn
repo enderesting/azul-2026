@@ -4,10 +4,14 @@
 [ext_resource type="Shader" uid="uid://dkhvdb2amyuy8" path="res://resources/shaders/crt.gdshader" id="4_5lk5m"]
 [ext_resource type="Theme" uid="uid://dsw2v34r746ro" path="res://resources/main_label_theme.tres" id="4_cw27w"]
 [ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_game_template/base/nodes/utilities/capture_focus.gd" id="4_l1ebe"]
+[ext_resource type="AudioStream" uid="uid://trd7t3s1dujm" path="res://assets/audio/menu_serious.mp3" id="4_vn02j"]
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/nodes/music_players/background_music_player.tscn" id="4_w8sbm"]
 [ext_resource type="Script" uid="uid://b5oej1q4h7jvh" path="res://addons/maaacks_game_template/base/nodes/autoloads/ui_sound_controller/ui_sound_controller.gd" id="6_bs342"]
 [ext_resource type="Script" uid="uid://dmkubt2nsnsbn" path="res://addons/maaacks_game_template/base/nodes/labels/config_version_label.gd" id="6_pdiij"]
+[ext_resource type="Script" uid="uid://b6qix78uncuu8" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector.gd" id="6_vjnah"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="7_im16j"]
+[ext_resource type="PackedScene" uid="uid://qekqqlfwa3b7" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector_button.tscn" id="7_xrkdo"]
+[ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="10_vn02j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vn02j"]
 shader = ExtResource("4_5lk5m")
@@ -24,7 +28,7 @@ shader_parameter/scanline_density = 1.15
 shader_parameter/interlace_strength = 0.2
 shader_parameter/mask_strength = 0.22
 shader_parameter/mask_scale = 1.0
-shader_parameter/chroma_offset_px = 1.6
+shader_parameter/chroma_offset_px = 1.10000005225
 shader_parameter/luma_smear_px = 2.2
 shader_parameter/jitter_px = 0.0
 shader_parameter/wobble_px = 1.5
@@ -48,6 +52,7 @@ script = ExtResource("1")
 script = ExtResource("6_bs342")
 
 [node name="BackgroundMusicPlayer" parent="." unique_id=1141822549 instance=ExtResource("4_w8sbm")]
+stream = ExtResource("4_vn02j")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=518708310]
 
@@ -68,6 +73,59 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12332948, 0.13753527, 0.1436213, 1)
+
+[node name="Level_selector" type="Control" parent="." unique_id=1387448061]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_vjnah")
+
+[node name="Levels" type="GridContainer" parent="Level_selector" unique_id=1222973890]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -302.0
+offset_right = 302.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Button" parent="Level_selector/Levels" unique_id=552392528 instance=ExtResource("7_xrkdo")]
+layout_mode = 2
+
+[node name="Button2" parent="Level_selector/Levels" unique_id=2093482108 instance=ExtResource("7_xrkdo")]
+layout_mode = 2
+
+[node name="Button3" parent="Level_selector/Levels" unique_id=290878566 instance=ExtResource("7_xrkdo")]
+layout_mode = 2
+
+[node name="Button4" parent="Level_selector/Levels" unique_id=1643652835 instance=ExtResource("7_xrkdo")]
+layout_mode = 2
+
+[node name="Exit_selector" type="Button" parent="Level_selector" unique_id=1093621965]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
 
 [node name="MenuContainer" type="MarginContainer" parent="." unique_id=396616752]
 unique_name_in_owner = true
@@ -110,6 +168,7 @@ mouse_filter = 2
 
 [node name="MenuButtonsBoxContainer" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" unique_id=2017477786]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(215.32, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -164,6 +223,21 @@ theme = ExtResource("4_cw27w")
 theme_override_font_sizes/font_size = 49
 text = "EXIT"
 
+[node name="player" parent="MenuContainer" unique_id=192982536 instance=ExtResource("10_vn02j")]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.15686275)
+position = Vector2(623, 314)
+
+[node name="player2" parent="MenuContainer" unique_id=1369896524 instance=ExtResource("10_vn02j")]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.15686275)
+position = Vector2(1463, 633)
+
+[node name="player3" parent="MenuContainer" unique_id=29981380 instance=ExtResource("10_vn02j")]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.15686275)
+position = Vector2(48, 772)
+
 [node name="VersionMargin" type="MarginContainer" parent="." unique_id=1732528471]
 layout_mode = 1
 anchors_preset = 15
@@ -192,6 +266,7 @@ offset_left = -88.0
 offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("4_cw27w")
 text = "v0.0.0"
 horizontal_alignment = 2
 script = ExtResource("6_pdiij")
@@ -209,6 +284,7 @@ ui_cancel_closes = false
 text = "Really exit the game?"
 title_visible = false
 
+[connection signal="pressed" from="Level_selector/Exit_selector" to="Level_selector" method="_on_exit_selector_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

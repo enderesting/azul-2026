@@ -10,8 +10,6 @@ extends MainMenu
 
 var animation_state_machine : AnimationNodeStateMachinePlayback
 
-@onready var continue_game_button = %ContinueGameButton
-@onready var level_select_button = %LevelSelectButton
 @onready var new_game_confirmation = %NewGameConfirmation
 
 func load_game_scene() -> void:
@@ -54,7 +52,7 @@ func _input(event : InputEvent) -> void:
 func _show_level_select_if_set() -> void: 
 	if level_select_packed_scene == null: return
 	if GameState.get_levels_reached() <= 1 : return
-	level_select_button.show()
+	#level_select_button.show()
 
 #func _show_continue_if_set() -> void:
 	#if GameState.get_current_level_path().is_empty(): return

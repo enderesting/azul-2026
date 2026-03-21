@@ -31,6 +31,7 @@ func _ready() -> void:
 	await countDownTimer.timeout
 	$player.canMove = false
 	gameUI.visible = false
+	detectionSys	.checkBoxes()
 	scanUI.visible = true
 	await $"AI Scan UI/VBoxContainer".beginScan()
 	#detectionSys.showBoxes()
