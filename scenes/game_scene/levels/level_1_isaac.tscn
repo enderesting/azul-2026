@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dc0gt5wrnqcuj"]
 
+[ext_resource type="Texture2D" uid="uid://ddt2eypq1vxu2" path="res://icon.svg" id="2_mmj56"]
 [ext_resource type="PackedScene" uid="uid://der1yow75oll6" path="res://scenes/player/body_point.tscn" id="2_v0ark"]
 [ext_resource type="Script" uid="uid://bagujp4lax5d5" path="res://scripts/player/body_line.gd" id="3_mmj56"]
+[ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="3_ydfmt"]
+[ext_resource type="Texture2D" uid="uid://cfg1b1twtcohx" path="res://assets/classics/mona_lisa.jpg" id="4_m3rmr"]
+[ext_resource type="Texture2D" uid="uid://qm0xhvcpof8s" path="res://assets/classics/creation of adam.jpg" id="6_8tdjf"]
 
 [node name="Level1" type="Control" unique_id=235822082]
 layout_mode = 3
@@ -26,6 +30,13 @@ neighbours = [NodePath("../R_Hand"), NodePath("../Head")]
 [node name="Head" parent="player/Points" unique_id=1875055520 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_v0ark")]
 position = Vector2(690, 292)
 neighbours = [NodePath("../R_Elbow"), NodePath("../L_Elbow"), NodePath("../Hips")]
+
+[node name="Sprite2D" type="Sprite2D" parent="player/Points/Head" unique_id=1045349496]
+z_index = 10
+z_as_relative = false
+position = Vector2(0, -20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mmj56")
 
 [node name="L_Elbow" parent="player/Points" unique_id=142835690 node_paths=PackedStringArray("neighbours") instance=ExtResource("2_v0ark")]
 position = Vector2(636, 314)
@@ -60,7 +71,7 @@ neighbours = [NodePath("../R_Knee")]
 
 [node name="arms" type="Line2D" parent="player/Lines" unique_id=69097552 node_paths=PackedStringArray("body_points")]
 width = 20.0
-default_color = Color(1, 0.7764706, 0.8627451, 1)
+default_color = Color(0.98045534, 0.8061994, 0.72741383, 1)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -69,7 +80,7 @@ body_points = [NodePath("../../Points/R_Hand"), NodePath("../../Points/R_Elbow")
 
 [node name="legs" type="Line2D" parent="player/Lines" unique_id=1123789986 node_paths=PackedStringArray("body_points")]
 width = 20.0
-default_color = Color(1, 0.7764706, 0.8627451, 1)
+default_color = Color(0.072902806, 0.38800356, 0.69499403, 1)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -78,9 +89,27 @@ body_points = [NodePath("../../Points/L_Foot"), NodePath("../../Points/L_Knee"),
 
 [node name="Body" type="Line2D" parent="player/Lines" unique_id=2104820970 node_paths=PackedStringArray("body_points")]
 width = 30.0
-default_color = Color(1, 0.7764706, 0.8627451, 1)
+default_color = Color(0.14746085, 0.15999615, 0.16873208, 1)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("3_mmj56")
 body_points = [NodePath("../../Points/Head"), NodePath("../../Points/Hips")]
+
+[node name="MonaLisa" type="Sprite2D" parent="." unique_id=1610133959]
+z_index = -10
+position = Vector2(416.375, 462.3318)
+scale = Vector2(0.33712122, 0.33712122)
+texture = ExtResource("4_m3rmr")
+
+[node name="CreationOfAdam" type="Sprite2D" parent="." unique_id=1136379505]
+z_index = -10
+position = Vector2(316.00003, 159)
+scale = Vector2(0.16338333, 0.16338335)
+texture = ExtResource("6_8tdjf")
+
+[node name="DavidTemp" type="Sprite2D" parent="." unique_id=852570151]
+z_index = -10
+position = Vector2(137.25, 494.6888)
+scale = Vector2(0.74475527, 0.74475527)
+texture = ExtResource("3_ydfmt")

@@ -7,7 +7,7 @@ script/source = "extends Node2D
 @export var neighbours: Array[Node2D] = []
 @export var max_dist: float = 60.0
 @export var min_dist: float = 30.0
-@export var stiffness: float = 0.5
+@export var stiffness: float = 0.2
 
 var dragging := false
 var drag_offset := Vector2.ZERO
