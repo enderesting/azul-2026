@@ -4,21 +4,24 @@ extends Node2D
 @export var show_debug_visuals: bool = true
 
 var body_parts: Array[Node] = []
-var target_nodes: Array[Node] = []
+var target_nodes: Array[Node]
 
-var distances: Dictionary = {
-	"Head": 200.0, "L_Hand": 200.0, "R_Hand": 200.0, "L_Foot": 200.0, "R_Foot": 200.0
-}
+var distances: Dictionary = {}
 
 var match_coefficient: float = 0.0
 
 func _ready() -> void:
 	body_parts = get_tree().get_nodes_in_group("player_points")
-	target_nodes = get_children()
-	
-	# Optional: Sort arrays to ensure index [i] matches between targets and parts
+	target_nodes = []
+	distances.clear()
+	for child in get_children():
+		if child is Node2D:
+			target_nodes.append(child)
+			distances[child.name] = trigger_distance
+
 	body_parts.sort_custom(func(a, b): return a.name < b.name)
 	target_nodes.sort_custom(func(a, b): return a.name < b.name)
+	
 	
 	if show_debug_visuals:
 		_setup_target_visuals(target_nodes)
@@ -30,12 +33,13 @@ func _setup_target_visuals(nodes: Array[Node]) -> void:
 		
 		var rect = ReferenceRect.new()
 		rect.name = "box"
-		rect.size = Vector2(60, 60) 
-		rect.position = -rect.size / 2 
+		rect.size = Vector2(64, 64) 
+		rect.position = (-rect.size / 2).round() 
 		rect.border_color = Color.GREEN
-		rect.border_width = 2.0
+		rect.border_width = 3.0 
 		rect.editor_only = false 
 		rect.visible = false
+		rect.z_index = 12
 		target.add_child(rect)
 		target.move_child(rect, 0)
 		
@@ -90,19 +94,18 @@ func checkBoxes():
 				target_box.visible = true
 				target_box.border_color = Color.GREEN
 				
-				# Hide body box and label when matched
+
 				body_box.visible = false
 				if body_label: body_label.visible = false
 			else:
-				# --- FAR STATE ---
+
 				target_box.visible = true
-				target_box.border_color = Color.YELLOW
+				target_box.border_color = Color.ORANGE
 				
 				body_box.visible = true
 				body_box.border_color = Color.RED
 				if body_label:
 					body_label.visible = true
-					# Show specific part match % instead of total match_coefficient
 					var part_score = (trigger_distance - dist_value) / trigger_distance
 					body_label.text = "%.1f" % part_score
 
