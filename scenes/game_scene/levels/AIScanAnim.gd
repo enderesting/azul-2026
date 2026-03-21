@@ -53,7 +53,7 @@ func writeTerminalOutput():
 func writeWin():
 	var fakeWinLogData = [
 		"No issues found",
-		"Certainty: %s%%" % str($"../../Detection".getScore() * 100),
+		"Certainty: %s%%" % str(snapped($"../../Detection".getScore(),0.1) * 100),
 		"Next exhibit",
 		"Press any key to continue"
 	]

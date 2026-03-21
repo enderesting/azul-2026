@@ -159,15 +159,10 @@ NEXT EXHIBIT"
 horizontal_alignment = 2
 
 [node name="Game UI" type="MarginContainer" parent="." unique_id=771000683]
-custom_minimum_size = Vector2(60, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = 8.0
-offset_right = -60.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -181,13 +176,11 @@ theme_override_constants/separation = 16
 
 [node name="ProgressBar" type="ProgressBar" parent="Game UI/VBoxContainer" unique_id=1315863147]
 modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 value = 100.0
 show_percentage = false
 
 [node name="CountDown" type="PanelContainer" parent="Game UI/VBoxContainer" unique_id=858714209]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 script = ExtResource("4_sycfm")
 

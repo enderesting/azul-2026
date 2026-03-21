@@ -12,6 +12,9 @@ signal level_lost
 var level_state : LevelState
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
+func getTime():
+	return time
+
 func resetLevel() -> void:
 	get_tree().reload_current_scene()
 	
