@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dh5ia6j8mxnpj"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/main_menu.tscn" id="1_sr523"]
-[ext_resource type="Script" path="res://scenes/menus/main_menu/main_menu_with_animations.gd" id="2_ixa71"]
-[ext_resource type="PackedScene" path="res://scenes/windows/main_menu_options_window.tscn" id="3_2k5l7"]
-[ext_resource type="PackedScene" path="res://scenes/windows/main_menu_credits_window.tscn" id="4_vsp5b"]
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="5_6xh1d"]
+[ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/main_menu.tscn" id="1_sr523"]
+[ext_resource type="Script" uid="uid://c8hsq6uq41c2n" path="res://scenes/menus/main_menu/main_menu_with_animations.gd" id="2_ixa71"]
+[ext_resource type="PackedScene" uid="uid://cqnl13gawcq6u" path="res://scenes/windows/main_menu_options_window.tscn" id="3_2k5l7"]
+[ext_resource type="PackedScene" uid="uid://c0vpmpu612d4g" path="res://scenes/windows/main_menu_credits_window.tscn" id="4_vsp5b"]
+[ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="5_6xh1d"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -332,8 +332,8 @@ parameters/conditions/intro_done = false
 [node name="TitleContainer" parent="MenuContainer/TitleMargin" parent_id_path=PackedInt32Array(2112060331) index="0" unique_id=556427956]
 modulate = Color(1, 1, 1, 0)
 
-[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" parent_id_path=PackedInt32Array(1510335937) index="0" unique_id=930520368]
-modulate = Color(1, 1, 1, 0)
+[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0" unique_id=359406872]
+script = null
 
 [node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(210553886) index="0" unique_id=116448484]
 modulate = Color(1, 1, 1, 0)
@@ -341,20 +341,11 @@ modulate = Color(1, 1, 1, 0)
 [node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=2017477786]
 lock = true
 
-[node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1" unique_id=1206401873]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "Continue"
-
-[node name="LevelSelectButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="2" unique_id=78300098]
+[node name="LevelSelectButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1" unique_id=78300098]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Level Select"
-
-[node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1732528471) index="0" unique_id=1603969262]
-modulate = Color(1, 1, 1, 0)
 
 [node name="NewGameConfirmation" parent="." index="7" unique_id=1747133399 instance=ExtResource("5_6xh1d")]
 unique_name_in_owner = true
@@ -380,6 +371,8 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
+[node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1732528471) index="0" unique_id=1603969262]
+modulate = Color(1, 1, 1, 0)
+
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="confirmed" from="NewGameConfirmation" to="." method="_on_new_game_confirmation_confirmed"]

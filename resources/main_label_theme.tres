@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://dsw2v34r746ro"]
+
+[ext_resource type="FontFile" uid="uid://c3twv8kdc656w" path="res://assets/fonts/PixelOperatorSC.ttf" id="1_6oh67"]
+
+[resource]
+default_font = ExtResource("1_6oh67")
+Button/colors/font_color = Color(0.09411765, 0.8745098, 0.07450981, 1)
+Label/colors/font_color = Color(0.09411765, 0.8745098, 0.07450981, 1)
