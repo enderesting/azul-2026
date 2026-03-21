@@ -152,12 +152,11 @@ offset_left = 1141.0
 offset_top = -14.0
 offset_right = 1811.0
 offset_bottom = 301.0
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "NO ISSUES FOUND
 CERTAINTY: 98%
 NEXT EXHIBIT"
 horizontal_alignment = 2
-vertical_alignment = 2
 
 [node name="Game UI" type="MarginContainer" parent="." unique_id=771000683]
 layout_mode = 1

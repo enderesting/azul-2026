@@ -20,20 +20,6 @@ var fakeLogData = [
     "Scan complete."
 ]
 
-var fakeWinLogData = [
-	"No issues found",
-	"Certainty: 98%",
-	"Next exhibit",
-	"Press any key to continue"
-]
-
-var fakeLoseLogData = [
-	"ISSUES DETECTED",
-	"Match: 98%",
-	"Eliminate TARGET",
-	"Press any key to be murdered"
-]
-
 func _ready():
 	beginScan()
 
@@ -65,6 +51,12 @@ func writeTerminalOutput():
 		await get_tree().create_timer(0.4).timeout
 
 func writeWin():
+	var fakeWinLogData = [
+		"No issues found",
+		"Certainty: %s%%" % str($"../../Detection".getScore() * 100),
+		"Next exhibit",
+		"Press any key to continue"
+	]
 	for line in fakeWinLogData:
 		var currentBlockText = ""
 		for i in range(logLines.size()):
@@ -86,6 +78,12 @@ func writeWin():
 		await get_tree().process_frame
 
 func writeLoss():
+	var fakeLoseLogData = [
+		"ISSUES DETECTED",
+		"Match: %s%%" % str(snapped($"../../Detection".getScore(),0.1) * 100),
+		"Eliminate TARGET",
+		"Press any key to be murdered"
+	]
 	for line in fakeLoseLogData:
 		var currentBlockText = ""
 		for i in range(logLines.size()):
