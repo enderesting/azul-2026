@@ -1,19 +1,17 @@
 [gd_scene format=3 uid="uid://50yx1ntvysdl"]
 
-[ext_resource type="Script" uid="uid://cy0jibpkevarj" path="res://scenes/game_scene/levels/level.gd" id="1_v6nrp"]
-[ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="2_3jykf"]
-[ext_resource type="Shader" uid="uid://dkhvdb2amyuy8" path="res://resources/shaders/crt.gdshader" id="3_5puc7"]
-[ext_resource type="Script" uid="uid://1rghb0rd8q7y" path="res://scenes/game_scene/tutorial_manager.gd" id="4_wjli6"]
-[ext_resource type="PackedScene" uid="uid://5hk256ytvpbf" path="res://scenes/game_scene/tutorials/tutorial_1.tscn" id="5_7a6nk"]
-[ext_resource type="Script" uid="uid://c3x5t2oks3r0c" path="res://scenes/game_scene/levels/AIScanAnim.gd" id="6_fiv8y"]
-[ext_resource type="Script" uid="uid://bagdv8cpjqley" path="res://scenes/game_scene/levels/countdown.gd" id="7_pvanv"]
-[ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="8_ahftc"]
-[ext_resource type="Script" uid="uid://8chatss3tf5a" path="res://scenes/game_scene/levels/detection.gd" id="9_3cmi2"]
+[ext_resource type="Script" uid="uid://cy0jibpkevarj" path="res://scenes/game_scene/levels/level.gd" id="1_ajsbc"]
+[ext_resource type="Shader" uid="uid://dkhvdb2amyuy8" path="res://resources/shaders/crt.gdshader" id="2_fsvkk"]
+[ext_resource type="Script" uid="uid://c3x5t2oks3r0c" path="res://scenes/game_scene/levels/AIScanAnim.gd" id="3_xh6y5"]
+[ext_resource type="FontFile" uid="uid://c3twv8kdc656w" path="res://assets/fonts/PixelOperatorSC.ttf" id="4_wxd3i"]
+[ext_resource type="Script" uid="uid://bagdv8cpjqley" path="res://scenes/game_scene/levels/countdown.gd" id="5_4ewrl"]
+[ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="6_c76rq"]
+[ext_resource type="Script" uid="uid://8chatss3tf5a" path="res://scenes/game_scene/levels/detection.gd" id="7_5b8ya"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fmabn"]
-shader = ExtResource("3_5puc7")
+shader = ExtResource("2_fsvkk")
 shader_parameter/pixel_scale = 4.000000142499999
-shader_parameter/brightness = 0.0
+shader_parameter/brightness = 1.02
 shader_parameter/contrast = 1.08
 shader_parameter/saturation = 1.1
 shader_parameter/gamma = 1.05
@@ -80,14 +78,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_v6nrp")
-next_level_path = "uid://den6cn88m8ex2"
-
-[node name="DavidTemp" type="Sprite2D" parent="." unique_id=1269795959]
-z_index = -10
-position = Vector2(938.00006, 703)
-scale = Vector2(2.5080433, 1.939752)
-texture = ExtResource("2_3jykf")
+script = ExtResource("1_ajsbc")
+next_level_path = "uid://50yx1ntvysdl"
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1389548597]
 unique_name_in_owner = true
@@ -110,11 +102,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TutorialManager" type="Node" parent="." unique_id=928060640]
-unique_name_in_owner = true
-script = ExtResource("4_wjli6")
-tutorial_scenes = Array[PackedScene]([ExtResource("5_7a6nk")])
-
 [node name="AI Scan UI" type="MarginContainer" parent="." unique_id=355327883]
 visible = false
 layout_mode = 0
@@ -132,26 +119,59 @@ theme_override_constants/margin_bottom = 32
 [node name="VBoxContainer" type="VBoxContainer" parent="AI Scan UI" unique_id=1312636315]
 layout_mode = 2
 theme_override_constants/separation = 16
-script = ExtResource("6_fiv8y")
+script = ExtResource("3_xh6y5")
 
 [node name="Warning" type="Label" parent="AI Scan UI/VBoxContainer" unique_id=557491053]
+modulate = Color(5.390644e-06, 0.8670134, 0.2089828, 1)
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("4_wxd3i")
+theme_override_font_sizes/font_size = 150
 text = "AI Scanning In Progress"
 vertical_alignment = 1
 
-[node name="Code Block" type="Label" parent="AI Scan UI/VBoxContainer" unique_id=1380460188]
-modulate = Color(0.817351, 0.10037423, 0, 1)
+[node name="Panel" type="Panel" parent="AI Scan UI/VBoxContainer" unique_id=1545448516]
+modulate = Color(0, 0.8666667, 0.20784314, 1)
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+
+[node name="HBoxContainer" type="Control" parent="AI Scan UI/VBoxContainer" unique_id=1193122464]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="Code Block" type="Label" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=1380460188]
+modulate = Color(0.817351, 0.10037423, 0, 1)
+layout_mode = 0
+offset_right = 448.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("4_wxd3i")
+theme_override_font_sizes/font_size = 60
 text = "Searching for unnusual activity"
 vertical_alignment = 1
 
+[node name="Log" type="Label" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=80296313]
+modulate = Color(0, 0.8666667, 0.20784314, 1)
+layout_mode = 0
+offset_left = 953.0
+offset_top = 22.0
+offset_right = 1753.0
+offset_bottom = 337.0
+theme_override_fonts/font = ExtResource("4_wxd3i")
+theme_override_font_sizes/font_size = 60
+text = "NO ISSUES FOUND
+CERTAINTY: 98%
+NEXT EXHIBIT"
+horizontal_alignment = 2
+
 [node name="Game UI" type="MarginContainer" parent="." unique_id=771000683]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 8.0
+offset_right = -60.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -163,9 +183,17 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="CountDown" type="PanelContainer" parent="Game UI/VBoxContainer" unique_id=858714209]
+[node name="ProgressBar" type="ProgressBar" parent="Game UI/VBoxContainer" unique_id=1315863147]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
-script = ExtResource("7_pvanv")
+value = 100.0
+show_percentage = false
+
+[node name="CountDown" type="PanelContainer" parent="Game UI/VBoxContainer" unique_id=858714209]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+script = ExtResource("5_4ewrl")
 
 [node name="Timer" type="Timer" parent="Game UI/VBoxContainer/CountDown" unique_id=1203175817]
 wait_time = 15.0
@@ -178,26 +206,11 @@ text = "15"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="player" parent="." unique_id=192982536 instance=ExtResource("8_ahftc")]
+[node name="player" parent="." unique_id=192982536 instance=ExtResource("6_c76rq")]
 position = Vector2(1113, 599)
 
 [node name="Detection" type="Node2D" parent="." unique_id=218797964]
-script = ExtResource("9_3cmi2")
-
-[node name="Head" type="Node2D" parent="Detection" unique_id=428873503]
-position = Vector2(896, 414)
-
-[node name="L_Hand" type="Node2D" parent="Detection" unique_id=382464656]
-position = Vector2(787, 707)
-
-[node name="R_Hand" type="Node2D" parent="Detection" unique_id=63859331]
-position = Vector2(966, 470)
-
-[node name="L_Foot" type="Node2D" parent="Detection" unique_id=1107649323]
-position = Vector2(916, 974)
-
-[node name="R_Foot" type="Node2D" parent="Detection" unique_id=1044884557]
-position = Vector2(1101, 1019)
+script = ExtResource("7_5b8ya")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=484765634]
 unique_name_in_owner = true

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqnl13gawcq6u"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/nodes/windows/overlaid_window_scene_container.tscn" id="1_miy0a"]
-[ext_resource type="PackedScene" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_mljqd"]
+[ext_resource type="PackedScene" uid="uid://crndfbb22ri4s" path="res://addons/maaacks_game_template/base/nodes/windows/overlaid_window_scene_container.tscn" id="1_miy0a"]
+[ext_resource type="PackedScene" uid="uid://wejocdih3nni" path="res://scenes/menus/options_menu/master_options_menu_with_tabs.tscn" id="2_mljqd"]
 
 [node name="MainMenuOptionsOverlaidWindow" unique_id=1787637973 instance=ExtResource("1_miy0a")]
 anchors_preset = 15
@@ -20,9 +20,20 @@ update_content = true
 close_button_text = "Back"
 title_visible = false
 
+[node name="ContentContainer" parent="." index="0" unique_id=1755486830]
+theme_override_constants/margin_top = 137
+
 [node name="TitleMargin" parent="ContentContainer/BoxContainer" parent_id_path=PackedInt32Array(394030069) index="0" unique_id=1262022916]
 visible = false
 
-[node name="CloseButton" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(1371114575) index="0" unique_id=314526102]
-size_flags_horizontal = 0
+[node name="MenuButtonsMargin" parent="ContentContainer/BoxContainer" parent_id_path=PackedInt32Array(394030069) index="2" unique_id=1413292752]
+size_flags_horizontal = 4
+theme_override_constants/margin_bottom = 98
+
+[node name="MenuButtons" parent="ContentContainer/BoxContainer/MenuButtonsMargin" index="0" unique_id=1371114575]
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="CloseButton" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" index="0" unique_id=314526102]
+size_flags_horizontal = 4
 text = "Back"
