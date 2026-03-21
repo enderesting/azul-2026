@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cy0jibpkevarj" path="res://scenes/game_scene/levels/level.gd" id="1_623lg"]
 [ext_resource type="Script" uid="uid://1rghb0rd8q7y" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
-[ext_resource type="Script" uid="uid://bagdv8cpjqley" path="res://scenes/game_scene/levels/countdown.gd" id="4_sycfm"]
+[ext_resource type="Script" path="res://scenes/game_scene/levels/countdown.gd" id="4_sycfm"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="5_623lg"]
 [ext_resource type="PackedScene" uid="uid://5hk256ytvpbf" path="res://scenes/game_scene/tutorials/tutorial_1.tscn" id="5_fmabn"]
 [ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="6_sycfm"]
+[ext_resource type="Script" uid="uid://8chatss3tf5a" path="res://scenes/game_scene/levels/detection.gd" id="7_pmyid"]
 
 [node name="Level1" type="Control" unique_id=235822082]
 layout_mode = 3
@@ -72,3 +73,16 @@ vertical_alignment = 1
 
 [node name="player" parent="." unique_id=192982536 instance=ExtResource("5_623lg")]
 position = Vector2(1113, 599)
+
+[node name="Detection" type="Node2D" parent="." unique_id=218797964]
+script = ExtResource("7_pmyid")
+
+[node name="Head" type="Node2D" parent="Detection" unique_id=428873503]
+
+[node name="L_Hand" type="Node2D" parent="Detection" unique_id=382464656]
+
+[node name="R_Hand" type="Node2D" parent="Detection" unique_id=63859331]
+
+[node name="L_Foot" type="Node2D" parent="Detection" unique_id=1107649323]
+
+[node name="R_Foot" type="Node2D" parent="Detection" unique_id=1044884557]
