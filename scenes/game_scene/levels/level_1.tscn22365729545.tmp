@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cy0jibpkevarj" path="res://scenes/game_scene/levels/level.gd" id="1_623lg"]
 [ext_resource type="Shader" uid="uid://dkhvdb2amyuy8" path="res://resources/shaders/crt.gdshader" id="3_fmabn"]
+[ext_resource type="Script" uid="uid://1rghb0rd8q7y" path="res://scenes/game_scene/tutorial_manager.gd" id="4_bsimd"]
 [ext_resource type="Script" uid="uid://bagdv8cpjqley" path="res://scenes/game_scene/levels/countdown.gd" id="4_sycfm"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="5_623lg"]
 [ext_resource type="Script" uid="uid://c3x5t2oks3r0c" path="res://scenes/game_scene/levels/AIScanAnim.gd" id="5_bsimd"]
+[ext_resource type="PackedScene" uid="uid://5hk256ytvpbf" path="res://scenes/game_scene/tutorials/tutorial_1.tscn" id="5_fmabn"]
 [ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="6_sycfm"]
 [ext_resource type="Script" uid="uid://8chatss3tf5a" path="res://scenes/game_scene/levels/detection.gd" id="7_pmyid"]
 
@@ -108,6 +110,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="TutorialManager" type="Node" parent="." unique_id=928060640]
+unique_name_in_owner = true
+script = ExtResource("4_bsimd")
+tutorial_scenes = Array[PackedScene]([ExtResource("5_fmabn")])
+
+[node name="Panel" type="Panel" parent="." unique_id=1287583328]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 67.0
+offset_right = 1468.0
+offset_bottom = 1003.0
+
 [node name="AI Scan UI" type="MarginContainer" parent="." unique_id=355327883]
 visible = false
 layout_mode = 0
@@ -133,33 +147,15 @@ theme_override_font_sizes/font_size = 100
 text = "AI Scanning In Progress"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="Control" parent="AI Scan UI/VBoxContainer" unique_id=1193122464]
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
-
-[node name="Code Block" type="Label" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=1380460188]
+[node name="Code Block" type="Label" parent="AI Scan UI/VBoxContainer" unique_id=1380460188]
 modulate = Color(0.817351, 0.10037423, 0, 1)
-layout_mode = 0
-offset_right = 448.0
-offset_bottom = 42.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Searching for unnusual activity"
 vertical_alignment = 1
 
-[node name="Log" type="Label" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=80296313]
-layout_mode = 0
-offset_left = 1141.0
-offset_top = -14.0
-offset_right = 1811.0
-offset_bottom = 301.0
-theme_override_font_sizes/font_size = 50
-text = "NO ISSUES FOUND
-CERTAINTY: 98%
-NEXT EXHIBIT"
-horizontal_alignment = 2
-vertical_alignment = 2
-
 [node name="Game UI" type="MarginContainer" parent="." unique_id=771000683]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
