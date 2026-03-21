@@ -11,12 +11,14 @@ var warningMessage = "WARNING: AI scan initialised..."
 var fakeLogData = [
 	"Loading core drivers...",
 	"Super Advanced AI ready",
+	"I was told there would be cake",
+	"Counting fingers on hands...",
 	"Looking for googly eyes...",
+	"This is the part where he kills you",
 	"Checking sanity...",
 	"Playing some Silksong...",
 	"Winning Game of the year...",
 	".........",
-	"Counting fingers on hands...",
     "Scan complete."
 ]
 
@@ -82,7 +84,8 @@ func writeLoss():
 		"ISSUES DETECTED",
 		"Match: %s%%" % str(snapped($"../../Detection".getScore(),0.1) * 100),
 		"Eliminate TARGET",
-		"Press any key to be murdered"
+		"Press any key",
+		"to be murdered"
 	]
 	for line in fakeLoseLogData:
 		var currentBlockText = ""

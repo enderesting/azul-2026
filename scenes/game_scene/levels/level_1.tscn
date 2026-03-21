@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bagdv8cpjqley" path="res://scenes/game_scene/levels/countdown.gd" id="4_sycfm"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="5_623lg"]
 [ext_resource type="Script" uid="uid://c3x5t2oks3r0c" path="res://scenes/game_scene/levels/AIScanAnim.gd" id="5_bsimd"]
+[ext_resource type="FontFile" uid="uid://c3twv8kdc656w" path="res://assets/fonts/PixelOperatorSC.ttf" id="5_fmabn"]
 [ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="6_sycfm"]
 [ext_resource type="Script" uid="uid://8chatss3tf5a" path="res://scenes/game_scene/levels/detection.gd" id="7_pmyid"]
 
@@ -128,10 +129,17 @@ theme_override_constants/separation = 16
 script = ExtResource("5_bsimd")
 
 [node name="Warning" type="Label" parent="AI Scan UI/VBoxContainer" unique_id=557491053]
+modulate = Color(5.390644e-06, 0.8670134, 0.2089828, 1)
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("5_fmabn")
+theme_override_font_sizes/font_size = 150
 text = "AI Scanning In Progress"
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="AI Scan UI/VBoxContainer" unique_id=1545448516]
+modulate = Color(0, 0.8666667, 0.20784314, 1)
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
 
 [node name="HBoxContainer" type="Control" parent="AI Scan UI/VBoxContainer" unique_id=1193122464]
 custom_minimum_size = Vector2(800, 0)
@@ -142,17 +150,20 @@ modulate = Color(0.817351, 0.10037423, 0, 1)
 layout_mode = 0
 offset_right = 448.0
 offset_bottom = 42.0
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_fmabn")
+theme_override_font_sizes/font_size = 60
 text = "Searching for unnusual activity"
 vertical_alignment = 1
 
 [node name="Log" type="Label" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=80296313]
+modulate = Color(0, 0.8666667, 0.20784314, 1)
 layout_mode = 0
-offset_left = 1141.0
-offset_top = -14.0
-offset_right = 1811.0
-offset_bottom = 301.0
-theme_override_font_sizes/font_size = 40
+offset_left = 953.0
+offset_top = 22.0
+offset_right = 1753.0
+offset_bottom = 337.0
+theme_override_fonts/font = ExtResource("5_fmabn")
+theme_override_font_sizes/font_size = 60
 text = "NO ISSUES FOUND
 CERTAINTY: 98%
 NEXT EXHIBIT"
