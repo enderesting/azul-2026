@@ -14,7 +14,7 @@ var levels = {
 	"res://scenes/game_scene/finalLevels/level6.tscn": 0,
 	"res://scenes/game_scene/finalLevels/level7.tscn": 0,
 	"res://scenes/game_scene/finalLevels/level8.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level9.tscn": 0,
+	"res://scenes/game_scene/finalLevels/level9.tscn": 0
 }
 
 func save_levels():
@@ -33,13 +33,18 @@ func load_levels():
 		var result = JSON.parse_string(content)
 		
 		if typeof(result) == TYPE_DICTIONARY:
-			levels = result
+			
+			for key in result.keys():
+				if levels.has(key):
+					levels[key] = result[key]
 
 func reset_levels():
+	if FileAccess.file_exists("user://levels.json"):
+		DirAccess.remove_absolute("user://levels.json")
 	for key in levels.keys():
 		levels[key] = 0
 	save_levels()
-	print("All scores reset!")
+
 
 func _ready():
 	load_levels()
@@ -54,7 +59,7 @@ func get_next_level(current_path: String) -> String:
 	index += 1
 	
 	if index >= keys.size():
-		index = 0 # loop to first level
+		index = 0 
 	
 	return keys[index]
 

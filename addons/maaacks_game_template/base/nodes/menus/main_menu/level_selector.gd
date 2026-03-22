@@ -12,8 +12,9 @@ func _on_exit_selector_pressed() -> void:
 	menu_container.show()
 
 func _ready() -> void:
+	
+	print(Global.levels)
 	for level_path in Global.levels:
-		print("A")
 		var level_button = button_packed.instantiate()
 		level_button.level_packed = load(level_path)
 		level_button.score = Global.levels[level_path]
