@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bba7614jc6kqt" path="res://assets/audio/walkie_walkie_10.wav" id="8_xh6y5"]
 [ext_resource type="AudioStream" uid="uid://c7idasf5bg6hd" path="res://assets/audio/analyse glitch.mp3" id="9_wxd3i"]
 [ext_resource type="AudioStream" uid="uid://cqneb6xr8rmvv" path="res://assets/audio/next_level_loud.mp3" id="9_xh6y5"]
+[ext_resource type="Texture2D" uid="uid://cnugd8gtjim11" path="res://assets/bg/wall.png" id="11_4ewrl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fmabn"]
 shader = ExtResource("2_fsvkk")
@@ -227,3 +228,8 @@ stream = ExtResource("9_wxd3i")
 
 [node name="NextLvl" type="AudioStreamPlayer2D" parent="." unique_id=1115276680]
 stream = ExtResource("9_xh6y5")
+
+[node name="Wall" type="Sprite2D" parent="." unique_id=1243209939]
+z_index = -50
+texture = ExtResource("11_4ewrl")
+centered = false
