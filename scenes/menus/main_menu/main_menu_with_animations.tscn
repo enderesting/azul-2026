@@ -371,6 +371,9 @@ lock = true
 [node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1732528471) index="0" unique_id=1603969262]
 modulate = Color(1, 1, 1, 0)
 
+[node name="VersionLabel" parent="VersionMargin/VersionContainer" index="0" unique_id=793266470]
+text = "v0.0.0"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="12" unique_id=445306013]
 stream = ExtResource("7_2k5l7")
 
