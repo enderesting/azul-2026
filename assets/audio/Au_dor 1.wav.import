@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3634y4x3mjif"
+path="res://.godot/imported/Au_dor 1.wav-8858d42c0ff9f1b8a5827834f60938ef.sample"
+
+[deps]
+
+source_file="res://assets/audio/Au_dor 1.wav"
+dest_files=["res://.godot/imported/Au_dor 1.wav-8858d42c0ff9f1b8a5827834f60938ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

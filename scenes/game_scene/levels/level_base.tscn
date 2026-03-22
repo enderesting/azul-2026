@@ -116,6 +116,7 @@ mouse_filter = 2
 
 [node name="AI Scan UI" type="MarginContainer" parent="." unique_id=355327883]
 visible = false
+z_index = 1000
 layout_mode = 0
 offset_left = 32.0
 offset_top = 32.0
@@ -212,6 +213,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5b8ya")
 text = "Menu"
 
 [node name="Game UI" type="MarginContainer" parent="." unique_id=771000683]
+z_index = 100
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 1
 anchors_preset = 15
