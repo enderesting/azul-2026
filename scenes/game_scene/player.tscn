@@ -423,7 +423,7 @@ max_dist = 160.0
 stiffness = 0.4
 is_extremity = true
 
-[node name="R_Elbow" parent="Points" unique_id=58329688 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+[node name="R_Elbow" parent="Points" unique_id=58329688 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(151, 41)
 neighbours = [NodePath("../R_Hand"), NodePath("../Neck")]
 max_dist = 160.0
@@ -528,7 +528,7 @@ neighbours = [NodePath("../R_Elbow"), NodePath("../L_Elbow"), NodePath("../Hips"
 max_dist = 300.0
 stiffness = 1.0
 
-[node name="L_Elbow" parent="Points" unique_id=993613529 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+[node name="L_Elbow" parent="Points" unique_id=993613529 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(-162, 53)
 neighbours = [NodePath("../Neck"), NodePath("../L_Hand")]
 max_dist = 160.0
@@ -548,7 +548,7 @@ max_dist = 200.0
 min_dist = 100.0
 stiffness = 0.4
 
-[node name="L_Knee" parent="Points" unique_id=507512239 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+[node name="L_Knee" parent="Points" unique_id=507512239 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(-78, 393)
 neighbours = [NodePath("../Hips"), NodePath("../L_Foot")]
 max_dist = 160.0
@@ -561,7 +561,7 @@ max_dist = 160.0
 stiffness = 0.4
 is_extremity = true
 
-[node name="R_Knee" parent="Points" unique_id=163544791 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+[node name="R_Knee" parent="Points" unique_id=163544791 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(38, 346)
 neighbours = [NodePath("../Hips"), NodePath("../R_Foot")]
 max_dist = 160.0
