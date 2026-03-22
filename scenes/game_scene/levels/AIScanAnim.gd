@@ -22,8 +22,6 @@ var fakeLogData = [
     "Scan complete."
 ]
 
-func _ready():
-	beginScan()
 
 func beginScan():
 	warningLabel.text = ""
@@ -34,12 +32,15 @@ func beginScan():
 
 func writeWarning():
 	var textBuilt = ""
+	$"../../typing".play()
 	for i in range(warningMessage.length()):
 		textBuilt += warningMessage[i]
 		warningLabel.text = textBuilt
 		await get_tree().create_timer(0.05).timeout
+	$"../../typing".stop()
 
 func writeTerminalOutput():
+	$"../../typing".play()
 	for line in fakeLogData:
 		terminalLines.append(line)
 		if terminalLines.size() > maxLines:
@@ -51,6 +52,7 @@ func writeTerminalOutput():
 			
 		codeBlockLabel.text = currentBlockText
 		await get_tree().create_timer(0.4).timeout
+	$"../../typing".stop()
 
 func get_round_score() -> int:
 	return snapped($"../../Detection".getScore(),0.001) * 100
@@ -62,6 +64,7 @@ func writeWin():
 		"Next exhibit"
 	]
 	winloseLog.modulate = Color("18df13")
+	$"../../typing".play()
 	for line in fakeWinLogData:
 		var currentBlockText = ""
 		for i in range(logLines.size()):
@@ -76,6 +79,7 @@ func writeWin():
 		logLines.append(line)
 		if logLines.size() > maxLines:
 			logLines.pop_front()
+		$"../../typing".stop()
 			
 	$HBoxContainer/Log/ContinueBtn.visible = true
 	$HBoxContainer/Log/MenuBtn.visible = true
@@ -91,6 +95,7 @@ func writeLoss():
 	winloseLog.modulate = Color("ff412cff")
 	
 	for line in fakeLoseLogData:
+		$"../../typing".play()
 		var currentBlockText = ""
 		for i in range(logLines.size()):
 			currentBlockText += logLines[i] + "\n"
@@ -104,6 +109,7 @@ func writeLoss():
 		logLines.append(line)
 		if logLines.size() > maxLines:
 			logLines.pop_front()
+		$"../../typing".stop()
 			
 	$HBoxContainer/Log/ContinueBtn.visible = true
 	$HBoxContainer/Log/MenuBtn.visible = true
