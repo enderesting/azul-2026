@@ -6,5 +6,5 @@ extends Button
 
 
 func _on_pressed() -> void:
+	$"../../../AudioStreamPlayer2D".play()
 	get_tree().change_scene_to_packed(level_packed)
-	
