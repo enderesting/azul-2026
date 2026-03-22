@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7idasf5bg6hd"
+path="res://.godot/imported/analyse glitch.mp3-24a338a427151a0019cb1b348471acbb.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/analyse glitch.mp3"
+dest_files=["res://.godot/imported/analyse glitch.mp3-24a338a427151a0019cb1b348471acbb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

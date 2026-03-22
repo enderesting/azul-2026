@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://chohwimyhusui"]
+
+[ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_eltk4"]
+[ext_resource type="Texture2D" uid="uid://cfg1b1twtcohx" path="res://assets/classics/mona_lisa.jpg" id="2_j4hkh"]
+
+[node name="Level1" unique_id=235822082 instance=ExtResource("1_eltk4")]
+next_level_path = "uid://crxx7rv4jjc6b"
+
+[node name="MonaLisa" type="Sprite2D" parent="." index="1" unique_id=1236729199]
+position = Vector2(938, 650)
+scale = Vector2(1.1666666, 1.2398374)
+texture = ExtResource("2_j4hkh")
+
+[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=51074230]
+position = Vector2(926, 497)
+
+[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=1935960619]
+position = Vector2(890, 831)
+
+[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=863476606]
+position = Vector2(892, 880)

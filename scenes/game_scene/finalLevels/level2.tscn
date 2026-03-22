@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://crxx7rv4jjc6b"]
+
+[ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_wtptu"]
+[ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="2_wtptu"]
+
+[node name="Level1" unique_id=235822082 instance=ExtResource("1_wtptu")]
+next_level_path = "uid://chohwimyhusui"
+
+[node name="DavidTemp" type="Sprite2D" parent="." index="0" unique_id=999778282]
+z_index = -10
+position = Vector2(969.00006, 672.99994)
+scale = Vector2(2.5080433, 1.939752)
+texture = ExtResource("2_wtptu")
+
+[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=51074230]
+position = Vector2(921, 397)
+
+[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=1935960619]
+position = Vector2(835, 710)
+
+[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=863476606]
+position = Vector2(997, 458)
+
+[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=1262004914]
+position = Vector2(936, 954)
+
+[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1616594577]
+position = Vector2(1098, 956)
