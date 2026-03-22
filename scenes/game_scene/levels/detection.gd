@@ -3,6 +3,7 @@ extends Node2D
 @export var trigger_distance: float = 200.0
 @export var show_debug_visuals: bool = true
 @export var allowance: int = 80
+@export var thres: float = 0.6
 
 var body_parts: Array[Node] = []
 var target_nodes: Array[Node]
@@ -132,4 +133,4 @@ func _is_valid_match(part_name: String, target_name: String) -> bool:
 	return false
 
 func checkWinCondition() -> bool:
-	return match_coefficient > 0.6
+	return match_coefficient > thres
