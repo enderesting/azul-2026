@@ -4,20 +4,224 @@
 [ext_resource type="Script" uid="uid://pyf2nb34ks2i" path="res://scenes/game_scene/player.gd" id="1_25vo0"]
 [ext_resource type="Script" uid="uid://bagujp4lax5d5" path="res://scripts/player/body_line.gd" id="3_chv0e"]
 [ext_resource type="Script" uid="uid://dcdu1cddr6tn" path="res://scenes/game_scene/face.gd" id="4_gdpre"]
+[ext_resource type="Texture2D" uid="uid://7jcfh104buce" path="res://assets/sweat.png" id="5_44l0u"]
 [ext_resource type="Gradient" uid="uid://dw6b877spwgtd" path="res://light_shade.tres" id="5_chv0e"]
 [ext_resource type="Shader" uid="uid://bknqxpf67k8ql" path="res://shaders/googlyeyes.gdshader" id="5_gdpre"]
 [ext_resource type="Texture2D" uid="uid://cu741yp6ia3g5" path="res://assets/white_rounded_square.png" id="6_ul2a4"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_44l0u"]
+[sub_resource type="Animation" id="Animation_gdpre"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("R_Eye:material:shader_parameter/top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("L_Eye:material:shader_parameter/top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("R_Eye:material:shader_parameter/top_alpha")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("L_Eye:material:shader_parameter/top_alpha")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Face/CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("R_Eye:material:shader_parameter/PUPIL_RADIUS")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.20600000815506]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("L_Eye:material:shader_parameter/PUPIL_RADIUS")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.20600000815506]
+}
+
+[sub_resource type="Animation" id="Animation_4f4ye"]
+resource_name = "face_shook"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("R_Eye:material:shader_parameter/PUPIL_RADIUS")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.20600000815506, 0.10000000312006]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("L_Eye:material:shader_parameter/PUPIL_RADIUS")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.20600000815506, 0.10000000312006]
+}
+
+[sub_resource type="Animation" id="Animation_44l0u"]
+resource_name = "face_worried"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("R_Eye:material:shader_parameter/top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 0.30000001425]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("L_Eye:material:shader_parameter/top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 0.30000001425]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("R_Eye:material:shader_parameter/top_alpha")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("L_Eye:material:shader_parameter/top_alpha")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Face/CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4f4ye"]
+_data = {
+&"RESET": SubResource("Animation_gdpre"),
+&"face_shook": SubResource("Animation_4f4ye"),
+&"face_worried": SubResource("Animation_44l0u")
+}
+
+[sub_resource type="Gradient" id="Gradient_44l0u"]
+offsets = PackedFloat32Array(0.61026615, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdpre"]
 shader = ExtResource("5_gdpre")
-shader_parameter/EYE_RADIUS = 0.40000001667093
-shader_parameter/PUPIL_RADIUS = 0.30000001192093
-shader_parameter/PUPIL_OFFSET = Vector2(0, -0.06)
+shader_parameter/EYE_RADIUS = 0.41100001719343
+shader_parameter/PUPIL_RADIUS = 0.20600000815506
+shader_parameter/PUPIL_OFFSET = Vector2(0, -0.03)
 shader_parameter/EYE_OFFSET = Vector2(0, 0)
 shader_parameter/black = Color(0.09, 0.12, 0.16, 1)
 shader_parameter/white = Color(0.87, 0.83, 0.78, 1)
 shader_parameter/top = 0.0
 shader_parameter/bottom = 1.0
+shader_parameter/top_alpha = -0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44l0u"]
+shader = ExtResource("5_gdpre")
+shader_parameter/EYE_RADIUS = 0.41100001719343
+shader_parameter/PUPIL_RADIUS = 0.20600000815506
+shader_parameter/PUPIL_OFFSET = Vector2(0, -0.03)
+shader_parameter/EYE_OFFSET = Vector2(0, 0)
+shader_parameter/black = Color(0.09, 0.12, 0.16, 1)
+shader_parameter/white = Color(0.87, 0.83, 0.78, 1)
+shader_parameter/top = 0.0
+shader_parameter/bottom = 1.0
+shader_parameter/top_alpha = -0.5
 
 [sub_resource type="Gradient" id="Gradient_chv0e"]
 colors = PackedColorArray(0.80009085, 0.60538423, 0.90685064, 1, 1, 1, 1, 1)
@@ -54,6 +258,9 @@ offset_right = 60.0
 offset_bottom = 53.0
 metadata/_edit_use_anchors_ = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Points/Head" unique_id=1205760445]
+libraries/ = SubResource("AnimationLibrary_4f4ye")
+
 [node name="Face" type="Sprite2D" parent="Points/Head" unique_id=1626676485]
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
 z_index = 10
@@ -63,15 +270,43 @@ scale = Vector2(0.29497743, 0.22495596)
 texture = ExtResource("6_ul2a4")
 script = ExtResource("4_gdpre")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Points/Head/Face" unique_id=1693884690]
+z_index = 13
+position = Vector2(0, -300)
+scale = Vector2(1.0000002, 1.0000002)
+emitting = false
+amount = 6
+texture = ExtResource("5_44l0u")
+use_fixed_seed = true
+seed = 11
+emission_shape = 5
+emission_points = PackedVector2Array()
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray()
+particle_flag_align_y = true
+direction = Vector2(0, -1)
+spread = 127.37
+gravity = Vector2(0, 200)
+initial_velocity_min = 600.0
+initial_velocity_max = 800.0
+angular_velocity_min = 720.0
+angular_velocity_max = 720.0
+color_ramp = SubResource("Gradient_44l0u")
+
+[node name="Node2D" type="Node2D" parent="Points/Head/Face" unique_id=1339525498]
+z_index = 12
+position = Vector2(0, -500)
+
 [node name="R_Eye" type="ColorRect" parent="Points/Head" unique_id=28789469]
 z_index = 11
-material = SubResource("ShaderMaterial_44l0u")
+material = SubResource("ShaderMaterial_gdpre")
 offset_left = 2.0
 offset_top = -25.0
 offset_right = 74.0
 offset_bottom = 47.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="L_Eye" type="ColorRect" parent="Points/Head" unique_id=664365656]
 z_index = 11
@@ -82,6 +317,7 @@ offset_right = 8.0
 offset_bottom = 50.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Neck" parent="Points" unique_id=2057357725 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
 position = Vector2(0, 23)

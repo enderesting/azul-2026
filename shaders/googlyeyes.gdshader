@@ -11,17 +11,22 @@ uniform vec4 white: source_color = vec4(0.87, 0.83, 0.78, 1);
  
 uniform float top: hint_range(0, 0.5) = 0;
 uniform float bottom: hint_range(0.5, 1) = 1;
- 
+uniform float top_alpha: hint_range(-0.5,0.5) = 0.5
+;
+// negative for right, pos for leeft
+//uniform int orientation: hint_enum("LEFT","RIGHT");
+
 const vec2 CENTER = vec2(0.5, 0.5);
 const vec4 TRANSPARENT = vec4(0,0,0,0);
- 
+
 varying flat vec4 modulate;
 void vertex() {
 	modulate = COLOR;
 }
  
 void fragment() {
-	if (UV.y > top && UV.y < bottom){
+		
+	if (UV.y > top + (CENTER.x - UV.x)*tan(top_alpha) && UV.y < bottom){
  
 		 if (length(UV-CENTER-EYE_OFFSET) < EYE_RADIUS) {
 			COLOR = white*modulate;
