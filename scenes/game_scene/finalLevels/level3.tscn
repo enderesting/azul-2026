@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://bqc3pmc8yjgai"]
+[gd_scene format=3 uid="uid://dyhq12rv45kwr"]
 
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_0bpya"]
 [ext_resource type="Texture2D" uid="uid://qm0xhvcpof8s" path="res://assets/classics/creation of adam.jpg" id="2_putxh"]
+[ext_resource type="Texture2D" uid="uid://d33rt6gistn3a" path="res://assets/curtain.png" id="3_e24t8"]
+[ext_resource type="PackedScene" uid="uid://nlb6ey1a1vyj" path="res://scenes/game_scene/painting_frame.tscn" id="4_k7li0"]
 
 [node name="Level" unique_id=235822082 instance=ExtResource("1_0bpya")]
 next_level_path = "uid://chohwimyhusui"
 
 [node name="CreationOfAdam" type="Sprite2D" parent="." index="0" unique_id=1233986688]
+z_index = -10
 position = Vector2(1338.9999, 540)
 scale = Vector2(0.32186434, 0.34799087)
 texture = ExtResource("2_putxh")
@@ -34,3 +37,18 @@ position = Vector2(1, 5)
 
 [node name="NextLvl" parent="." index="10" unique_id=1115276680]
 position = Vector2(2, 3)
+
+[node name="Curtain" type="Sprite2D" parent="." index="12" unique_id=148508807]
+z_index = -5
+position = Vector2(1469, 611)
+scale = Vector2(1.1522223, 1.1522222)
+texture = ExtResource("3_e24t8")
+
+[node name="Paint_Frame" parent="." index="13" unique_id=189737555 instance=ExtResource("4_k7li0")]
+z_index = -7
+layout_mode = 1
+offset_left = 682.0
+offset_top = 179.0
+offset_right = -573.5
+offset_bottom = -535.5
+scale = Vector2(2, 2)
