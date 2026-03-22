@@ -97,7 +97,10 @@ func checkBoxes():
 		var body_label = part.get_node_or_null("coef")
 		
 		if target_box and body_box:
-			if dist_value < 50:
+			if dist_value < 40:
+				print("DEBUG: correct box")
+				print(body_parts[i])
+				print(target_nodes[i])
 				target_box.visible = true
 				target_box.border_color = Color.GREEN
 				
@@ -105,6 +108,8 @@ func checkBoxes():
 				body_box.visible = false
 				if body_label: body_label.visible = false
 			else:
+				print("DEBUG: Wrong box")
+				print(body_parts[i])
 				print(target_nodes[i])
 				target_box.visible = true
 				target_box.border_color = Color.ORANGE

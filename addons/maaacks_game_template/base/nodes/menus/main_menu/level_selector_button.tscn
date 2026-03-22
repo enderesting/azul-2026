@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://b8nlil5u4fb55"]
 
+[ext_resource type="Theme" uid="uid://dbqgx0b0snip6" path="res://resources/main_label_theme.tres" id="1_0rv7s"]
 [ext_resource type="Script" uid="uid://wtku5no0664" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector_button.gd" id="1_p224l"]
-[ext_resource type="AudioStream" uid="uid://dkvkxlwl0beg3" path="res://assets/audio/next_level_3 (mp3cut.net).wav" id="2_itp2k"]
+[ext_resource type="AudioStream" uid="uid://cwq60ws2uxxrg" path="res://assets/audio/clickar_camara.wav" id="2_itp2k"]
+[ext_resource type="Texture2D" uid="uid://cnugd8gtjim11" path="res://assets/bg/wall.png" id="4_wkgv0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkgv0"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Button" type="Button" unique_id=552392528]
 custom_minimum_size = Vector2(350, 200)
@@ -9,9 +17,27 @@ offset_right = 350.0
 offset_bottom = 200.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("1_0rv7s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wkgv0")
 script = ExtResource("1_p224l")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=576138936]
 stream = ExtResource("2_itp2k")
+
+[node name="screenshot" type="TextureRect" parent="." unique_id=1109438924]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.8627451)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_wkgv0")
+expand_mode = 2
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

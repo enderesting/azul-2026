@@ -4,11 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bpmf6iui4e6yp" path="res://assets/classics/jesus.jpg" id="2_kog3r"]
 
 [node name="Level" unique_id=235822082 instance=ExtResource("1_xjt2v")]
+next_level_path = "uid://di57xgysbwluv"
 
 [node name="Jesus" type="Sprite2D" parent="." index="0" unique_id=1880331050]
 position = Vector2(937.25, 611.50006)
 scale = Vector2(0.7204433, 0.5245614)
 texture = ExtResource("2_kog3r")
+
+[node name="player" parent="." index="5" unique_id=192982536]
+position = Vector2(1113, 599)
 
 [node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=342148241]
 position = Vector2(978, 380)

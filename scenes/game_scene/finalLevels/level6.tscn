@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://iv0qs1akm4o0"]
+
+[ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_a0y2o"]
+[ext_resource type="Texture2D" uid="uid://cvp3fi8w6m6jg" path="res://assets/classics/Thinker.png" id="2_ucoqv"]
+
+[node name="Level" unique_id=235822082 instance=ExtResource("1_a0y2o")]
+next_level_path = "uid://chohwimyhusui"
+
+[node name="Thinker" type="Sprite2D" parent="." index="0" unique_id=662558881]
+position = Vector2(1008, 764.00006)
+scale = Vector2(0.7939453, 0.6611328)
+texture = ExtResource("2_ucoqv")
+
+[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=67454153]
+position = Vector2(1149, 525)
+scale = Vector2(0.9707031, 0.92578125)
+
+[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=689771912]
+position = Vector2(1151, 596)
+scale = Vector2(0.9707031, 0.92578125)
+
+[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=526116315]
+position = Vector2(1213, 746)
+scale = Vector2(0.9707031, 0.92578125)
+
+[node name="L_Elbow" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=1881778904]
+position = Vector2(1101.9999, 690)
+scale = Vector2(0.9707031, 0.92578125)
+
+[node name="L_Knee" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1896191351]
+position = Vector2(1088, 767.99994)
+scale = Vector2(0.9707031, 0.92578125)
+
+[node name="R_Knee" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="5" unique_id=454392296]
+position = Vector2(1179, 775)
+scale = Vector2(0.9707031, 0.92578125)
+
+[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="6" unique_id=1021057676]
+position = Vector2(1033, 950.99994)
+scale = Vector2(0.9707031, 0.92578125)
+
+[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="7" unique_id=489584585]
+position = Vector2(1088.9999, 945.99994)
+scale = Vector2(0.9707031, 0.92578125)
