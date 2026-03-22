@@ -2,6 +2,8 @@ extends Node
 signal face_worried
 signal face_relaxed
 
+
+
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
