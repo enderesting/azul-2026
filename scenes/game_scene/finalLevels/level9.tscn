@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dvv6f6knnayne"]
+
+[ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_26c7b"]
+[ext_resource type="Texture2D" uid="uid://c7jmepm5xcmt2" path="res://assets/classics/Mario.png" id="2_fwbtv"]
+
+[node name="Level1" unique_id=235822082 instance=ExtResource("1_26c7b")]
+next_level_path = "uid://chohwimyhusui"
+
+[node name="Mario" type="Sprite2D" parent="." index="0" unique_id=786797465]
+position = Vector2(894.00006, 645.00006)
+scale = Vector2(1.778, 1.778)
+texture = ExtResource("2_fwbtv")
+
+[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=1833287121]
+position = Vector2(912, 490)
+
+[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=1696084397]
+position = Vector2(799, 301)
+
+[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=1937522764]
+position = Vector2(1045, 626)
+
+[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=1486032768]
+position = Vector2(854, 1012)
+
+[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1683341094]
+position = Vector2(992, 826)

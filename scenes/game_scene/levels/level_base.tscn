@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c3x5t2oks3r0c" path="res://scenes/game_scene/levels/AIScanAnim.gd" id="3_xh6y5"]
 [ext_resource type="FontFile" uid="uid://c3twv8kdc656w" path="res://assets/fonts/PixelOperatorSC.ttf" id="4_wxd3i"]
 [ext_resource type="Script" uid="uid://bagdv8cpjqley" path="res://scenes/game_scene/levels/countdown.gd" id="5_4ewrl"]
+[ext_resource type="Theme" uid="uid://dbqgx0b0snip6" path="res://resources/main_label_theme.tres" id="5_c76rq"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="6_c76rq"]
 [ext_resource type="Script" uid="uid://8chatss3tf5a" path="res://scenes/game_scene/levels/detection.gd" id="7_5b8ya"]
 [ext_resource type="AudioStream" uid="uid://bba7614jc6kqt" path="res://assets/audio/walkie_walkie_10.wav" id="8_xh6y5"]
@@ -37,6 +38,13 @@ shader_parameter/roll_speed = 0.05400000256499999
 shader_parameter/roll_strength = 0.0290000013775
 shader_parameter/glow_strength = 0.154000007315
 shader_parameter/glow_threshold = 0.65
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b8ya"]
+bg_color = Color(0.14246494, 0.4348198, 3.85046e-07, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="Animation" id="Animation_fmabn"]
 length = 0.001
@@ -83,7 +91,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ajsbc")
-next_level_path = "uid://crxx7rv4jjc6b"
+next_level_path = "uid://chohwimyhusui"
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1389548597]
 unique_name_in_owner = true
@@ -172,11 +180,16 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.18100001
 anchor_bottom = 0.34600002
-offset_left = 577.0
+offset_left = 448.0
 offset_top = 274.0
-offset_right = 660.2
-offset_bottom = 274.01
+offset_right = 531.2
+offset_bottom = 243.01
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_c76rq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
 text = "Continue"
 
 [node name="MenuBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/Log" unique_id=348099762]
@@ -185,11 +198,17 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.18100001
 anchor_bottom = 0.34600002
-offset_left = 575.0
-offset_top = 406.0
-offset_right = 658.2
-offset_bottom = 406.01
+offset_left = 446.0
+offset_top = 387.0
+offset_right = 529.2
+offset_bottom = 346.01
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_c76rq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5b8ya")
 text = "Menu"
 
 [node name="Game UI" type="MarginContainer" parent="." unique_id=771000683]

@@ -626,6 +626,7 @@ self_modulate = Color(0.27058825, 1, 1, 1)
 
 [node name="Body2" type="Line2D" parent="Lines" unique_id=1714618489 node_paths=PackedStringArray("body_points")]
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
+z_index = 1
 points = PackedVector2Array(2, 180)
 width = 100.0
 gradient = SubResource("Gradient_chv0e")
@@ -646,6 +647,7 @@ body_points = [NodePath("../../Points/Neck"), NodePath("../../Points/Head")]
 
 [node name="arms" type="Line2D" parent="Lines" unique_id=44152408 node_paths=PackedStringArray("body_points")]
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
+z_index = 2
 points = PackedVector2Array(127, -93)
 width = 50.0
 default_color = Color(0.92156863, 0.79607844, 0.81960785, 1)
@@ -659,6 +661,7 @@ body_points = [NodePath("../../Points/R_Hand"), NodePath("../../Points/R_Elbow")
 
 [node name="legs" type="Line2D" parent="Lines" unique_id=241403007 node_paths=PackedStringArray("body_points")]
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
+z_index = 2
 width = 50.0
 gradient = ExtResource("5_chv0e")
 texture_mode = 2
@@ -670,6 +673,7 @@ body_points = [NodePath("../../Points/L_Foot"), NodePath("../../Points/L_Knee"),
 
 [node name="Body" type="Line2D" parent="Lines" unique_id=348578420 node_paths=PackedStringArray("body_points")]
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
+z_index = 1
 points = PackedVector2Array(67, -51)
 width = 100.0
 gradient = SubResource("Gradient_chv0e")
