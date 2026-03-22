@@ -12,6 +12,8 @@ signal level_lost
 var level_state : LevelState
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
+@onready var current_level_path = get_scene_file_path()
+
 func getTime():
 	return time
 
@@ -28,7 +30,7 @@ func fadeBrightness(targetValue : float, duration : float) -> void:
 	await tween.finished
 
 func _ready() -> void:
-	Global.emit_signal("face_relaxed")
+	Global.emit_signal("level_begin")
 	$Walkie.play()
 	animation_player.play_backwards("fade")
 	level_state = GameState.get_level_state(scene_file_path)
@@ -43,7 +45,7 @@ func _ready() -> void:
 	scanUI.visible = true
 	await $"AI Scan UI/VBoxContainer".beginScan()
 	#detectionSys.showBoxes()
-	var current_level_path = get_scene_file_path()
+	
 
 	Global.levels[current_level_path] = ai.get_round_score()
 	Global.save_levels()
@@ -53,15 +55,14 @@ func _ready() -> void:
 		await $"AI Scan UI/VBoxContainer".writeLoss()
 
 func _on_continue_btn_pressed() -> void:
+	animation_player.play("fade")
+	$NextLvl.play()
+	await animation_player.animation_finished
+
 	if $Detection.checkWinCondition():
-		animation_player.play("fade")
-		$NextLvl.play()
-		await animation_player.animation_finished
-		get_tree().change_scene_to_file(next_level_path)
+		var next_level = Global.get_next_level(current_level_path)
+		get_tree().change_scene_to_file(next_level)
 	else:
-		animation_player.play("fade")
-		$NextLvl.play()
-		await animation_player.animation_finished
 		resetLevel()
 
 
@@ -70,4 +71,3 @@ func _on_menu_btn_pressed() -> void:
 	$NextLvl.play()
 	await animation_player.animation_finished
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu_with_animations.tscn")
-		

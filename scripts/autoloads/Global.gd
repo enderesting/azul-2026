@@ -3,6 +3,7 @@ extends Node
 signal face_worried
 signal face_relaxed
 signal face_shook
+signal level_begin
 
 var levels := {
 	"res://scenes/game_scene/finalLevels/level1.tscn": 0,
@@ -10,7 +11,10 @@ var levels := {
 	"res://scenes/game_scene/finalLevels/level3.tscn": 0,
 	"res://scenes/game_scene/finalLevels/level4.tscn": 0,
 	"res://scenes/game_scene/finalLevels/level5.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level6.tscn": 0
+	"res://scenes/game_scene/finalLevels/level6.tscn": 0,
+	"res://scenes/game_scene/finalLevels/level7.tscn": 0,
+	"res://scenes/game_scene/finalLevels/level8.tscn": 0,
+	"res://scenes/game_scene/finalLevels/level9.tscn": 0,
 }
 
 func save_levels():
@@ -39,6 +43,20 @@ func reset_levels():
 
 func _ready():
 	load_levels()
+
+func get_next_level(current_path: String) -> String:
+	var keys = levels.keys()
+	var index = keys.find(current_path)
+	
+	if index == -1:
+		return keys[0] # fallback
+	
+	index += 1
+	
+	if index >= keys.size():
+		index = 0 # loop to first level
+	
+	return keys[index]
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
