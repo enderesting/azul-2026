@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://di57xgysbwluv"]
+
+[ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_00u7k"]
+[ext_resource type="Texture2D" uid="uid://b4msssb1h5hrm" path="res://assets/classics/jojo.png" id="2_1wyff"]
+
+[node name="Level" unique_id=235822082 instance=ExtResource("1_00u7k")]
+next_level_path = "uid://iv0qs1akm4o0"
+
+[node name="Jojo" type="Sprite2D" parent="." index="0" unique_id=1567866732]
+position = Vector2(930.5, 610.5)
+scale = Vector2(1.3421053, 1.2381817)
+texture = ExtResource("2_1wyff")
+
+[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=153462783]
+position = Vector2(975, 339)
+
+[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=1280021862]
+position = Vector2(761, 549)
+
+[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=1592304888]
+position = Vector2(1000, 393)
+
+[node name="R_Elbow" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=151444647]
+position = Vector2(978, 510)
+
+[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=2121364797]
+position = Vector2(717, 884)
+
+[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="5" unique_id=123821050]
+position = Vector2(1122, 863)
