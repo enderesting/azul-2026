@@ -586,7 +586,7 @@ body_points = [NodePath("../../Points/Neck"), NodePath("../../Points/Hips")]
 
 [node name="Neck" type="Line2D" parent="Lines" unique_id=2069271899 node_paths=PackedStringArray("body_points")]
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
-width = 15.0
+width = 20.0
 joint_mode = 2
 begin_cap_mode = 1
 end_cap_mode = 1

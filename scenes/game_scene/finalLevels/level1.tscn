@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cfg1b1twtcohx" path="res://assets/classics/mona_lisa.jpg" id="2_j4hkh"]
 
 [node name="Level1" unique_id=235822082 instance=ExtResource("1_eltk4")]
-next_level_path = "uid://crxx7rv4jjc6b"
 
 [node name="MonaLisa" type="Sprite2D" parent="." index="1" unique_id=1236729199]
 position = Vector2(938, 650)
