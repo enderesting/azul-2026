@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bqc3pmc8yjgai"]
+
+[ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_0bpya"]
+[ext_resource type="Texture2D" uid="uid://qm0xhvcpof8s" path="res://assets/classics/creation of adam.jpg" id="2_putxh"]
+
+[node name="Level" unique_id=235822082 instance=ExtResource("1_0bpya")]
+next_level_path = "uid://chohwimyhusui"
+
+[node name="CreationOfAdam" type="Sprite2D" parent="." index="0" unique_id=1233986688]
+position = Vector2(1338.9999, 540)
+scale = Vector2(0.32186434, 0.34799087)
+texture = ExtResource("2_putxh")
+
+[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=1405685842]
+position = Vector2(900, 477)
+
+[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=392261359]
+position = Vector2(813, 649)
+
+[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=537784545]
+position = Vector2(1162, 517)
+
+[node name="R_Knee" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=159958193]
+position = Vector2(1071, 581)
+
+[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=560799685]
+position = Vector2(1030, 739)
+
+[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="5" unique_id=819020614]
+position = Vector2(1228, 798)
+
+[node name="Walkie" parent="." index="8" unique_id=1898127467]
+position = Vector2(1, 5)
+
+[node name="NextLvl" parent="." index="10" unique_id=1115276680]
+position = Vector2(2, 3)

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_wtptu"]
 [ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="2_wtptu"]
 
-[node name="Level1" unique_id=235822082 instance=ExtResource("1_wtptu")]
+[node name="Level" unique_id=235822082 instance=ExtResource("1_wtptu")]
 next_level_path = "uid://chohwimyhusui"
 
 [node name="DavidTemp" type="Sprite2D" parent="." index="0" unique_id=999778282]
@@ -26,3 +26,12 @@ position = Vector2(936, 954)
 
 [node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1616594577]
 position = Vector2(1098, 956)
+
+[node name="Walkie" parent="." index="8" unique_id=1898127467]
+bus = &"Music"
+
+[node name="Ai Sounds" parent="." index="9" unique_id=520498024]
+bus = &"Music"
+
+[node name="NextLvl" parent="." index="10" unique_id=1115276680]
+bus = &"SFX"

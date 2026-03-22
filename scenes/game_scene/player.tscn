@@ -423,7 +423,7 @@ max_dist = 160.0
 stiffness = 0.4
 is_extremity = true
 
-[node name="R_Elbow" parent="Points" unique_id=58329688 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+[node name="R_Elbow" parent="Points" unique_id=58329688 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(151, 41)
 neighbours = [NodePath("../R_Hand"), NodePath("../Neck")]
 max_dist = 160.0
@@ -437,11 +437,14 @@ min_dist = 5.0
 stiffness = 0.1
 
 [node name="Button" parent="Points/Head" index="0" unique_id=137901880]
-offset_left = -65.0
-offset_top = -39.0
-offset_right = 69.0
-offset_bottom = 39.0
+offset_left = -64.999985
+offset_top = -53.0
+offset_right = 69.000015
+offset_bottom = 25.0
 flat = false
+
+[node name="WhiteCircle" parent="Points/Head" index="1" unique_id=1312067334]
+position = Vector2(1.5258788e-05, -13.999999)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Points/Head" unique_id=1205760445]
 libraries/ = SubResource("AnimationLibrary_4f4ye")
@@ -450,7 +453,7 @@ libraries/ = SubResource("AnimationLibrary_4f4ye")
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
 z_index = 10
 z_as_relative = false
-position = Vector2(0.49999332, 17.000004)
+position = Vector2(0.5000086, 3.0000038)
 scale = Vector2(0.34988716, 0.3115124)
 texture = ExtResource("6_ul2a4")
 script = ExtResource("4_gdpre")
@@ -502,20 +505,20 @@ texture = ExtResource("7_4f4ye")
 [node name="R_Eye" type="ColorRect" parent="Points/Head" unique_id=28789469]
 z_index = 11
 material = SubResource("ShaderMaterial_gdpre")
-offset_left = 2.0
-offset_top = -25.0
-offset_right = 74.0
-offset_bottom = 47.0
+offset_left = 2.0000153
+offset_top = -39.0
+offset_right = 74.000015
+offset_bottom = 33.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="L_Eye" type="ColorRect" parent="Points/Head" unique_id=664365656]
 z_index = 11
 material = SubResource("ShaderMaterial_44l0u")
-offset_left = -64.0
-offset_top = -22.0
-offset_right = 8.0
-offset_bottom = 50.0
+offset_left = -63.999985
+offset_top = -36.0
+offset_right = 8.000015
+offset_bottom = 36.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
@@ -525,7 +528,7 @@ neighbours = [NodePath("../R_Elbow"), NodePath("../L_Elbow"), NodePath("../Hips"
 max_dist = 300.0
 stiffness = 1.0
 
-[node name="L_Elbow" parent="Points" unique_id=993613529 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+[node name="L_Elbow" parent="Points" unique_id=993613529 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(-162, 53)
 neighbours = [NodePath("../Neck"), NodePath("../L_Hand")]
 max_dist = 160.0
@@ -545,7 +548,7 @@ max_dist = 200.0
 min_dist = 100.0
 stiffness = 0.4
 
-[node name="L_Knee" parent="Points" unique_id=507512239 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+[node name="L_Knee" parent="Points" unique_id=507512239 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(-78, 393)
 neighbours = [NodePath("../Hips"), NodePath("../L_Foot")]
 max_dist = 160.0
@@ -558,7 +561,7 @@ max_dist = 160.0
 stiffness = 0.4
 is_extremity = true
 
-[node name="R_Knee" parent="Points" unique_id=163544791 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
+[node name="R_Knee" parent="Points" unique_id=163544791 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(38, 346)
 neighbours = [NodePath("../Hips"), NodePath("../R_Foot")]
 max_dist = 160.0
@@ -587,7 +590,7 @@ body_points = [NodePath("../../Points/Neck"), NodePath("../../Points/Hips")]
 
 [node name="Neck" type="Line2D" parent="Lines" unique_id=2069271899 node_paths=PackedStringArray("body_points")]
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
-width = 15.0
+width = 20.0
 joint_mode = 2
 begin_cap_mode = 1
 end_cap_mode = 1

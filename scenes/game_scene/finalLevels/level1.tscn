@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_eltk4"]
 [ext_resource type="Texture2D" uid="uid://cfg1b1twtcohx" path="res://assets/classics/mona_lisa.jpg" id="2_j4hkh"]
 
-[node name="Level1" unique_id=235822082 instance=ExtResource("1_eltk4")]
-next_level_path = "uid://crxx7rv4jjc6b"
+[node name="Level" unique_id=235822082 instance=ExtResource("1_eltk4")]
+
+[node name="BackgroundColor" parent="." index="0" unique_id=1389548597]
+z_index = -1
 
 [node name="MonaLisa" type="Sprite2D" parent="." index="1" unique_id=1236729199]
 position = Vector2(938, 650)

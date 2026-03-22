@@ -1,6 +1,7 @@
 extends Node2D
 
 var canMove = true
+var currentTopZIndex = 1
 
 func _input(event):
 	if event is InputEventKey and event.pressed:

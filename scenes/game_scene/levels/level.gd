@@ -28,13 +28,13 @@ func fadeBrightness(targetValue : float, duration : float) -> void:
 	await tween.finished
 
 func _ready() -> void:
-	$NextLvl.play()
 	$Walkie.play()
 	animation_player.play_backwards("fade")
 	level_state = GameState.get_level_state(scene_file_path)
 	countDownTimer.start(time)
 	await countDownTimer.timeout
 	$Walkie.stop()
+	$"Ai Sounds".play()
 	$player.canMove = false
 	gameUI.visible = false
 	detectionSys	.checkBoxes()
@@ -44,13 +44,12 @@ func _ready() -> void:
 	if detectionSys.checkWinCondition():
 		await $"AI Scan UI/VBoxContainer".writeWin()
 		animation_player.play("fade")
+		$NextLvl.play()
 		await animation_player.animation_finished
 		get_tree().change_scene_to_file(next_level_path)
 	else:
 		await $"AI Scan UI/VBoxContainer".writeLoss()
 		animation_player.play("fade")
+		$NextLvl.play()
 		await animation_player.animation_finished
 		resetLevel()
-
-#func _exit_tree() -> void:
-#	animation_player.play("fade")

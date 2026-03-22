@@ -14,14 +14,21 @@ func _ready() -> void:
 	body_parts = get_tree().get_nodes_in_group("player_points")
 	target_nodes = []
 	distances.clear()
+	
 	for child in get_children():
 		if child is Node2D:
 			target_nodes.append(child)
 			distances[child.name] = trigger_distance
+	
+	body_parts = body_parts.filter(func(part): 
+		return distances.has(part.name)
+	)
 
 	body_parts.sort_custom(func(a, b): return a.name < b.name)
 	target_nodes.sort_custom(func(a, b): return a.name < b.name)
-	
+	#print(target_nodes)
+	#print("bodyparts")
+	#print(body_parts)
 	
 	if show_debug_visuals:
 		_setup_target_visuals(target_nodes)
@@ -98,7 +105,7 @@ func checkBoxes():
 				body_box.visible = false
 				if body_label: body_label.visible = false
 			else:
-
+				print(target_nodes[i])
 				target_box.visible = true
 				target_box.border_color = Color.ORANGE
 				
@@ -114,6 +121,8 @@ func _is_valid_match(part_name: String, target_name: String) -> bool:
 		"Head": return "Head" in part_name
 		"L_Hand", "R_Hand": return "Hand" in part_name
 		"L_Foot", "R_Foot": return "Foot" in part_name
+		"L_Elbow", "R_Elbow": return "Elbow" in part_name
+		"L_Knee", "R_Knee": return "Knee" in part_name
 	return false
 
 func checkWinCondition() -> bool:
