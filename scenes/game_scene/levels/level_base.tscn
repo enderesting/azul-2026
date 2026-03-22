@@ -166,6 +166,32 @@ CERTAINTY: 98%
 NEXT EXHIBIT"
 horizontal_alignment = 2
 
+[node name="ContinueBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/Log" unique_id=1163001735]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18100001
+anchor_bottom = 0.34600002
+offset_left = 577.0
+offset_top = 274.0
+offset_right = 660.2
+offset_bottom = 274.01
+theme_override_font_sizes/font_size = 50
+text = "Continue"
+
+[node name="MenuBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/Log" unique_id=348099762]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18100001
+anchor_bottom = 0.34600002
+offset_left = 575.0
+offset_top = 406.0
+offset_right = 658.2
+offset_bottom = 406.01
+theme_override_font_sizes/font_size = 50
+text = "Menu"
+
 [node name="Game UI" type="MarginContainer" parent="." unique_id=771000683]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 1
@@ -234,3 +260,6 @@ z_index = -50
 texture = ExtResource("11_4ewrl")
 centered = false
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/Log/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/Log/MenuBtn" to="." method="_on_menu_btn_pressed"]

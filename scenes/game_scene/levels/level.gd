@@ -43,13 +43,25 @@ func _ready() -> void:
 	#detectionSys.showBoxes()
 	if detectionSys.checkWinCondition():
 		await $"AI Scan UI/VBoxContainer".writeWin()
+	else:
+		await $"AI Scan UI/VBoxContainer".writeLoss()
+
+func _on_continue_btn_pressed() -> void:
+	if $Detection.checkWinCondition():
 		animation_player.play("fade")
 		$NextLvl.play()
 		await animation_player.animation_finished
 		get_tree().change_scene_to_file(next_level_path)
 	else:
-		await $"AI Scan UI/VBoxContainer".writeLoss()
 		animation_player.play("fade")
 		$NextLvl.play()
 		await animation_player.animation_finished
 		resetLevel()
+
+
+func _on_menu_btn_pressed() -> void:
+	animation_player.play("fade")
+	$NextLvl.play()
+	await animation_player.animation_finished
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu_with_animations.tscn")
+		
