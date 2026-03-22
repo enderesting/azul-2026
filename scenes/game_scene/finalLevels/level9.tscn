@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c7jmepm5xcmt2" path="res://assets/classics/Mario.png" id="2_fwbtv"]
 
 [node name="Level1" unique_id=235822082 instance=ExtResource("1_26c7b")]
-next_level_path = "uid://chohwimyhusui"
 
 [node name="MarioBackground" type="Sprite2D" parent="." index="0" unique_id=1712475599]
 z_index = -10
