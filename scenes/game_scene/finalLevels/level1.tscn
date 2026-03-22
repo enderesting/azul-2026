@@ -35,5 +35,5 @@ position = Vector2(928, 826)
 [node name="R_Hand" type="Node2D" parent="Detection" index="2" unique_id=863476606]
 position = Vector2(879, 842)
 
-[node name="Ai Sounds" parent="." index="10" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="11" unique_id=520498024]
 volume_db = 8.0

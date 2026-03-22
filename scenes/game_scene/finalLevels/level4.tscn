@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c54l143ctxf3w"]
+[gd_scene format=3 uid="uid://bmj6al8c8cxad"]
 
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_xjt2v"]
 [ext_resource type="Texture2D" uid="uid://cqt5uf8ry8pgf" path="res://assets/classics/jesus.png" id="2_kog3r"]
@@ -31,13 +31,13 @@ position = Vector2(981, 943)
 [node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=737384110]
 position = Vector2(956, 941)
 
-[node name="Walkie" parent="." index="8" unique_id=1898127467]
+[node name="Walkie" parent="." index="9" unique_id=1898127467]
 position = Vector2(83, -45)
 
-[node name="Ai Sounds" parent="." index="9" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="10" unique_id=520498024]
 position = Vector2(27, -77)
 
-[node name="NextLvl" parent="." index="10" unique_id=1115276680]
+[node name="NextLvl" parent="." index="11" unique_id=1115276680]
 position = Vector2(111, -95)
 
 [node name="Frame3" type="Sprite2D" parent="." index="12" unique_id=620971182]
