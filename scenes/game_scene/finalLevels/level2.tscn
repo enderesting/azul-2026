@@ -74,13 +74,13 @@ position = Vector2(936, 954)
 [node name="R_Foot" type="Node2D" parent="Detection" index="4" unique_id=1616594577]
 position = Vector2(1098, 956)
 
-[node name="Walkie" parent="." index="9" unique_id=1898127467]
+[node name="Walkie" parent="." index="8" unique_id=1898127467]
 bus = &"Music"
 
-[node name="Ai Sounds" parent="." index="10" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="9" unique_id=520498024]
 bus = &"Music"
 
-[node name="NextLvl" parent="." index="11" unique_id=1115276680]
+[node name="NextLvl" parent="." index="10" unique_id=1115276680]
 bus = &"SFX"
 
 [connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/Log/ContinueBtn" to="." method="_on_continue_btn_pressed"]

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://der1yow75oll6" path="res://scenes/player/body_point.tscn" id="1_15wav"]
 [ext_resource type="Script" uid="uid://pyf2nb34ks2i" path="res://scenes/game_scene/player.gd" id="1_25vo0"]
 [ext_resource type="Script" uid="uid://bagujp4lax5d5" path="res://scripts/player/body_line.gd" id="3_chv0e"]
+[ext_resource type="AudioStream" uid="uid://dvcfc2ebv8cgd" path="res://assets/audio/Au_sad.wav" id="3_kmp0t"]
 [ext_resource type="Script" uid="uid://dcdu1cddr6tn" path="res://scenes/game_scene/face.gd" id="4_gdpre"]
 [ext_resource type="Texture2D" uid="uid://7jcfh104buce" path="res://assets/sweat.png" id="5_44l0u"]
 [ext_resource type="Gradient" uid="uid://dw6b877spwgtd" path="res://light_shade.tres" id="5_chv0e"]
@@ -159,7 +160,7 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id="Animation_4f4ye"]
 resource_name = "face_shook"
-length = 0.2
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -231,6 +232,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [2.3749999966682367e-08, 0.5]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Face/CPUParticles2D:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_44l0u"]
@@ -492,6 +505,9 @@ offset_bottom = 29.0
 
 [node name="WhiteCircle" parent="Points/Head" index="1" unique_id=1312067334]
 position = Vector2(1.5258788e-05, -13.999999)
+
+[node name="AudioStreamPlayer2D" parent="Points/Head" index="3" unique_id=1537605781]
+stream = ExtResource("3_kmp0t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Points/Head" unique_id=1205760445]
 libraries/ = SubResource("AnimationLibrary_4f4ye")
