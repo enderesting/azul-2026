@@ -434,13 +434,14 @@ position = Vector2(0, -72)
 neighbours = [NodePath("../Neck")]
 max_dist = 30.0
 min_dist = 5.0
+stiffness = 0.1
 
 [node name="Button" parent="Points/Head" index="0" unique_id=137901880]
-offset_left = -57.0
-offset_top = -29.0
-offset_right = 60.0
-offset_bottom = 53.0
-metadata/_edit_use_anchors_ = true
+offset_left = -65.0
+offset_top = -39.0
+offset_right = 69.0
+offset_bottom = 39.0
+flat = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Points/Head" unique_id=1205760445]
 libraries/ = SubResource("AnimationLibrary_4f4ye")
@@ -449,8 +450,8 @@ libraries/ = SubResource("AnimationLibrary_4f4ye")
 self_modulate = Color(0.9391672, 0.57065433, 0.60659325, 1)
 z_index = 10
 z_as_relative = false
-position = Vector2(2.6624956, 12.827749)
-scale = Vector2(0.29497743, 0.22495596)
+position = Vector2(0.49999332, 17.000004)
+scale = Vector2(0.34988716, 0.3115124)
 texture = ExtResource("6_ul2a4")
 script = ExtResource("4_gdpre")
 
