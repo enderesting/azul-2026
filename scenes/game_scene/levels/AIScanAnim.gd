@@ -52,10 +52,13 @@ func writeTerminalOutput():
 		codeBlockLabel.text = currentBlockText
 		await get_tree().create_timer(0.4).timeout
 
+func get_round_score() -> int:
+	return snapped($"../../Detection".getScore(),0.1) * 100
+
 func writeWin():
 	var fakeWinLogData = [
 		"No issues found",
-		"Certainty: %s%%" % str(snapped($"../../Detection".getScore(),0.1) * 100),
+		"Certainty: %s%%" % str(get_round_score()),
 		"Next exhibit",
 		"Press any key to continue"
 	]
