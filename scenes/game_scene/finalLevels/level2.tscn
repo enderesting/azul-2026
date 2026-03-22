@@ -5,6 +5,12 @@
 
 [node name="Level" unique_id=235822082 instance=ExtResource("1_wtptu")]
 
+[node name="AI Scan UI" parent="." index="2" unique_id=355327883]
+z_index = 0
+
+[node name="Game UI" parent="." index="3" unique_id=771000683]
+z_index = 0
+
 [node name="DavidTemp" type="Sprite2D" parent="." index="5" unique_id=999778282]
 z_index = -10
 position = Vector2(965.00006, 745)
@@ -26,11 +32,11 @@ position = Vector2(936, 954)
 [node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1616594577]
 position = Vector2(1098, 956)
 
-[node name="Walkie" parent="." index="8" unique_id=1898127467]
+[node name="Walkie" parent="." index="10" unique_id=1898127467]
 bus = &"Music"
 
-[node name="Ai Sounds" parent="." index="9" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="11" unique_id=520498024]
 bus = &"Music"
 
-[node name="NextLvl" parent="." index="10" unique_id=1115276680]
+[node name="NextLvl" parent="." index="12" unique_id=1115276680]
 bus = &"SFX"

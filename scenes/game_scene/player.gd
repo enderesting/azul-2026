@@ -8,3 +8,4 @@ func _input(event):
 		if event.keycode == KEY_R:
 			print("Player reset")
 			get_tree().reload_current_scene()
+			
