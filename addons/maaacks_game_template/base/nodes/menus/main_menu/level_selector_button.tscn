@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8nlil5u4fb55"]
 
-[ext_resource type="Script" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector_button.gd" id="1_p224l"]
-[ext_resource type="AudioStream" uid="uid://cwq60ws2uxxrg" path="res://assets/audio/clickar_camara.wav" id="2_itp2k"]
+[ext_resource type="Script" uid="uid://wtku5no0664" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector_button.gd" id="1_p224l"]
+[ext_resource type="AudioStream" uid="uid://dkvkxlwl0beg3" path="res://assets/audio/next_level_3 (mp3cut.net).wav" id="2_itp2k"]
 
 [node name="Button" type="Button" unique_id=552392528]
 custom_minimum_size = Vector2(350, 200)
