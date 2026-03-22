@@ -22,7 +22,7 @@ func _on_head_normal() -> void:
 
 
 func _on_head_worried() -> void:
-	print("GET WORRIED")
+	# print("GET WORRIED")
 	#l_eye.get_material().set_shader_parameter("top_alpha",0.5)
 	#r_eye.get_material().set_shader_parameter("top_alpha",-0.5)
 	#var set_sad = func(v): 
@@ -33,5 +33,5 @@ func _on_head_worried() -> void:
 	anim_player.play("face_worried")
 
 func _on_head_relaxed() -> void:
-	print("ok relax now")
+	# print("ok relax now")
 	anim_player.play_backwards("face_worried")
