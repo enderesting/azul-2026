@@ -13,22 +13,25 @@ texture = ExtResource("2_o7pj0")
 [node name="player" parent="." index="5" unique_id=192982536]
 position = Vector2(345, 544)
 
-[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=127109334]
+[node name="Detection" parent="." index="6" unique_id=218797964]
+thres = 0.7
+
+[node name="Head" type="Node2D" parent="Detection" index="0" unique_id=127109334]
 position = Vector2(991, 540)
 scale = Vector2(1.483, 1.483)
 
-[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=1908108265]
+[node name="L_Hand" type="Node2D" parent="Detection" index="1" unique_id=1908108265]
 position = Vector2(755, 874.00006)
 scale = Vector2(1.483, 1.483)
 
-[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=1321653167]
+[node name="R_Hand" type="Node2D" parent="Detection" index="2" unique_id=1321653167]
 position = Vector2(1227, 849)
 scale = Vector2(1.483, 1.483)
 
-[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=1372217368]
+[node name="L_Foot" type="Node2D" parent="Detection" index="3" unique_id=1372217368]
 position = Vector2(900, 955)
 scale = Vector2(1.483, 1.483)
 
-[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1043899967]
+[node name="R_Foot" type="Node2D" parent="Detection" index="4" unique_id=1043899967]
 position = Vector2(1121, 962)
 scale = Vector2(1.483, 1.483)
