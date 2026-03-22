@@ -3,6 +3,7 @@ extends Node
 signal face_worried
 signal face_relaxed
 signal face_shook
+signal level_begin
 
 var levels := {
 	"res://scenes/game_scene/finalLevels/level1.tscn": 0,
