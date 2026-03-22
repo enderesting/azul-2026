@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://nlb6ey1a1vyj" path="res://scenes/game_scene/painting_frame.tscn" id="3_oa348"]
 
 [node name="Level1" unique_id=235822082 instance=ExtResource("1_h1cvq")]
+time = 16
 next_level_path = "uid://dfbgw8qrrp54i"
 
 [node name="Traveler" type="Sprite2D" parent="." index="0" unique_id=278088001]
