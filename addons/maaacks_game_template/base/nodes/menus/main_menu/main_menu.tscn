@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b6qix78uncuu8" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector.gd" id="6_vjnah"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="7_im16j"]
 [ext_resource type="PackedScene" uid="uid://qekqqlfwa3b7" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector_button.tscn" id="7_xrkdo"]
+[ext_resource type="FontFile" uid="uid://dcon6xkffq0sj" path="res://assets/fonts/PixelOperatorMono8-Bold.ttf" id="10_f1tla"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="10_vn02j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vn02j"]
@@ -156,7 +157,8 @@ anchor_right = 1.0
 offset_bottom = 67.0
 grow_horizontal = 2
 theme = ExtResource("4_cw27w")
-theme_override_font_sizes/font_size = 79
+theme_override_fonts/font = ExtResource("10_f1tla")
+theme_override_font_sizes/font_size = 66
 text = "NAKED MAN IN THE MUSEUM"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -231,7 +233,7 @@ text = "EXIT"
 [node name="player" parent="MenuContainer" unique_id=192982536 instance=ExtResource("10_vn02j")]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(1, 1, 1, 0.15686275)
-position = Vector2(623, 314)
+position = Vector2(276, 254)
 
 [node name="player2" parent="MenuContainer" unique_id=1369896524 instance=ExtResource("10_vn02j")]
 modulate = Color(0, 0, 0, 1)
@@ -241,7 +243,7 @@ position = Vector2(1463, 633)
 [node name="player3" parent="MenuContainer" unique_id=29981380 instance=ExtResource("10_vn02j")]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(1, 1, 1, 0.15686275)
-position = Vector2(48, 772)
+position = Vector2(606, 903)
 
 [node name="VersionMargin" type="MarginContainer" parent="." unique_id=1732528471]
 layout_mode = 1
