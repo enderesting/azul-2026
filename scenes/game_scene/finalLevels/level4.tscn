@@ -14,10 +14,7 @@ position = Vector2(943, 690)
 scale = Vector2(0.712541, 0.71254104)
 texture = ExtResource("2_kog3r")
 
-[node name="player" parent="." index="5" unique_id=192982536]
-position = Vector2(1113, 599)
-
-[node name="Detection" parent="." index="6" unique_id=218797964]
+[node name="Detection" parent="." index="7" unique_id=218797964]
 thres = 0.7
 
 [node name="Head" type="Node2D" parent="Detection" index="0" unique_id=342148241]
@@ -32,20 +29,17 @@ position = Vector2(1196, 266)
 [node name="L_Foot" type="Node2D" parent="Detection" index="3" unique_id=1531719250]
 position = Vector2(981, 943)
 
-[node name="R_Foot" type="Node2D" parent="Detection" index="4" unique_id=737384110]
-position = Vector2(956, 941)
-
-[node name="Walkie" parent="." index="9" unique_id=1898127467]
+[node name="Walkie" parent="." index="10" unique_id=1898127467]
 position = Vector2(83, -45)
 
-[node name="Ai Sounds" parent="." index="10" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="11" unique_id=520498024]
 position = Vector2(27, -77)
-
-[node name="NextLvl" parent="." index="11" unique_id=1115276680]
-position = Vector2(111, -95)
 
 [node name="Frame3" type="Sprite2D" parent="." index="12" unique_id=620971182]
 z_index = -8
 position = Vector2(957, 525)
 scale = Vector2(1.6752557, 1.5721679)
 texture = ExtResource("3_kog3r")
+
+[node name="NextLvl" parent="." index="13" unique_id=1115276680]
+position = Vector2(111, -95)
