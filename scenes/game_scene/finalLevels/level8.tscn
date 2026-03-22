@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b1jbblu7uk7pd" path="res://assets/classics/GFreddy.png" id="2_o7pj0"]
 
 [node name="Level1" unique_id=235822082 instance=ExtResource("1_qpg7m")]
-next_level_path = "uid://chohwimyhusui"
 
 [node name="GFreddy" type="Sprite2D" parent="." index="0" unique_id=891258606]
 position = Vector2(947, 631)

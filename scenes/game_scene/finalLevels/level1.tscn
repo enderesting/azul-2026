@@ -70,6 +70,7 @@ texture = ExtResource("2_j4hkh")
 
 [node name="Detection" parent="." index="7" unique_id=218797964]
 position = Vector2(9, -82)
+thres = 0.75
 
 [node name="Head" type="Node2D" parent="Detection" index="0" unique_id=51074230]
 position = Vector2(932.00006, 629)

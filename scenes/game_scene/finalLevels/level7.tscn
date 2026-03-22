@@ -16,13 +16,16 @@ texture = ExtResource("2_kpfii")
 [node name="player" parent="." index="5" unique_id=192982536]
 position = Vector2(1453, 507)
 
-[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=792962468]
+[node name="Detection" parent="." index="6" unique_id=218797964]
+thres = 0.7
+
+[node name="Head" type="Node2D" parent="Detection" index="0" unique_id=792962468]
 position = Vector2(939, 399)
 
-[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=745332528]
+[node name="R_Foot" type="Node2D" parent="Detection" index="1" unique_id=745332528]
 position = Vector2(953, 950)
 
-[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=358956342]
+[node name="L_Foot" type="Node2D" parent="Detection" index="2" unique_id=358956342]
 position = Vector2(848, 855)
 
 [node name="Frame" parent="." index="12" unique_id=189737555 instance=ExtResource("3_oa348")]

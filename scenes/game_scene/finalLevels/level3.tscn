@@ -17,22 +17,25 @@ texture = ExtResource("2_putxh")
 [node name="player" parent="." index="5" unique_id=192982536]
 position = Vector2(1113, 599)
 
-[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=1405685842]
+[node name="Detection" parent="." index="6" unique_id=218797964]
+thres = 0.7
+
+[node name="Head" type="Node2D" parent="Detection" index="0" unique_id=1405685842]
 position = Vector2(850, 506)
 
-[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=392261359]
+[node name="L_Hand" type="Node2D" parent="Detection" index="1" unique_id=392261359]
 position = Vector2(752, 686)
 
-[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=537784545]
+[node name="R_Hand" type="Node2D" parent="Detection" index="2" unique_id=537784545]
 position = Vector2(1139, 540)
 
-[node name="R_Knee" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=159958193]
+[node name="R_Knee" type="Node2D" parent="Detection" index="3" unique_id=159958193]
 position = Vector2(1045, 607)
 
-[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=560799685]
+[node name="L_Foot" type="Node2D" parent="Detection" index="4" unique_id=560799685]
 position = Vector2(986, 790)
 
-[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="5" unique_id=819020614]
+[node name="R_Foot" type="Node2D" parent="Detection" index="5" unique_id=819020614]
 position = Vector2(1201, 858)
 
 [node name="Walkie" parent="." index="9" unique_id=1898127467]

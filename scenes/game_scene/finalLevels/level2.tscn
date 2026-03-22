@@ -56,19 +56,22 @@ position = Vector2(965.00006, 745)
 scale = Vector2(2.5080433, 1.939752)
 texture = ExtResource("2_wtptu")
 
-[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=51074230]
+[node name="Detection" parent="." index="6" unique_id=218797964]
+thres = 0.7
+
+[node name="Head" type="Node2D" parent="Detection" index="0" unique_id=51074230]
 position = Vector2(921, 397)
 
-[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=1935960619]
+[node name="L_Hand" type="Node2D" parent="Detection" index="1" unique_id=1935960619]
 position = Vector2(835, 710)
 
-[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=863476606]
+[node name="R_Hand" type="Node2D" parent="Detection" index="2" unique_id=863476606]
 position = Vector2(997, 458)
 
-[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=1262004914]
+[node name="L_Foot" type="Node2D" parent="Detection" index="3" unique_id=1262004914]
 position = Vector2(936, 954)
 
-[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1616594577]
+[node name="R_Foot" type="Node2D" parent="Detection" index="4" unique_id=1616594577]
 position = Vector2(1098, 956)
 
 [node name="Walkie" parent="." index="9" unique_id=1898127467]
