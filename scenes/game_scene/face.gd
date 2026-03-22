@@ -30,8 +30,8 @@ func _on_head_worried() -> void:
 		#r_eye.get_material().set_shader_parameter("top",v)
 	#create_tween().tween_method(set_sad,0,1,1)
 	#pass # Replace with function body.
-	anim_player.play("face_worried")
+	anim_player.play("face_worried_2")
 
 func _on_head_relaxed() -> void:
 	# print("ok relax now")
-	anim_player.play_backwards("face_worried")
+	anim_player.play_backwards("face_worried_2")

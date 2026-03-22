@@ -8,6 +8,7 @@
 [ext_resource type="Gradient" uid="uid://dw6b877spwgtd" path="res://light_shade.tres" id="5_chv0e"]
 [ext_resource type="Shader" uid="uid://bknqxpf67k8ql" path="res://shaders/googlyeyes.gdshader" id="5_gdpre"]
 [ext_resource type="Texture2D" uid="uid://cu741yp6ia3g5" path="res://assets/white_rounded_square.png" id="6_ul2a4"]
+[ext_resource type="Texture2D" uid="uid://b41yeilp06o0j" path="res://assets/white_lesser.png" id="7_4f4ye"]
 
 [sub_resource type="Animation" id="Animation_gdpre"]
 length = 0.001
@@ -94,6 +95,66 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.20600000815506]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("R_Eye:material:shader_parameter/bottom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("R_Eye:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("blink:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("L_Eye:material:shader_parameter/bottom")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("L_Eye:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_4f4ye"]
@@ -188,11 +249,135 @@ tracks/4/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_kmp0t"]
+resource_name = "face_worried_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Face/CPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("R_Eye:material:shader_parameter/top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 0.400000019]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("R_Eye:material:shader_parameter/bottom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [1.0, 0.60000000475]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("R_Eye:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("blink:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("L_Eye:material:shader_parameter/top")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 0.400000019]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("L_Eye:material:shader_parameter/bottom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [1.0, 0.60000000475]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("L_Eye:material:shader_parameter/top_alpha")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.3749999966682367e-08]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("L_Eye:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("R_Eye:material:shader_parameter/top_alpha")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.3749999966682367e-08]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4f4ye"]
 _data = {
 &"RESET": SubResource("Animation_gdpre"),
 &"face_shook": SubResource("Animation_4f4ye"),
-&"face_worried": SubResource("Animation_44l0u")
+&"face_worried": SubResource("Animation_44l0u"),
+&"face_worried_2": SubResource("Animation_kmp0t")
 }
 
 [sub_resource type="Gradient" id="Gradient_44l0u"]
@@ -232,14 +417,14 @@ script = ExtResource("1_25vo0")
 [node name="Points" type="Node2D" parent="." unique_id=400753781]
 
 [node name="R_Hand" parent="Points" unique_id=2080435063 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(136, 188)
+position = Vector2(188, 221)
 neighbours = [NodePath("../R_Elbow")]
 max_dist = 160.0
 stiffness = 0.4
 is_extremity = true
 
 [node name="R_Elbow" parent="Points" unique_id=58329688 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(137, 69)
+position = Vector2(151, 41)
 neighbours = [NodePath("../R_Hand"), NodePath("../Neck")]
 max_dist = 160.0
 stiffness = 0.4
@@ -247,9 +432,8 @@ stiffness = 0.4
 [node name="Head" parent="Points" unique_id=331611917 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
 position = Vector2(0, -72)
 neighbours = [NodePath("../Neck")]
-max_dist = 100.0
+max_dist = 30.0
 min_dist = 5.0
-stiffness = 0.8
 
 [node name="Button" parent="Points/Head" index="0" unique_id=137901880]
 offset_left = -57.0
@@ -293,9 +477,26 @@ angular_velocity_min = 720.0
 angular_velocity_max = 720.0
 color_ramp = SubResource("Gradient_44l0u")
 
-[node name="Node2D" type="Node2D" parent="Points/Head/Face" unique_id=1339525498]
+[node name="blink" type="Node2D" parent="Points/Head" unique_id=1339525498]
+visible = false
 z_index = 12
-position = Vector2(0, -500)
+position = Vector2(2.6624956, -99.65024)
+scale = Vector2(0.29497743, 0.22495596)
+
+[node name="WhiteLesser" type="Sprite2D" parent="Points/Head/blink" unique_id=551241157]
+self_modulate = Color(0.87058824, 0.83137256, 0.78039217, 1)
+z_index = 11
+position = Vector2(-100.55853, 482.9845)
+scale = Vector2(0.14507145, 0.19022748)
+texture = ExtResource("7_4f4ye")
+flip_h = true
+
+[node name="WhiteLesser2" type="Sprite2D" parent="Points/Head/blink" unique_id=285292113]
+self_modulate = Color(0.87058824, 0.83137256, 0.78039217, 1)
+z_index = 11
+position = Vector2(109.627045, 482.9845)
+scale = Vector2(0.14507145, 0.19022748)
+texture = ExtResource("7_4f4ye")
 
 [node name="R_Eye" type="ColorRect" parent="Points/Head" unique_id=28789469]
 z_index = 11
@@ -306,7 +507,6 @@ offset_right = 74.0
 offset_bottom = 47.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="L_Eye" type="ColorRect" parent="Points/Head" unique_id=664365656]
 z_index = 11
@@ -317,7 +517,6 @@ offset_right = 8.0
 offset_bottom = 50.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="Neck" parent="Points" unique_id=2057357725 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
 position = Vector2(0, 23)
@@ -326,13 +525,13 @@ max_dist = 300.0
 stiffness = 1.0
 
 [node name="L_Elbow" parent="Points" unique_id=993613529 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-140, 75)
+position = Vector2(-162, 53)
 neighbours = [NodePath("../Neck"), NodePath("../L_Hand")]
 max_dist = 160.0
 stiffness = 0.4
 
 [node name="L_Hand" parent="Points" unique_id=583153435 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(-163, 189)
+position = Vector2(-210, 222)
 neighbours = [NodePath("../L_Elbow")]
 max_dist = 160.0
 stiffness = 0.4
@@ -346,26 +545,26 @@ min_dist = 100.0
 stiffness = 0.4
 
 [node name="L_Knee" parent="Points" unique_id=507512239 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(-53, 294)
+position = Vector2(-78, 393)
 neighbours = [NodePath("../Hips"), NodePath("../L_Foot")]
 max_dist = 160.0
 stiffness = 0.4
 
 [node name="L_Foot" parent="Points" unique_id=233439184 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(-66, 410)
+position = Vector2(-199, 498)
 neighbours = [NodePath("../L_Knee")]
 max_dist = 160.0
 stiffness = 0.4
 is_extremity = true
 
 [node name="R_Knee" parent="Points" unique_id=163544791 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
-position = Vector2(60, 291)
+position = Vector2(38, 346)
 neighbours = [NodePath("../Hips"), NodePath("../R_Foot")]
 max_dist = 160.0
 stiffness = 0.4
 
 [node name="R_Foot" parent="Points" unique_id=1980246193 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
-position = Vector2(65, 408)
+position = Vector2(162, 499)
 neighbours = [NodePath("../R_Knee")]
 max_dist = 160.0
 stiffness = 0.4
