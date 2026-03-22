@@ -5,6 +5,9 @@
 
 [node name="Level1" unique_id=235822082 instance=ExtResource("1_eltk4")]
 
+[node name="BackgroundColor" parent="." index="0" unique_id=1389548597]
+z_index = -1
+
 [node name="MonaLisa" type="Sprite2D" parent="." index="1" unique_id=1236729199]
 position = Vector2(938, 650)
 scale = Vector2(1.1666666, 1.2398374)

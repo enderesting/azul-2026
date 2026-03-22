@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chohwimyhusui" path="res://scenes/game_scene/finalLevels/level1.tscn" id="4_ixa71"]
 [ext_resource type="PackedScene" uid="uid://crxx7rv4jjc6b" path="res://scenes/game_scene/finalLevels/level2.tscn" id="5_2k5l7"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="5_6xh1d"]
+[ext_resource type="AudioStream" uid="uid://trd7t3s1dujm" path="res://assets/audio/menu_serious.mp3" id="7_2k5l7"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -329,6 +330,10 @@ tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
+[node name="BackgroundMusicPlayer" parent="." index="3" unique_id=1141822549]
+volume_db = -20.0
+autoplay = false
+
 [node name="Button" parent="Level_selector/Levels" parent_id_path=PackedInt32Array(1222973890) index="0" unique_id=552392528]
 level_packed = ExtResource("4_ixa71")
 
@@ -373,5 +378,8 @@ lock = true
 
 [node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1732528471) index="0" unique_id=1603969262]
 modulate = Color(1, 1, 1, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="12" unique_id=445306013]
+stream = ExtResource("7_2k5l7")
 
 [connection signal="confirmed" from="NewGameConfirmation" to="." method="_on_new_game_confirmation_confirmed"]

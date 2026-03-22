@@ -26,3 +26,12 @@ position = Vector2(936, 954)
 
 [node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1616594577]
 position = Vector2(1098, 956)
+
+[node name="Walkie" parent="." index="8" unique_id=1898127467]
+bus = &"Music"
+
+[node name="Ai Sounds" parent="." index="9" unique_id=520498024]
+bus = &"Music"
+
+[node name="NextLvl" parent="." index="10" unique_id=1115276680]
+bus = &"SFX"

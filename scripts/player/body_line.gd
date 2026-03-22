@@ -16,4 +16,4 @@ func adjustZIndex(grabbedJoint: Node2D, topZ: int) -> void:
 	if grabbedJoint in body_points:
 		z_index = topZ
 	else:
-		z_index -= 1
+		z_index = max(z_index-1,0)
