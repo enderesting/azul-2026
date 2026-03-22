@@ -13,7 +13,7 @@ func _ready() -> void:
 	if screenshot:
 		screenshot_node.texture = screenshot
 	
-	score_label.text = str(score)
+	score_label.text = str(int(score))  + "%"
 
 func _on_pressed() -> void:
 	#$AudioStreamPlayer2D.play()
