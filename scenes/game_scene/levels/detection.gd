@@ -2,7 +2,7 @@ extends Node2D
 
 @export var trigger_distance: float = 200.0
 @export var show_debug_visuals: bool = true
-@export var allowance: int = 50
+@export var allowance: int = 80
 
 var body_parts: Array[Node] = []
 var target_nodes: Array[Node]
