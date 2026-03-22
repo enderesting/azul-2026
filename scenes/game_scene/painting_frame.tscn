@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://nlb6ey1a1vyj"]
+
+[ext_resource type="Texture2D" uid="uid://dl3u51j7ft481" path="res://assets/frames/frame_2.png" id="1_mkden"]
+
+[node name="NinePatchRect" type="NinePatchRect" unique_id=189737555]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 378.0
+offset_top = 199.0
+offset_right = -1275.0
+offset_bottom = -640.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("1_mkden")
+patch_margin_left = 116
+patch_margin_top = 116
+patch_margin_right = 112
+patch_margin_bottom = 111
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
