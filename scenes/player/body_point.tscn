@@ -85,7 +85,7 @@ flat = true
 
 [node name="WhiteCircle" type="Sprite2D" parent="." unique_id=1312067334]
 self_modulate = Color(1, 1, 1, 0.23529412)
-z_index = 2
+z_index = 4
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_krwlc")
 

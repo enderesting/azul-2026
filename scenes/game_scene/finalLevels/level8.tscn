@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dfbgw8qrrp54i"]
+
+[ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_qpg7m"]
+[ext_resource type="Texture2D" uid="uid://b1jbblu7uk7pd" path="res://assets/classics/GFreddy.png" id="2_o7pj0"]
+
+[node name="Level1" unique_id=235822082 instance=ExtResource("1_qpg7m")]
+next_level_path = "uid://chohwimyhusui"
+
+[node name="GFreddy" type="Sprite2D" parent="." index="0" unique_id=891258606]
+position = Vector2(947, 631)
+scale = Vector2(1.483, 1.483)
+texture = ExtResource("2_o7pj0")
+
+[node name="player" parent="." index="5" unique_id=192982536]
+position = Vector2(345, 544)
+
+[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=127109334]
+position = Vector2(991, 540)
+scale = Vector2(1.483, 1.483)
+
+[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=1908108265]
+position = Vector2(755, 874.00006)
+scale = Vector2(1.483, 1.483)
+
+[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=1321653167]
+position = Vector2(1227, 849)
+scale = Vector2(1.483, 1.483)
+
+[node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=1372217368]
+position = Vector2(900, 955)
+scale = Vector2(1.483, 1.483)
+
+[node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1043899967]
+position = Vector2(1121, 962)
+scale = Vector2(1.483, 1.483)

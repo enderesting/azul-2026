@@ -8,6 +8,7 @@ extends Sprite2D
 func _ready() -> void:
 	Global.face_worried.connect(_on_head_worried)
 	Global.face_relaxed.connect(_on_head_relaxed)
+	Global.face_shook.connect(_on_head_scared)
 # range: -0.25, 0.25
 func _process(delta: float) -> void:
 	l_eye.get_material().set_shader_parameter("PUPIL_OFFSET",get_eye_v(l_eye.global_position))
@@ -34,4 +35,9 @@ func _on_head_worried() -> void:
 
 func _on_head_relaxed() -> void:
 	# print("ok relax now")
-	anim_player.play_backwards("face_worried_2")
+	#anim_player.play_backwards("face_worried_2")
+	anim_player.play("RESET")
+	
+func _on_head_scared() -> void:
+	anim_player.play("face_shook")
+	

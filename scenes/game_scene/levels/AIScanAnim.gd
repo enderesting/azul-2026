@@ -53,7 +53,7 @@ func writeTerminalOutput():
 		await get_tree().create_timer(0.4).timeout
 
 func get_round_score() -> int:
-	return snapped($"../../Detection".getScore(),0.1) * 100
+	return snapped($"../../Detection".getScore(),0.001) * 100
 
 func writeWin():
 	var fakeWinLogData = [
