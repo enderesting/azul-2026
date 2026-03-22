@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="2_wtptu"]
 
 [node name="Level" unique_id=235822082 instance=ExtResource("1_wtptu")]
+time = 2
 next_level_path = "uid://chohwimyhusui"
 
 [node name="DavidTemp" type="Sprite2D" parent="." index="5" unique_id=999778282]
