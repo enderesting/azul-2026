@@ -21,3 +21,6 @@ position = Vector2(890, 831)
 
 [node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=863476606]
 position = Vector2(892, 880)
+
+[node name="Ai Sounds" parent="." index="9" unique_id=520498024]
+volume_db = 8.0
