@@ -18,6 +18,8 @@ text = "Cancel"
 [node name="ConfirmButton" type="Button" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" index="1" unique_id=1052970550]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 text = "Confirm"
 
 [connection signal="pressed" from="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/ConfirmButton" to="." method="_on_confirm_button_pressed"]

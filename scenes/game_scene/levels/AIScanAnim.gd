@@ -1,20 +1,24 @@
 extends VBoxContainer
 
 @onready var warningLabel = $Warning
-@onready var codeBlockLabel = $"Code Block"
+@onready var codeBlockLabel = $"HBoxContainer/Code Block"
+@onready var winloseLog = $HBoxContainer/Log
 
 var maxLines = 5
 var terminalLines = []
+var logLines = []
 var warningMessage = "WARNING: AI scan initialised..."
 var fakeLogData = [
 	"Loading core drivers...",
 	"Super Advanced AI ready",
+	"I was told there would be cake",
+	"Counting fingers on hands...",
 	"Looking for googly eyes...",
+	"This is the part where he kills you",
 	"Checking sanity...",
 	"Playing some Silksong...",
 	"Winning Game of the year...",
 	".........",
-	"Counting fingers on hands...",
     "Scan complete."
 ]
 
@@ -24,6 +28,7 @@ func _ready():
 func beginScan():
 	warningLabel.text = ""
 	codeBlockLabel.text = ""
+	winloseLog.text = ""
 	await writeWarning()
 	await writeTerminalOutput()
 
@@ -46,3 +51,63 @@ func writeTerminalOutput():
 			
 		codeBlockLabel.text = currentBlockText
 		await get_tree().create_timer(0.4).timeout
+
+func writeWin():
+	var fakeWinLogData = [
+		"No issues found",
+		"Certainty: %s%%" % str(snapped($"../../Detection".getScore(),0.1) * 100),
+		"Next exhibit",
+		"Press any key to continue"
+	]
+	winloseLog.modulate = Color("18df13")
+	for line in fakeWinLogData:
+		var currentBlockText = ""
+		for i in range(logLines.size()):
+			currentBlockText += logLines[i] + "\n"
+		
+		var stringBuilder = ""
+		for character in line:
+			stringBuilder += character
+			winloseLog.text = currentBlockText + stringBuilder
+			await get_tree().create_timer(0.05).timeout
+		
+		logLines.append(line)
+		if logLines.size() > maxLines:
+			logLines.pop_front()
+			
+	while Input.is_anything_pressed():
+		await get_tree().process_frame
+	while not Input.is_anything_pressed():
+		await get_tree().process_frame
+
+func writeLoss():
+	var fakeLoseLogData = [
+		"ISSUES DETECTED",
+		"Match: %s%%" % str(snapped($"../../Detection".getScore(),0.1) * 100),
+		"Eliminate TARGET",
+		"Press any key",
+		"to be murdered"
+	]
+	#winloseLog.modulate = Color.hex(0xff8774ff)
+	winloseLog.modulate = Color("ff412cff")
+	#winloseLog.modulate.color = Color8(1/255,1/135,1/116)
+	
+	for line in fakeLoseLogData:
+		var currentBlockText = ""
+		for i in range(logLines.size()):
+			currentBlockText += logLines[i] + "\n"
+		
+		var stringBuilder = ""
+		for character in line:
+			stringBuilder += character
+			winloseLog.text = currentBlockText + stringBuilder
+			await get_tree().create_timer(0.05).timeout
+		
+		logLines.append(line)
+		if logLines.size() > maxLines:
+			logLines.pop_front()
+			
+	while Input.is_anything_pressed():
+		await get_tree().process_frame
+	while not Input.is_anything_pressed():
+		await get_tree().process_frame

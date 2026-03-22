@@ -12,3 +12,5 @@ option_titles = []
 [node name="OptionButton" type="OptionButton" parent="." index="1" unique_id=264509485]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2

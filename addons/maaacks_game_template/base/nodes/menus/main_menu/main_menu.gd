@@ -14,6 +14,10 @@ signal game_exited
 @export var options_packed_scene : PackedScene
 ## The scene to open when a player clicks the 'Credits' button.
 @export var credits_packed_scene : PackedScene
+
+@onready var level_selector: Control = %Level_selector
+
+
 @export var confirm_exit : bool = true
 @export_group("Extra Settings")
 ## If true, signals that the game has started loading in the background, instead of directly loading it.
@@ -112,7 +116,8 @@ func _ready() -> void:
 	_hide_new_game_if_unset()
 
 func _on_new_game_button_pressed() -> void:
-	new_game()
+	level_selector.show()
+	menu_container.hide()
 
 func _on_options_button_pressed() -> void:
 	_open_sub_menu(options_packed_scene)
