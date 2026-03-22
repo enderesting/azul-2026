@@ -28,11 +28,13 @@ func fadeBrightness(targetValue : float, duration : float) -> void:
 	await tween.finished
 
 func _ready() -> void:
+	Global.emit_signal("face_relaxed")
 	$Walkie.play()
 	animation_player.play_backwards("fade")
 	level_state = GameState.get_level_state(scene_file_path)
 	countDownTimer.start(time)
 	await countDownTimer.timeout
+	Global.emit_signal("face_shook")
 	$Walkie.stop()
 	$"Ai Sounds".play()
 	$player.canMove = false
