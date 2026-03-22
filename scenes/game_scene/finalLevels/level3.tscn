@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dyhq12rv45kwr"]
+[gd_scene format=3 uid="uid://bqc3pmc8yjgai"]
 
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_0bpya"]
 [ext_resource type="Texture2D" uid="uid://qm0xhvcpof8s" path="res://assets/classics/creation of adam.jpg" id="2_putxh"]
@@ -35,10 +35,10 @@ position = Vector2(986, 790)
 [node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="5" unique_id=819020614]
 position = Vector2(1201, 858)
 
-[node name="Walkie" parent="." index="8" unique_id=1898127467]
+[node name="Walkie" parent="." index="9" unique_id=1898127467]
 position = Vector2(1, 5)
 
-[node name="NextLvl" parent="." index="10" unique_id=1115276680]
+[node name="NextLvl" parent="." index="11" unique_id=1115276680]
 position = Vector2(2, 3)
 
 [node name="Curtain" type="Sprite2D" parent="." index="12" unique_id=148508807]

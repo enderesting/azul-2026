@@ -1,15 +1,54 @@
 [gd_scene format=3 uid="uid://crxx7rv4jjc6b"]
 
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_wtptu"]
+[ext_resource type="Theme" uid="uid://dbqgx0b0snip6" path="res://resources/main_label_theme.tres" id="2_wam61"]
 [ext_resource type="Texture2D" uid="uid://fsruktpg45b6" path="res://assets/classics/david_temp.png" id="2_wtptu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b8ya"]
+bg_color = Color(0.14246494, 0.4348198, 3.85046e-07, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Level" unique_id=235822082 instance=ExtResource("1_wtptu")]
 
-[node name="AI Scan UI" parent="." index="2" unique_id=355327883]
-z_index = 0
+[node name="ContinueBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/Log" parent_id_path=PackedInt32Array(80296313) index="0" unique_id=1163001735]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18100001
+anchor_bottom = 0.34600002
+offset_left = 448.0
+offset_top = 274.0
+offset_right = 531.2
+offset_bottom = 243.01
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_wam61")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
+text = "Continue"
 
-[node name="Game UI" parent="." index="3" unique_id=771000683]
-z_index = 0
+[node name="MenuBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/Log" parent_id_path=PackedInt32Array(80296313) index="1" unique_id=348099762]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18100001
+anchor_bottom = 0.34600002
+offset_left = 446.0
+offset_top = 387.0
+offset_right = 529.2
+offset_bottom = 346.01
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_wam61")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5b8ya")
+text = "Menu"
 
 [node name="DavidTemp" type="Sprite2D" parent="." index="5" unique_id=999778282]
 z_index = -10
@@ -32,11 +71,14 @@ position = Vector2(936, 954)
 [node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=1616594577]
 position = Vector2(1098, 956)
 
-[node name="Walkie" parent="." index="10" unique_id=1898127467]
+[node name="Walkie" parent="." index="8" unique_id=1898127467]
 bus = &"Music"
 
-[node name="Ai Sounds" parent="." index="11" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="9" unique_id=520498024]
 bus = &"Music"
 
-[node name="NextLvl" parent="." index="12" unique_id=1115276680]
+[node name="NextLvl" parent="." index="10" unique_id=1115276680]
 bus = &"SFX"
+
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/Log/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/Log/MenuBtn" to="." method="_on_menu_btn_pressed"]

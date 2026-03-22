@@ -2,12 +2,57 @@
 
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_eltk4"]
 [ext_resource type="Texture2D" uid="uid://cfg1b1twtcohx" path="res://assets/classics/mona_lisa.jpg" id="2_j4hkh"]
+[ext_resource type="Theme" uid="uid://dbqgx0b0snip6" path="res://resources/main_label_theme.tres" id="2_kbobo"]
 [ext_resource type="PackedScene" uid="uid://nlb6ey1a1vyj" path="res://scenes/game_scene/painting_frame.tscn" id="3_qobc2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b8ya"]
+bg_color = Color(0.14246494, 0.4348198, 3.85046e-07, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Level" unique_id=235822082 instance=ExtResource("1_eltk4")]
 
 [node name="BackgroundColor" parent="." index="0" unique_id=1389548597]
 z_index = -1
+
+[node name="ContinueBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/Log" parent_id_path=PackedInt32Array(80296313) index="0" unique_id=1163001735]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18100001
+anchor_bottom = 0.34600002
+offset_left = 448.0
+offset_top = 274.0
+offset_right = 531.2
+offset_bottom = 243.01
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_kbobo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
+text = "Continue"
+
+[node name="MenuBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/Log" parent_id_path=PackedInt32Array(80296313) index="1" unique_id=348099762]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18100001
+anchor_bottom = 0.34600002
+offset_left = 446.0
+offset_top = 387.0
+offset_right = 529.2
+offset_bottom = 346.01
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_kbobo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5b8ya")
+text = "Menu"
 
 [node name="Frame" parent="." index="5" unique_id=189737555 instance=ExtResource("3_qobc2")]
 z_index = -8
@@ -35,5 +80,8 @@ position = Vector2(928, 826)
 [node name="R_Hand" type="Node2D" parent="Detection" index="2" unique_id=863476606]
 position = Vector2(879, 842)
 
-[node name="Ai Sounds" parent="." index="10" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="11" unique_id=520498024]
 volume_db = 8.0
+
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/Log/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/Log/MenuBtn" to="." method="_on_menu_btn_pressed"]

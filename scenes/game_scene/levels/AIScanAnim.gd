@@ -81,8 +81,8 @@ func writeWin():
 			logLines.pop_front()
 		$"../../typing".stop()
 			
-	$HBoxContainer/Log/ContinueBtn.visible = true
-	$HBoxContainer/Log/MenuBtn.visible = true
+	$HBoxContainer/ContinueBtn.visible = true
+	$HBoxContainer/MenuBtn.visible = true
 	await get_tree().process_frame
 
 func writeLoss():
@@ -111,6 +111,24 @@ func writeLoss():
 			logLines.pop_front()
 		$"../../typing".stop()
 			
-	$HBoxContainer/Log/ContinueBtn.visible = true
-	$HBoxContainer/Log/MenuBtn.visible = true
+	$HBoxContainer/ContinueBtn.text = "restart"
+
+	var normal_style = $HBoxContainer/ContinueBtn.get_theme_stylebox("normal").duplicate()
+	normal_style.bg_color = Color(1, 0, 0) 
+	$HBoxContainer/ContinueBtn.add_theme_stylebox_override("normal", normal_style)
+
+	var hover_style = $HBoxContainer/ContinueBtn.get_theme_stylebox("hover").duplicate()
+	hover_style.bg_color = Color(0.7, 0, 0) 
+	$HBoxContainer/ContinueBtn.add_theme_stylebox_override("hover", hover_style)
+
+
+	var normal_style2 = $HBoxContainer/MenuBtn.get_theme_stylebox("normal").duplicate()
+	normal_style2.bg_color = Color(1, 0, 0)
+	$HBoxContainer/MenuBtn.add_theme_stylebox_override("normal", normal_style2)
+
+	var hover_style2 = $HBoxContainer/MenuBtn.get_theme_stylebox("hover").duplicate()
+	hover_style2.bg_color = Color(0.7, 0, 0)
+	$HBoxContainer/MenuBtn.add_theme_stylebox_override("hover", hover_style2)
+	$HBoxContainer/ContinueBtn.visible = true
+	$HBoxContainer/MenuBtn.visible = true
 	await get_tree().process_frame

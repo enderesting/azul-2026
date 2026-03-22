@@ -40,6 +40,13 @@ grow_vertical = 2
 texture = ExtResource("4_wkgv0")
 expand_mode = 2
 
+[node name="cam_label" type="Label" parent="." unique_id=1566853410]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 2.0
+offset_right = 134.0
+offset_bottom = 49.0
+
 [node name="score_label" type="Label" parent="." unique_id=2035813669]
 unique_name_in_owner = true
 layout_mode = 1
