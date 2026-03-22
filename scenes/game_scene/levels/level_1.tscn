@@ -82,7 +82,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_623lg")
-next_level_path = "uid://50yx1ntvysdl"
+next_level_path = "uid://crxx7rv4jjc6b"
 
 [node name="DavidTemp" type="Sprite2D" parent="." unique_id=1269795959]
 z_index = -10
