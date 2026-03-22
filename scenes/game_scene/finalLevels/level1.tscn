@@ -2,25 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_eltk4"]
 [ext_resource type="Texture2D" uid="uid://cfg1b1twtcohx" path="res://assets/classics/mona_lisa.jpg" id="2_j4hkh"]
+[ext_resource type="PackedScene" uid="uid://nlb6ey1a1vyj" path="res://scenes/game_scene/painting_frame.tscn" id="3_qobc2"]
 
 [node name="Level" unique_id=235822082 instance=ExtResource("1_eltk4")]
 
 [node name="BackgroundColor" parent="." index="0" unique_id=1389548597]
 z_index = -1
 
-[node name="MonaLisa" type="Sprite2D" parent="." index="1" unique_id=1236729199]
+[node name="Detection" parent="." index="5" unique_id=218797964]
+position = Vector2(9, -82)
+
+[node name="Frame" parent="Detection" index="0" unique_id=189737555 instance=ExtResource("3_qobc2")]
+z_index = -8
+offset_left = 684.0
+offset_top = 320.0
+offset_right = 937.0
+offset_bottom = 652.5
+
+[node name="MonaLisa" type="Sprite2D" parent="Detection" index="1" unique_id=1236729199]
+z_index = -10
 position = Vector2(938, 650)
-scale = Vector2(1.1666666, 1.2398374)
 texture = ExtResource("2_j4hkh")
 
-[node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=51074230]
-position = Vector2(926, 497)
+[node name="Head" type="Node2D" parent="Detection" index="2" unique_id=51074230]
+position = Vector2(930, 531)
 
-[node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=1935960619]
-position = Vector2(890, 831)
+[node name="L_Hand" type="Node2D" parent="Detection" index="3" unique_id=1935960619]
+position = Vector2(905, 797)
 
-[node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=863476606]
-position = Vector2(892, 880)
+[node name="R_Hand" type="Node2D" parent="Detection" index="4" unique_id=863476606]
+position = Vector2(879, 823)
 
-[node name="Ai Sounds" parent="." index="9" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="8" unique_id=520498024]
 volume_db = 8.0
