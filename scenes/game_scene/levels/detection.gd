@@ -14,14 +14,18 @@ func _ready() -> void:
 	body_parts = get_tree().get_nodes_in_group("player_points")
 	target_nodes = []
 	distances.clear()
+	
 	for child in get_children():
 		if child is Node2D:
 			target_nodes.append(child)
 			distances[child.name] = trigger_distance
+	
+	body_parts = body_parts.filter(func(part): 
+		return distances.has(part.name)
+	)
 
 	body_parts.sort_custom(func(a, b): return a.name < b.name)
 	target_nodes.sort_custom(func(a, b): return a.name < b.name)
-	
 	
 	if show_debug_visuals:
 		_setup_target_visuals(target_nodes)
