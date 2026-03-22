@@ -16,7 +16,7 @@
 [ext_resource type="FontFile" uid="uid://dcon6xkffq0sj" path="res://assets/fonts/PixelOperatorMono8-Bold.ttf" id="10_f1tla"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="10_vn02j"]
 [ext_resource type="PackedScene" uid="uid://crxx7rv4jjc6b" path="res://scenes/game_scene/finalLevels/level2.tscn" id="10_wi3wt"]
-[ext_resource type="PackedScene" uid="uid://dyhq12rv45kwr" path="res://scenes/game_scene/finalLevels/level3.tscn" id="11_7p6dw"]
+[ext_resource type="PackedScene" uid="uid://bqc3pmc8yjgai" path="res://scenes/game_scene/finalLevels/level3.tscn" id="11_7p6dw"]
 [ext_resource type="PackedScene" uid="uid://bmj6al8c8cxad" path="res://scenes/game_scene/finalLevels/level4.tscn" id="12_rmdgu"]
 [ext_resource type="PackedScene" uid="uid://di57xgysbwluv" path="res://scenes/game_scene/finalLevels/level5.tscn" id="13_hdrf2"]
 [ext_resource type="PackedScene" uid="uid://iv0qs1akm4o0" path="res://scenes/game_scene/finalLevels/level6.tscn" id="14_uextx"]
@@ -271,7 +271,7 @@ offset_top = -127.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("4_cw27w")
-text = "v0.0.0"
+text = "v1.0.0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_pdiij")
