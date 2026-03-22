@@ -53,14 +53,13 @@ func writeTerminalOutput():
 		await get_tree().create_timer(0.4).timeout
 
 func get_round_score() -> int:
-	return snapped($"../../Detection".getScore(),0.1) * 100
+	return snapped($"../../Detection".getScore(),0.001) * 100
 
 func writeWin():
 	var fakeWinLogData = [
 		"No issues found",
 		"Certainty: %s%%" % str(get_round_score()),
-		"Next exhibit",
-		"Press any key to continue"
+		"Next exhibit"
 	]
 	winloseLog.modulate = Color("18df13")
 	for line in fakeWinLogData:
@@ -78,22 +77,18 @@ func writeWin():
 		if logLines.size() > maxLines:
 			logLines.pop_front()
 			
-	while Input.is_anything_pressed():
-		await get_tree().process_frame
-	while not Input.is_anything_pressed():
-		await get_tree().process_frame
+	$HBoxContainer/Log/ContinueBtn.visible = true
+	$HBoxContainer/Log/MenuBtn.visible = true
+	await get_tree().process_frame
 
 func writeLoss():
 	var fakeLoseLogData = [
 		"ISSUES DETECTED",
 		"Match: %s%%" % str(snapped($"../../Detection".getScore(),0.1) * 100),
 		"Eliminate TARGET",
-		"Press any key",
-		"to be murdered"
+		"Continue to be murdered"
 	]
-	#winloseLog.modulate = Color.hex(0xff8774ff)
 	winloseLog.modulate = Color("ff412cff")
-	#winloseLog.modulate.color = Color8(1/255,1/135,1/116)
 	
 	for line in fakeLoseLogData:
 		var currentBlockText = ""
@@ -110,7 +105,6 @@ func writeLoss():
 		if logLines.size() > maxLines:
 			logLines.pop_front()
 			
-	while Input.is_anything_pressed():
-		await get_tree().process_frame
-	while not Input.is_anything_pressed():
-		await get_tree().process_frame
+	$HBoxContainer/Log/ContinueBtn.visible = true
+	$HBoxContainer/Log/MenuBtn.visible = true
+	await get_tree().process_frame
