@@ -9,10 +9,12 @@ var level_packed = PackedScene
 
 var score: float = 0
 
+var cam_n: int = 0
+
 func _ready() -> void:
 	if screenshot:
 		screenshot_node.texture = screenshot
-	
+	$cam_label.text = "CAM " + str(cam_n)
 	score_label.text = str(int(score))  + "%"
 
 func _on_pressed() -> void:

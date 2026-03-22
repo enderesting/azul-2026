@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="10_vn02j"]
 [ext_resource type="PackedScene" uid="uid://crxx7rv4jjc6b" path="res://scenes/game_scene/finalLevels/level2.tscn" id="10_wi3wt"]
 [ext_resource type="PackedScene" uid="uid://dyhq12rv45kwr" path="res://scenes/game_scene/finalLevels/level3.tscn" id="11_7p6dw"]
-[ext_resource type="PackedScene" uid="uid://c54l143ctxf3w" path="res://scenes/game_scene/finalLevels/level4.tscn" id="12_rmdgu"]
-[ext_resource type="PackedScene" path="res://scenes/game_scene/finalLevels/level5.tscn" id="13_hdrf2"]
+[ext_resource type="PackedScene" uid="uid://bmj6al8c8cxad" path="res://scenes/game_scene/finalLevels/level4.tscn" id="12_rmdgu"]
+[ext_resource type="PackedScene" uid="uid://di57xgysbwluv" path="res://scenes/game_scene/finalLevels/level5.tscn" id="13_hdrf2"]
 [ext_resource type="PackedScene" uid="uid://iv0qs1akm4o0" path="res://scenes/game_scene/finalLevels/level6.tscn" id="14_uextx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vn02j"]
