@@ -40,4 +40,20 @@ grow_vertical = 2
 texture = ExtResource("4_wkgv0")
 expand_mode = 2
 
+[node name="score_label" type="Label" parent="." unique_id=2035813669]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -52.0
+offset_right = -12.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]
