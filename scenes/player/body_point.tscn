@@ -16,7 +16,7 @@ script/source = "extends Node2D
 var dragging := false
 var drag_offset := Vector2.ZERO
 var stretched := false
-var stretched_dist := 120
+var stretched_dist := 50
 var held := false
 
 func _on_button_down():

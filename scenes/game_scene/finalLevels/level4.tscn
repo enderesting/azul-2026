@@ -1,33 +1,35 @@
-[gd_scene format=3 uid="uid://bmj6al8c8cxad"]
+[gd_scene format=3 uid="uid://c54l143ctxf3w"]
 
 [ext_resource type="PackedScene" uid="uid://quq1cfxg8bob" path="res://scenes/game_scene/levels/level_base.tscn" id="1_xjt2v"]
-[ext_resource type="Texture2D" uid="uid://bpmf6iui4e6yp" path="res://assets/classics/jesus.jpg" id="2_kog3r"]
+[ext_resource type="Texture2D" uid="uid://cqt5uf8ry8pgf" path="res://assets/classics/jesus.png" id="2_kog3r"]
+[ext_resource type="Texture2D" uid="uid://dbntuscwbelpt" path="res://assets/frames/frame_3.png" id="3_kog3r"]
 
 [node name="Level" unique_id=235822082 instance=ExtResource("1_xjt2v")]
 next_level_path = "uid://di57xgysbwluv"
 
 [node name="Jesus" type="Sprite2D" parent="." index="0" unique_id=1880331050]
-position = Vector2(937.25, 611.50006)
-scale = Vector2(0.7204433, 0.5245614)
+z_index = -10
+position = Vector2(943, 690)
+scale = Vector2(0.712541, 0.71254104)
 texture = ExtResource("2_kog3r")
 
 [node name="player" parent="." index="5" unique_id=192982536]
 position = Vector2(1113, 599)
 
 [node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=342148241]
-position = Vector2(978, 380)
+position = Vector2(985, 393)
 
 [node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=373571665]
-position = Vector2(753, 310)
+position = Vector2(748, 257)
 
 [node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=1952774900]
-position = Vector2(1174, 300)
+position = Vector2(1196, 266)
 
 [node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=1531719250]
-position = Vector2(959, 816)
+position = Vector2(981, 943)
 
 [node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=737384110]
-position = Vector2(982, 814)
+position = Vector2(956, 941)
 
 [node name="Walkie" parent="." index="8" unique_id=1898127467]
 position = Vector2(83, -45)
@@ -37,3 +39,9 @@ position = Vector2(27, -77)
 
 [node name="NextLvl" parent="." index="10" unique_id=1115276680]
 position = Vector2(111, -95)
+
+[node name="Frame3" type="Sprite2D" parent="." index="12" unique_id=620971182]
+z_index = -8
+position = Vector2(957, 525)
+scale = Vector2(1.6752557, 1.5721679)
+texture = ExtResource("3_kog3r")

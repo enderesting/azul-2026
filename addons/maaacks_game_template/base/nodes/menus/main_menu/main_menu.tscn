@@ -12,8 +12,14 @@
 [ext_resource type="Script" uid="uid://b6qix78uncuu8" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector.gd" id="6_vjnah"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="7_im16j"]
 [ext_resource type="PackedScene" uid="uid://b8nlil5u4fb55" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector_button.tscn" id="7_xrkdo"]
+[ext_resource type="PackedScene" uid="uid://chohwimyhusui" path="res://scenes/game_scene/finalLevels/level1.tscn" id="9_na4r1"]
 [ext_resource type="FontFile" uid="uid://dcon6xkffq0sj" path="res://assets/fonts/PixelOperatorMono8-Bold.ttf" id="10_f1tla"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="10_vn02j"]
+[ext_resource type="PackedScene" uid="uid://crxx7rv4jjc6b" path="res://scenes/game_scene/finalLevels/level2.tscn" id="10_wi3wt"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/finalLevels/level3.tscn" id="11_7p6dw"]
+[ext_resource type="PackedScene" uid="uid://c54l143ctxf3w" path="res://scenes/game_scene/finalLevels/level4.tscn" id="12_rmdgu"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/finalLevels/level5.tscn" id="13_hdrf2"]
+[ext_resource type="PackedScene" path="res://scenes/game_scene/finalLevels/level6.tscn" id="14_uextx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vn02j"]
 shader = ExtResource("4_5lk5m")
@@ -88,6 +94,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_vjnah")
+levels = Array[PackedScene]([ExtResource("9_na4r1"), ExtResource("10_wi3wt"), ExtResource("11_7p6dw"), ExtResource("12_rmdgu"), ExtResource("13_hdrf2"), ExtResource("14_uextx")])
+button_packed = ExtResource("7_xrkdo")
 
 [node name="Levels" type="GridContainer" parent="Level_selector" unique_id=1222973890]
 layout_mode = 1
@@ -104,18 +112,6 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 2
 
-[node name="Button" parent="Level_selector/Levels" unique_id=552392528 instance=ExtResource("7_xrkdo")]
-layout_mode = 2
-
-[node name="Button2" parent="Level_selector/Levels" unique_id=2093482108 instance=ExtResource("7_xrkdo")]
-layout_mode = 2
-
-[node name="Button3" parent="Level_selector/Levels" unique_id=290878566 instance=ExtResource("7_xrkdo")]
-layout_mode = 2
-
-[node name="Button4" parent="Level_selector/Levels" unique_id=1643652835 instance=ExtResource("7_xrkdo")]
-layout_mode = 2
-
 [node name="Exit_selector" type="Button" parent="Level_selector" unique_id=1093621965]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
@@ -125,8 +121,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -100.0
-offset_top = -50.0
+offset_top = -186.0
 offset_right = 100.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0

@@ -41,6 +41,10 @@ func _ready() -> void:
 	scanUI.visible = true
 	await $"AI Scan UI/VBoxContainer".beginScan()
 	#detectionSys.showBoxes()
+	var current_level_path = get_scene_file_path()
+
+	Global.levels[current_level_path] = ai.get_round_score()
+	Global.save_levels()
 	if detectionSys.checkWinCondition():
 		await $"AI Scan UI/VBoxContainer".writeWin()
 	else:

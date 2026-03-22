@@ -10,30 +10,30 @@ next_level_path = "uid://bmj6al8c8cxad"
 
 [node name="CreationOfAdam" type="Sprite2D" parent="." index="0" unique_id=1233986688]
 z_index = -10
-position = Vector2(1338.9999, 540)
-scale = Vector2(0.32186434, 0.34799087)
+position = Vector2(1312.5624, 570.3907)
+scale = Vector2(0.33686858, 0.38600296)
 texture = ExtResource("2_putxh")
 
 [node name="player" parent="." index="5" unique_id=192982536]
 position = Vector2(1113, 599)
 
 [node name="Head" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="0" unique_id=1405685842]
-position = Vector2(900, 477)
+position = Vector2(850, 506)
 
 [node name="L_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="1" unique_id=392261359]
-position = Vector2(813, 649)
+position = Vector2(752, 686)
 
 [node name="R_Hand" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="2" unique_id=537784545]
-position = Vector2(1162, 517)
+position = Vector2(1139, 540)
 
 [node name="R_Knee" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="3" unique_id=159958193]
-position = Vector2(1071, 581)
+position = Vector2(1045, 607)
 
 [node name="L_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="4" unique_id=560799685]
-position = Vector2(1030, 739)
+position = Vector2(986, 790)
 
 [node name="R_Foot" type="Node2D" parent="Detection" parent_id_path=PackedInt32Array(218797964) index="5" unique_id=819020614]
-position = Vector2(1228, 798)
+position = Vector2(1201, 858)
 
 [node name="Walkie" parent="." index="8" unique_id=1898127467]
 position = Vector2(1, 5)
@@ -50,8 +50,8 @@ texture = ExtResource("3_e24t8")
 [node name="Paint_Frame" parent="." index="13" unique_id=189737555 instance=ExtResource("4_k7li0")]
 z_index = -7
 layout_mode = 1
-offset_left = 682.0
+offset_left = 634.0
 offset_top = 179.0
-offset_right = -573.5
-offset_bottom = -535.5
-scale = Vector2(2, 2)
+offset_right = -597.5
+offset_bottom = -509.5
+metadata/_edit_lock_ = true

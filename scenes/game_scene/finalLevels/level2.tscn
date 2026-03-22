@@ -6,9 +6,9 @@
 [node name="Level" unique_id=235822082 instance=ExtResource("1_wtptu")]
 next_level_path = "uid://chohwimyhusui"
 
-[node name="DavidTemp" type="Sprite2D" parent="." index="0" unique_id=999778282]
+[node name="DavidTemp" type="Sprite2D" parent="." index="5" unique_id=999778282]
 z_index = -10
-position = Vector2(969.00006, 672.99994)
+position = Vector2(965.00006, 745)
 scale = Vector2(2.5080433, 1.939752)
 texture = ExtResource("2_wtptu")
 

@@ -437,11 +437,10 @@ min_dist = 5.0
 stiffness = 0.1
 
 [node name="Button" parent="Points/Head" index="0" unique_id=137901880]
-offset_left = -64.999985
-offset_top = -53.0
-offset_right = 69.000015
-offset_bottom = 25.0
-flat = false
+offset_left = -76.0
+offset_top = -65.0
+offset_right = 77.0
+offset_bottom = 29.0
 
 [node name="WhiteCircle" parent="Points/Head" index="1" unique_id=1312067334]
 position = Vector2(1.5258788e-05, -13.999999)

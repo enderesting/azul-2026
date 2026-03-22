@@ -2,6 +2,7 @@ extends Node2D
 
 @export var trigger_distance: float = 200.0
 @export var show_debug_visuals: bool = true
+@export var allowance: int = 80
 
 var body_parts: Array[Node] = []
 var target_nodes: Array[Node]
@@ -40,7 +41,7 @@ func _setup_target_visuals(nodes: Array[Node]) -> void:
 		
 		var rect = ReferenceRect.new()
 		rect.name = "box"
-		rect.size = Vector2(64, 64) 
+		rect.size = Vector2(allowance,allowance) 
 		rect.position = (-rect.size / 2).round() 
 		rect.border_color = Color.GREEN
 		rect.border_width = 3.0 
@@ -97,7 +98,7 @@ func checkBoxes():
 		var body_label = part.get_node_or_null("coef")
 		
 		if target_box and body_box:
-			if dist_value < 40:
+			if dist_value < allowance:
 				print("DEBUG: correct box")
 				print(body_parts[i])
 				print(target_nodes[i])
