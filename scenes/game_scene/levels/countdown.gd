@@ -10,4 +10,4 @@ func _process(delta):
 	var minutesAmount = int(remainingTime) / 60
 	var secondsAmount = int(remainingTime) % 60
 	#timeLabel.text = "%d" % [secondsAmount]
-	$"../ProgressBar".value = (remainingTime/$"../../..".getTime())*100
+	$"../HBoxContainer/VBoxContainer/ProgressBar".value = (remainingTime/$"../../..".getTime())*100

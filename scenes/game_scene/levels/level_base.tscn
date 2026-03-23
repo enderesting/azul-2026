@@ -8,11 +8,13 @@
 [ext_resource type="Theme" uid="uid://dbqgx0b0snip6" path="res://resources/main_label_theme.tres" id="5_c76rq"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="6_c76rq"]
 [ext_resource type="Script" uid="uid://8chatss3tf5a" path="res://scenes/game_scene/levels/detection.gd" id="7_5b8ya"]
+[ext_resource type="Texture2D" uid="uid://hoopto2k303t" path="res://assets/empty.png" id="7_myive"]
 [ext_resource type="AudioStream" uid="uid://bba7614jc6kqt" path="res://assets/audio/walkie_walkie_10.wav" id="8_xh6y5"]
 [ext_resource type="AudioStream" uid="uid://dqk2xr3n4l7uc" path="res://assets/audio/typing.wav" id="9_5b8ya"]
 [ext_resource type="AudioStream" uid="uid://c7idasf5bg6hd" path="res://assets/audio/analyse glitch.mp3" id="9_wxd3i"]
 [ext_resource type="AudioStream" uid="uid://cqneb6xr8rmvv" path="res://assets/audio/next_level_loud.mp3" id="9_xh6y5"]
 [ext_resource type="Texture2D" uid="uid://cnugd8gtjim11" path="res://assets/bg/wall.png" id="11_4ewrl"]
+[ext_resource type="Texture2D" uid="uid://bv3u4r34afgkg" path="res://assets/white_circle.png" id="14_22gea"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fmabn"]
 shader = ExtResource("2_fsvkk")
@@ -52,6 +54,32 @@ corner_radius_bottom_left = 4
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22gea"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_myive"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22gea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_22gea")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_22gea"]
+frames = 2
+frame_0/texture = ExtResource("14_22gea")
+frame_1/texture = ExtResource("7_myive")
+frame_1/duration = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22gea"]
+bg_color = Color(0, 0, 0, 0.3137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myive"]
+bg_color = Color(0, 0, 0, 0.5882353)
 
 [sub_resource type="Animation" id="Animation_5b8ya"]
 length = 0.001
@@ -283,13 +311,69 @@ theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Game UI" unique_id=2104361633]
 layout_mode = 2
-theme_override_constants/separation = 16
 
-[node name="ProgressBar" type="ProgressBar" parent="Game UI/VBoxContainer" unique_id=1315863147]
-modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(1000, 100)
+[node name="HBoxContainer" type="HBoxContainer" parent="Game UI/VBoxContainer" unique_id=760870903]
 layout_mode = 2
-value = 100.0
+theme_override_constants/separation = 10
+
+[node name="Control" type="Control" parent="Game UI/VBoxContainer/HBoxContainer" unique_id=1188424793]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game UI/VBoxContainer/HBoxContainer/Control" unique_id=1513337011]
+self_modulate = Color(0.6527336, 0, 0.041316517, 1)
+layout_mode = 0
+offset_left = 14.999996
+offset_top = 46.0
+offset_right = 166.0
+offset_bottom = 197.0
+scale = Vector2(0.35999978, 0.35999978)
+texture = ExtResource("14_22gea")
+expand_mode = 2
+
+[node name="rec" type="Label" parent="Game UI/VBoxContainer/HBoxContainer/Control" unique_id=648565387]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 0
+offset_left = 80.0
+offset_top = -14.775
+offset_right = 277.0
+offset_bottom = 165.225
+theme_override_fonts/font = ExtResource("4_wxd3i")
+theme_override_font_sizes/font_size = 145
+text = "rec"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game UI/VBoxContainer/HBoxContainer/Control" unique_id=1314841772]
+visible = false
+self_modulate = Color(0.6936922, 0, 0.10267591, 1)
+position = Vector2(-28, 76)
+scale = Vector2(0.195, 0.195)
+sprite_frames = SubResource("SpriteFrames_22gea")
+frame_progress = 0.01580997
+
+[node name="TextureRect2" type="TextureRect" parent="Game UI/VBoxContainer/HBoxContainer/Control" unique_id=66133600]
+visible = false
+self_modulate = Color(0.5921569, 0.07450981, 0.043137256, 1)
+layout_mode = 0
+offset_left = 12.0
+offset_top = 49.0
+offset_right = 52.0
+offset_bottom = 89.0
+scale = Vector2(1.3, 1.3)
+texture = SubResource("AnimatedTexture_22gea")
+expand_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game UI/VBoxContainer/HBoxContainer" unique_id=1776678847]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Game UI/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1315863147]
+custom_minimum_size = Vector2(1400, 75)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_22gea")
+theme_override_styles/fill = SubResource("StyleBoxFlat_myive")
+value = 50.0
 show_percentage = false
 
 [node name="CountDown" type="PanelContainer" parent="Game UI/VBoxContainer" unique_id=858714209]
@@ -338,6 +422,12 @@ z_index = -50
 texture = ExtResource("11_4ewrl")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=660409977]
+layout_mode = 0
+offset_right = 154.0
+offset_bottom = 101.0
+theme_override_constants/margin_left = 100
 
 [connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
