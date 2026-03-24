@@ -2,6 +2,13 @@
 
 [ext_resource type="FontFile" uid="uid://c3twv8kdc656w" path="res://assets/fonts/PixelOperatorSC.ttf" id="1_6oh67"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3b2i"]
+bg_color = Color(0.27, 0.1215, 0.20070001, 0.38039216)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6oh67"]
 bg_color = Color(0.09411765, 0.8745098, 0.07450981, 1)
 
@@ -52,6 +59,7 @@ default_font_size = 46
 Button/colors/font_color = Color(0.09411765, 0.8745098, 0.07450981, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0.07379841, 0.641152, 0.058835074, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_l3b2i")
 Button/styles/hover = SubResource("StyleBoxFlat_6oh67")
 Button/styles/normal = SubResource("StyleBoxEmpty_nvsaa")
 Button/styles/pressed = SubResource("StyleBoxEmpty_6oh67")
