@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b6qix78uncuu8" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector.gd" id="6_vjnah"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="7_im16j"]
 [ext_resource type="PackedScene" uid="uid://b8nlil5u4fb55" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/level_selector_button.tscn" id="7_xrkdo"]
+[ext_resource type="Texture2D" uid="uid://cnugd8gtjim11" path="res://assets/bg/wall.png" id="8_wi3wt"]
 [ext_resource type="PackedScene" uid="uid://chohwimyhusui" path="res://scenes/game_scene/finalLevels/level1.tscn" id="9_na4r1"]
 [ext_resource type="FontFile" uid="uid://dcon6xkffq0sj" path="res://assets/fonts/PixelOperatorMono8-Bold.ttf" id="10_f1tla"]
 [ext_resource type="PackedScene" uid="uid://dnxlusuy3v0is" path="res://scenes/game_scene/player.tscn" id="10_vn02j"]
@@ -88,6 +89,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12332948, 0.13753527, 0.1436213, 1)
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundTextureRect" unique_id=495305548]
+modulate = Color(0.84, 0.84, 0.84, 0.33333334)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_wi3wt")
 
 [node name="Level_selector" type="Control" parent="." unique_id=1387448061]
 unique_name_in_owner = true
@@ -234,8 +242,7 @@ theme_override_font_sizes/font_size = 49
 text = "EXIT"
 
 [node name="player" parent="MenuContainer" unique_id=192982536 instance=ExtResource("10_vn02j")]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(1, 1, 1, 0.15686275)
+modulate = Color(0.06469653, 0.06469653, 0.06469653, 1)
 position = Vector2(276, 254)
 
 [node name="player2" parent="MenuContainer" unique_id=1369896524 instance=ExtResource("10_vn02j")]

@@ -339,7 +339,7 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game UI/VBoxContainer/HBoxContainer/Control" unique_id=1513337011]
-self_modulate = Color(0.6527336, 0, 0.041316517, 1)
+self_modulate = Color(0.65, 0, 0.043333292, 0.827451)
 layout_mode = 0
 offset_left = 14.999996
 offset_top = 46.0
@@ -350,14 +350,15 @@ texture = ExtResource("14_22gea")
 expand_mode = 2
 
 [node name="rec" type="Label" parent="Game UI/VBoxContainer/HBoxContainer/Control" unique_id=648565387]
+modulate = Color(1, 1, 1, 0.6)
 custom_minimum_size = Vector2(0, 180)
 layout_mode = 0
 offset_left = 80.0
-offset_top = -14.775
+offset_top = -10.0
 offset_right = 277.0
-offset_bottom = 165.225
+offset_bottom = 170.0
 theme_override_fonts/font = ExtResource("4_wxd3i")
-theme_override_font_sizes/font_size = 145
+theme_override_font_sizes/font_size = 140
 text = "rec"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game UI/VBoxContainer/HBoxContainer/Control" unique_id=1314841772]
