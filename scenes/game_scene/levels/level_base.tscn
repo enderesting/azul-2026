@@ -240,10 +240,10 @@ vertical_alignment = 1
 [node name="BtnsContainer" type="VBoxContainer" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=600403944]
 custom_minimum_size = Vector2(241.25, 0)
 layout_mode = 0
-offset_left = 1449.0
-offset_top = 285.0
-offset_right = 1659.0
-offset_bottom = 446.0
+offset_left = 1397.0
+offset_top = 345.0
+offset_right = 1638.25
+offset_bottom = 536.0
 theme_override_constants/separation = 19
 
 [node name="ContinueBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/BtnsContainer" unique_id=1163001735]
@@ -305,6 +305,7 @@ theme_override_fonts/font = ExtResource("4_wxd3i")
 theme_override_font_sizes/font_size = 60
 text = "NO ISSUES FOUND
 CERTAINTY: 98%
+Required: 100%
 NEXT EXHIBIT"
 horizontal_alignment = 2
 
