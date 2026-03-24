@@ -12,8 +12,9 @@ func _process(_delta: float) -> void:
 		if point != null:
 			add_point(point.position)
 
-func adjustZIndex(grabbedJoint: Node2D, topZ: int) -> void:
-	if grabbedJoint in body_points:
-		z_index = topZ
-	else:
-		z_index = 1
+
+#func adjustZIndex(grabbedJoint: Node2D, topZ: int) -> void:
+#	if grabbedJoint in body_points:
+#		z_index = topZ
+#	else:
+#		z_index = 1
