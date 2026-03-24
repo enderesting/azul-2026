@@ -2,6 +2,38 @@
 
 [ext_resource type="PackedScene" uid="uid://sikc02ddepyt" path="res://addons/maaacks_game_template/base/nodes/opening/opening.tscn" id="1_ke3tw"]
 [ext_resource type="Texture2D" uid="uid://bckkyfq3p8he8" path="res://assets/bg/splash.png" id="2_ke3tw"]
+[ext_resource type="Shader" uid="uid://dkhvdb2amyuy8" path="res://resources/shaders/crt.gdshader" id="3_yhkvs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6ao7"]
+shader = ExtResource("3_yhkvs")
+shader_parameter/native_resolution = Vector2(960, 540)
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.09
+shader_parameter/corner_soften = 0.06
+shader_parameter/pixel_scale = 1.0
+shader_parameter/vignette_strength = 0.38
+shader_parameter/scanline_opacity = 0.0400000019
+shader_parameter/scanline_density = 1.700000057
+shader_parameter/rolling_speed = 0.1
+shader_parameter/rolling_band_width = 0.08
+shader_parameter/rolling_strength = 0.01
+shader_parameter/interlace_strength = 0.08
+shader_parameter/mask_strength = 0.07
+shader_parameter/mask_scale = 0.7
+shader_parameter/chroma_offset_px = 0.04
+shader_parameter/luma_smear_px = 0.6
+shader_parameter/drift_speed = 1.0
+shader_parameter/drift_amount = 0.001
+shader_parameter/jitter_px = 0.05
+shader_parameter/wobble_px = 0.1
+shader_parameter/noise_strength = 0.02
+shader_parameter/flicker_strength = 0.01
+shader_parameter/tape_lines = 0.0
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
 
 [node name="Opening" unique_id=1930105641 instance=ExtResource("1_ke3tw")]
 images = Array[Texture2D]([ExtResource("2_ke3tw")])
@@ -16,3 +48,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.11372549, 0.11372549, 0.11372549, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=1368823622]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0" unique_id=565656667]
+material = SubResource("ShaderMaterial_u6ao7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
