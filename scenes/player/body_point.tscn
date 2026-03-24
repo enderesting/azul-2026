@@ -65,21 +65,23 @@ func _process(_delta):
 	for point in neighbours:
 		var direction = global_position - point.global_position
 		var distance = direction.length()
-		if distance > max_dist:
-			if dragging and not stretched and distance > (max_dist+stretched_dist): 
-				Global.face_worried.emit()
-				var audioPlayers: Array = [$AudioStreamPlayer2D, $AudioStreamPlayer2D2]
-				var randomPlayer: AudioStreamPlayer2D = audioPlayers.pick_random()
-				randomPlayer.play()
-				stretched = true
-			global_position -= direction.normalized() * (distance - max_dist) * stiffness
-				
-		if distance < min_dist and distance > 0:
-			global_position += direction.normalized() * (min_dist - distance) * stiffness
 		
-		if stretched and (distance <= (max_dist+stretched_dist) or not dragging): 
-			Global.face_relaxed.emit()
-			stretched = false
+		if distance == 0:
+			continue
+		
+		var normal = direction / distance
+		
+		if distance > max_dist:
+			var correction = (distance - max_dist) * stiffness
+			
+			global_position -= normal * correction * 0.5
+			point.global_position += normal * correction * 0.5
+			
+		elif distance < min_dist:
+			var correction = (min_dist - distance) * stiffness
+			
+			global_position += normal * correction * 0.5
+			point.global_position -= normal * correction * 0.5
 "
 
 [node name="body_point" type="Node2D" unique_id=2080435063]

@@ -65,6 +65,7 @@ func _ready() -> void:
 			
 			if Global.levels.has(next_level):
 				Global.levels[next_level]["unlocked"] = true
+				Global.save_levels()
 		await $"AI Scan UI/VBoxContainer".writeWin()
 	else:
 		await $"AI Scan UI/VBoxContainer".writeLoss()

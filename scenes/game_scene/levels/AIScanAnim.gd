@@ -67,7 +67,7 @@ func writeWin():
 	var fakeWinLogData = [
 		"No issues found",
 		"Certainty: %s%%" % str(get_round_score()),
-		"Required: %s%%" % str($"../../Detection".thres * 100),
+		"Required: %s%%" % str(int($"../../Detection".thres * 100)),
 		"Next exhibit"
 	]
 	winloseLog.modulate = Color("18df13")
@@ -100,7 +100,7 @@ func writeLoss():
 	var fakeLoseLogData = [
 		"ISSUES DETECTED",
 		"Match: %s%%" % str(get_round_score()),
-		"Required: %s%%" % str($"../../Detection".thres * 100),
+		"Required: %s%%" % str(int($"../../Detection".thres * 100)),
 		"Eliminate TARGET"
 	]
 	winloseLog.modulate = Color("ff412cff")

@@ -610,7 +610,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Neck" parent="Points" unique_id=2057357725 node_paths=PackedStringArray("neighbours") instance=ExtResource("1_15wav")]
 position = Vector2(0, 23)
 neighbours = [NodePath("../R_Elbow"), NodePath("../L_Elbow"), NodePath("../Hips"), NodePath("../Head")]
-max_dist = 300.0
+max_dist = 200.0
 stiffness = 1.0
 
 [node name="L_Elbow" parent="Points" unique_id=993613529 node_paths=PackedStringArray("neighbours") groups=["player_points"] instance=ExtResource("1_15wav")]
