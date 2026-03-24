@@ -142,7 +142,7 @@ grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
-text = "Back"
+text = "BACK"
 
 [node name="MenuContainer" type="MarginContainer" parent="." unique_id=396616752]
 unique_name_in_owner = true

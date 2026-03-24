@@ -12,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
 current_tab = 0
+tab_focus_mode = 0
 script = ExtResource("1_fqpxk")
 
 [node name="Audio" parent="." unique_id=506115522 instance=ExtResource("4_6wkjv")]
