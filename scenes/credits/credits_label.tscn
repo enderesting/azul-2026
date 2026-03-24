@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccugoshag7hl0"]
 
-[ext_resource type="Script" path="res://addons/maaacks_game_template/base/nodes/labels/credits_label.gd" id="1_yhcaj"]
+[ext_resource type="Script" uid="uid://cc2wtqasev7le" path="res://addons/maaacks_game_template/base/nodes/labels/credits_label.gd" id="1_yhcaj"]
 
 [node name="CreditsLabel" type="RichTextLabel" unique_id=525943618]
 anchors_preset = 15
@@ -11,43 +11,67 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 bbcode_enabled = true
-text = "[font_size=48]Collaborators[/font_size]
+text = "
 
-[font_size=32]Role[/font_size]
-Person 1  
-Person 2  
-[url=]Person w/ Link[/url]  
 
-[font_size=48]Sourced[/font_size]
-[font_size=32]Asset Type[/font_size]
-[font_size=24]Use Case[/font_size]
-Author: [url=]Name[/url]  
-Source: [url=]Domain : webpage.html[/url]  
-License: [url=]License[/url]
+[b][font_size=48]MADE BY[/font_size][/b]
 
-[font_size=24]Godot Engine Logo[/font_size]
-Author: Andrea Calabró  
-Source: [url=https://godotengine.org/press/]godotengine.org : press[/url]  
-License: [url=https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt]CC BY 4.0 International[/url] 
 
-[font_size=48]Tools[/font_size]
-[font_size=24]Godot[/font_size]
-[img=80]res:///assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
-Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
-Source: [url=https://godotengine.org/]godotengine.org[/url]  
-License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url] 
+André Correia - [url=https://andremcorreia.itch.io/]andremcorreia[/url]
 
-[font_size=24]Godot Game Template[/font_size]
-[img=80]res:///assets/plugin_logo/logo.png[/img]  
+Isaac Cerejo - [url=https://aaatum-games.itch.io/]AAATUM Games[/url]
+
+Margarida \"Amarga\" Tavares - [url=https://amargosa.itch.io/]amargosa[/url]
+
+Nicolas Silva - [url=https://darth712.itch.io/]darth712[/url]
+
+Yichen \"Mimi\" Cao - [url=https://enderesting.itch.io/]enderesting[/url]
+
+[b][font_size=48]CONTRIBUTORS[/font_size][/b]
+
+Thanks Leonardo da Vinci for Mona Lisa 
+Shoutout Michelangelo for Creation of Adam
+Also Michelangelo again for David
+Thanks Francisco de Zurbarán for Crucifixion
+Thanks Auguste Rodin for The Thinker
+Thanks Caspar David Friedrich for Wanderer
+Shoutout Hirohiko Araki for JoJo
+Cheers Scott Cawthon for Freddy
+Respect Shigeru Miyamoto for Super Mario
+
+[b][font_size=48]ASSETS[/font_size][/b]
+
+[b][font_size=32]Godot Game Template[/font_size][/b]
 Author: [url=https://github.com/Maaack/Godot-Game-Template/graphs/contributors]Marek Belski and contributors[/url]  
 Source: [url=https://github.com/Maaack/Godot-Game-Template]github: Godot-Game-Template[/url]  
 License: [url=LICENSE.txt]MIT License[/url]  
 
-[font_size=24]Git[/font_size]
-[img=80]res:///assets/git_logo/Git-Logo-2Color.png[/img]  
+[b][font_size=32]CRT Shader[/font_size][/b]
+Author: [url=https://godotshaders.com/author/banwarfarms/]Banwarfarms[/url]  
+Source: [url=https://godotshaders.com/shader/test-crt-vcr/]CRT Shader[/url]  
+License: [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0 1.0 Universal License[/url]  
+
+
+[b][font_size=48]TOOLS[/font_size][/b]
+
+[b][font_size=32]Godot[/font_size][/b]
+[img=354x50]res:///assets/godot_engine_logo/logo_vertical_color_dark.png[/img]  
+Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
+Source: [url=https://godotengine.org/]godotengine.org[/url]  
+License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url]
+
+[b][font_size=32]Git[/font_size][/b]
+[img=354x50]res:///assets/git_logo/Git-Logo-2Color.png[/img]  
 Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
 Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
+
+
+[b][font_size=32]Bandlab[/font_size][/b]
+[img=354x50]res:///assets/git_logo/bandlab-blog-logo-black.png[/img]  
+Author: [url=https://www.bandlab.com/]BandLab Technologies[/url]  
+Source: [url=https://www.bandlab.com/]bandlab.com[/url]  
+License: [url=https://blog.bandlab.com/terms-of-use/]BandLab Terms of Service[/url]
 "
 fit_content = true
 scroll_active = false
@@ -60,4 +84,6 @@ h3_font_size = 32
 h4_font_size = 24
 h5_font_size = 20
 h6_font_size = 16
-max_image_width = 80
+bold_headings = true
+max_image_width = 354
+max_image_height = 50
