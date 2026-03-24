@@ -29,8 +29,8 @@ func _ready() -> void:
 
 	body_parts.sort_custom(func(a, b): return a.name < b.name)
 	target_nodes.sort_custom(func(a, b): return a.name < b.name)
-		_setup_target_visuals(target_nodes)
-		_setup_target_visuals(body_parts)
+	_setup_target_visuals(target_nodes)
+	_setup_target_visuals(body_parts)
 
 func _setup_target_visuals(nodes: Array[Node]) -> void:
 	for target in nodes:
