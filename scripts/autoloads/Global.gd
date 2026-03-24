@@ -6,18 +6,45 @@ signal face_shook
 signal level_begin
 
 #if you increase this number all pcs with old saves will have their saves reset
-const SAVE_VERSION = 1
+const SAVE_VERSION = 2
 
 var levels = {
-	"res://scenes/game_scene/finalLevels/level1.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level2.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level3.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level4.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level5.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level6.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level7.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level8.tscn": 0,
-	"res://scenes/game_scene/finalLevels/level9.tscn": 0
+	"res://scenes/game_scene/finalLevels/level1.tscn": {
+		"score": 0,
+		"unlocked": true
+	},
+	"res://scenes/game_scene/finalLevels/level2.tscn": {
+		"score": 0,
+		"unlocked": false
+	},
+	"res://scenes/game_scene/finalLevels/level3.tscn": {
+		"score": 0,
+		"unlocked": false
+	},
+	"res://scenes/game_scene/finalLevels/level4.tscn": {
+		"score": 0,
+		"unlocked": false
+	},
+	"res://scenes/game_scene/finalLevels/level5.tscn": {
+		"score": 0,
+		"unlocked": false
+	},
+	"res://scenes/game_scene/finalLevels/level6.tscn": {
+		"score": 0,
+		"unlocked": false
+	},
+	"res://scenes/game_scene/finalLevels/level7.tscn": {
+		"score": 0,
+		"unlocked": false
+	},
+	"res://scenes/game_scene/finalLevels/level8.tscn": {
+		"score": 0,
+		"unlocked": false
+	},
+	"res://scenes/game_scene/finalLevels/level9.tscn": {
+		"score": 0,
+		"unlocked": false
+	}
 }
 
 func save_levels():
@@ -56,6 +83,13 @@ func reset_levels():
 		levels[key] = 0
 	save_levels()
 
+func cheat_unlock_all():
+	for key in levels.keys():
+		levels[key]["score"] = 100
+		levels[key]["unlocked"] = true
+	save_levels()
+	get_tree().reload_current_scene()
+
 
 func _ready():
 	load_levels()
@@ -70,7 +104,7 @@ func get_next_level(current_path: String) -> String:
 	index += 1
 	
 	if index >= keys.size():
-		index = 0 
+		return ""
 	
 	return keys[index]
 
@@ -78,6 +112,9 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.alt_pressed and event.keycode == KEY_R:
 			reset_levels()
+	
+		if event.alt_pressed and event.keycode == KEY_U:
+			cheat_unlock_all()
 
 	if event.is_action_pressed("fullscreen"):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:

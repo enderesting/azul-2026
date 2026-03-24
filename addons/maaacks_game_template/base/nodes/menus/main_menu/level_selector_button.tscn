@@ -38,6 +38,7 @@ offset_right = -6.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("4_wkgv0")
 expand_mode = 2
 
@@ -81,6 +82,7 @@ offset_right = 53.0
 offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("5_dyfqc")
 expand_mode = 1
 

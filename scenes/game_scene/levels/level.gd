@@ -55,10 +55,16 @@ func _ready() -> void:
 	#detectionSys.showBoxes()
 	
 
-	if Global.levels[current_level_path] < ai.get_round_score():
-		Global.levels[current_level_path] = ai.get_round_score()
+	if Global.levels[current_level_path]["score"] < ai.get_round_score():
+		Global.levels[current_level_path]["score"] = ai.get_round_score()
 	Global.save_levels()
+	
 	if detectionSys.checkWinCondition():
+		if detectionSys.checkWinCondition():
+			var next_level = Global.get_next_level(current_level_path)
+			
+			if Global.levels.has(next_level):
+				Global.levels[next_level]["unlocked"] = true
 		await $"AI Scan UI/VBoxContainer".writeWin()
 	else:
 		await $"AI Scan UI/VBoxContainer".writeLoss()

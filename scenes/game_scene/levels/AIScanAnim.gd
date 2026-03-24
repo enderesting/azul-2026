@@ -86,8 +86,10 @@ func writeWin():
 		if logLines.size() > maxLines:
 			logLines.pop_front()
 		$"../../typing".stop()
-			
-	continue_btn.show()
+	
+	var next_level = Global.get_next_level(get_parent().get_parent().current_level_path)
+	if next_level != "":
+		continue_btn.show()
 	menu_btn.show()
 	restart_btn.show()
 	
@@ -96,7 +98,7 @@ func writeWin():
 func writeLoss():
 	var fakeLoseLogData = [
 		"ISSUES DETECTED",
-		"Match: %s%%" % str(snapped($"../../Detection".getScore(),0.1) * 100),
+		"Match: %s%%" % str(get_round_score()),
 		"Eliminate TARGET",
 		"Continue to be murdered"
 	]
@@ -120,7 +122,9 @@ func writeLoss():
 		$"../../typing".stop()
 
 
-	continue_btn.show()
+	var next_level = Global.get_next_level(get_parent().get_parent().current_level_path)
+	if next_level != "":
+		continue_btn.show()
 	continue_btn.disabled = true
 	menu_btn.show()
 	restart_btn.show()
