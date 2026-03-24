@@ -34,11 +34,6 @@ Author: [Marek Belski and contributors](https://github.com/Maaack/Godot-Game-Tem
 Source: [github: Godot-Game-Template](https://github.com/Maaack/Godot-Game-Template)  
 License: [MIT License](LICENSE.txt)  
 
-### CRT Shader
-Author: [Banwarfarms](https://godotshaders.com/author/banwarfarms/)  
-Source: [CRT Shader](https://godotshaders.com/shader/test-crt-vcr/)  
-License: [CC0 1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/)  
-
 
 ## TOOLS
 
