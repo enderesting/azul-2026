@@ -12,6 +12,12 @@ signal level_lost
 var level_state : LevelState
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
+@onready var continue_btn: Button = %ContinueBtn
+@onready var restart_btn: Button = %RestartBtn
+@onready var menu_btn: Button = %MenuBtn
+
+
+
 @onready var current_level_path = get_scene_file_path()
 
 func getTime():
@@ -58,6 +64,9 @@ func _ready() -> void:
 		await $"AI Scan UI/VBoxContainer".writeLoss()
 
 func _on_continue_btn_pressed() -> void:
+	restart_btn.disabled = true
+	continue_btn.disabled = true
+	menu_btn.disabled = true
 	animation_player.play("fade")
 	$NextLvl.play()
 	await animation_player.animation_finished
@@ -69,6 +78,11 @@ func _on_continue_btn_pressed() -> void:
 
 
 func _on_menu_btn_pressed() -> void:
+	
+	restart_btn.disabled = true
+	continue_btn.disabled = true
+	menu_btn.disabled = true
+	
 	animation_player.play("fade")
 	$NextLvl.play()
 	await animation_player.animation_finished
@@ -76,4 +90,7 @@ func _on_menu_btn_pressed() -> void:
 
 
 func _on_restart_btn_pressed() -> void:
+	restart_btn.disabled = true
+	continue_btn.disabled = true
+	menu_btn.disabled = true
 	resetLevel()
