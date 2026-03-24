@@ -5,6 +5,9 @@ signal face_relaxed
 signal face_shook
 signal level_begin
 
+#if you increase this number all pcs with old saves will have their saves reset
+const SAVE_VERSION = 1
+
 var levels = {
 	"res://scenes/game_scene/finalLevels/level1.tscn": 0,
 	"res://scenes/game_scene/finalLevels/level2.tscn": 0,
@@ -20,8 +23,11 @@ var levels = {
 func save_levels():
 	var file = FileAccess.open("user://levels.json", FileAccess.WRITE)
 	if file:
-		var json_string = JSON.stringify(levels)
-		file.store_string(json_string)
+		var data = {
+			"version": SAVE_VERSION,
+			"levels": levels
+		}
+		file.store_string(JSON.stringify(data))
 		
 func load_levels():
 	if not FileAccess.file_exists("user://levels.json"):
@@ -34,9 +40,14 @@ func load_levels():
 		
 		if typeof(result) == TYPE_DICTIONARY:
 			
-			for key in result.keys():
-				if levels.has(key):
-					levels[key] = result[key]
+			if not result.has("version") or result["version"] != SAVE_VERSION:
+				reset_levels()
+				return
+			
+			if result.has("levels"):
+				for key in result["levels"].keys():
+					if levels.has(key):
+						levels[key] = result["levels"][key]
 
 func reset_levels():
 	if FileAccess.file_exists("user://levels.json"):
@@ -54,7 +65,7 @@ func get_next_level(current_path: String) -> String:
 	var index = keys.find(current_path)
 	
 	if index == -1:
-		return keys[0] # fallback
+		return keys[0]
 	
 	index += 1
 	

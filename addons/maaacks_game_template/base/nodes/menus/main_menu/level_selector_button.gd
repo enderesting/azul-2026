@@ -2,6 +2,7 @@ extends Button
 
 @onready var screenshot_node: TextureRect = %screenshot
 @onready var score_label: Label = %score_label
+@onready var lock: TextureRect = %lock
 
 var level_packed = PackedScene
 
@@ -15,6 +16,9 @@ func _ready() -> void:
 	if screenshot:
 		screenshot_node.texture = screenshot
 	$cam_label.text = "CAM " + str(cam_n)
+	if score == 0 and cam_n != 1:
+		disabled = true
+		lock.show()
 	score_label.text = str(int(score))  + "%"
 
 func _on_pressed() -> void:
