@@ -61,11 +61,10 @@ func _on_continue_btn_pressed() -> void:
 	$NextLvl.play()
 	await animation_player.animation_finished
 
-	if $Detection.checkWinCondition():
-		var next_level = Global.get_next_level(current_level_path)
-		get_tree().change_scene_to_file(next_level)
-	else:
-		resetLevel()
+
+	var next_level = Global.get_next_level(current_level_path)
+	get_tree().change_scene_to_file(next_level)
+
 
 
 func _on_menu_btn_pressed() -> void:
@@ -73,3 +72,7 @@ func _on_menu_btn_pressed() -> void:
 	$NextLvl.play()
 	await animation_player.animation_finished
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu/main_menu_with_animations.tscn")
+
+
+func _on_restart_btn_pressed() -> void:
+	resetLevel()

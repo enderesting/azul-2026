@@ -4,6 +4,12 @@ extends VBoxContainer
 @onready var codeBlockLabel = $"HBoxContainer/Code Block"
 @onready var winloseLog = $HBoxContainer/Log
 
+@onready var continue_btn: Button = %ContinueBtn
+@onready var restart_btn: Button = %RestartBtn
+@onready var menu_btn: Button = %MenuBtn
+
+
+
 var maxLines = 5
 var terminalLines = []
 var logLines = []
@@ -81,8 +87,10 @@ func writeWin():
 			logLines.pop_front()
 		$"../../typing".stop()
 			
-	$HBoxContainer/ContinueBtn.visible = true
-	$HBoxContainer/MenuBtn.visible = true
+	continue_btn.show()
+	menu_btn.show()
+	restart_btn.show()
+	
 	await get_tree().process_frame
 
 func writeLoss():
@@ -110,25 +118,10 @@ func writeLoss():
 		if logLines.size() > maxLines:
 			logLines.pop_front()
 		$"../../typing".stop()
-			
-	$HBoxContainer/ContinueBtn.text = "restart"
-
-	var normal_style = $HBoxContainer/ContinueBtn.get_theme_stylebox("normal").duplicate()
-	normal_style.bg_color = Color(1, 0, 0) 
-	$HBoxContainer/ContinueBtn.add_theme_stylebox_override("normal", normal_style)
-
-	var hover_style = $HBoxContainer/ContinueBtn.get_theme_stylebox("hover").duplicate()
-	hover_style.bg_color = Color(0.7, 0, 0) 
-	$HBoxContainer/ContinueBtn.add_theme_stylebox_override("hover", hover_style)
 
 
-	var normal_style2 = $HBoxContainer/MenuBtn.get_theme_stylebox("normal").duplicate()
-	normal_style2.bg_color = Color(1, 0, 0)
-	$HBoxContainer/MenuBtn.add_theme_stylebox_override("normal", normal_style2)
-
-	var hover_style2 = $HBoxContainer/MenuBtn.get_theme_stylebox("hover").duplicate()
-	hover_style2.bg_color = Color(0.7, 0, 0)
-	$HBoxContainer/MenuBtn.add_theme_stylebox_override("hover", hover_style2)
-	$HBoxContainer/ContinueBtn.visible = true
-	$HBoxContainer/MenuBtn.visible = true
+	continue_btn.show()
+	continue_btn.disabled = true
+	menu_btn.show()
+	restart_btn.show()
 	await get_tree().process_frame

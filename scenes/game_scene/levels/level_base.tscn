@@ -238,16 +238,19 @@ theme_override_font_sizes/font_size = 60
 text = "Searching for unnusual activity"
 vertical_alignment = 1
 
-[node name="ContinueBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=1163001735]
+[node name="BtnsContainer" type="VBoxContainer" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=600403944]
+custom_minimum_size = Vector2(241.25, 0)
+layout_mode = 0
+offset_left = 1449.0
+offset_top = 285.0
+offset_right = 1659.0
+offset_bottom = 446.0
+theme_override_constants/separation = 19
+
+[node name="ContinueBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/BtnsContainer" unique_id=1163001735]
+unique_name_in_owner = true
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.18100001
-anchor_bottom = 0.34600002
-offset_left = 1372.0
-offset_top = 295.0
-offset_right = 1285.648
-offset_bottom = 346.0
+layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_c76rq")
@@ -258,18 +261,28 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_5b8ya")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_22gea")
-text = "Continue"
+text = "NEXT LEVEL"
 
-[node name="MenuBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=348099762]
+[node name="RestartBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/BtnsContainer" unique_id=178905520]
+unique_name_in_owner = true
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.18100001
-anchor_bottom = 0.34600002
-offset_left = 1370.0
-offset_top = 375.0
-offset_right = 1286.648
-offset_bottom = 426.0
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_c76rq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5b8ya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_22gea")
+text = "RESTART"
+
+[node name="MenuBtn" type="Button" parent="AI Scan UI/VBoxContainer/HBoxContainer/BtnsContainer" unique_id=348099762]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_c76rq")
@@ -280,7 +293,7 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_5b8ya")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_myive")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_22gea")
-text = "Menu"
+text = "MAIN MENU"
 
 [node name="Log" type="Label" parent="AI Scan UI/VBoxContainer/HBoxContainer" unique_id=80296313]
 modulate = Color(0.09411765, 0.8745098, 0.07450981, 1)
@@ -434,5 +447,6 @@ offset_right = 154.0
 offset_bottom = 101.0
 theme_override_constants/margin_left = 100
 
-[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
-[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/BtnsContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/BtnsContainer/RestartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/BtnsContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]
