@@ -68,9 +68,9 @@ position = Vector2(947, 628.135)
 scale = Vector2(0.905, 0.747)
 texture = ExtResource("2_j4hkh")
 
-[node name="Detection" parent="." index="7" unique_id=218797964]
+[node name="Detection" parent="." index="8" unique_id=218797964]
 position = Vector2(9, -82)
-thres = 0.75
+thres = 0.7
 
 [node name="Head" type="Node2D" parent="Detection" index="0" unique_id=51074230]
 position = Vector2(932.00006, 629)
@@ -81,7 +81,7 @@ position = Vector2(928, 826)
 [node name="R_Hand" type="Node2D" parent="Detection" index="2" unique_id=863476606]
 position = Vector2(879, 842)
 
-[node name="Ai Sounds" parent="." index="11" unique_id=520498024]
+[node name="Ai Sounds" parent="." index="12" unique_id=520498024]
 volume_db = 8.0
 
 [connection signal="pressed" from="AI Scan UI/VBoxContainer/HBoxContainer/Log/ContinueBtn" to="." method="_on_continue_btn_pressed"]
