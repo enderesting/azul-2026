@@ -2,7 +2,7 @@
 extends Label
 ## Displays the value of `application/config/version`, set in project settings.
 
-const NO_VERSION_STRING : String = "1.0.0"
+const NO_VERSION_STRING : String = "1.1.0"
 
 ## Prefixes the value of `application/config/version` when displaying to the user.
 @export var version_prefix : String = "v"
